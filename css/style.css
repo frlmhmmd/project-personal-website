@@ -1,0 +1,237 @@
+/* ==========================================================================
+   MUHAMMAD FIRLY - PERSONAL PORTFOLIO STYLESHEET
+   Deep-Void & Cyber Neon Aesthetic
+   ========================================================================== */
+
+:root {
+  --color-deep-void: #020617;
+  --color-background: #0c1324;
+  --color-surface-card: rgba(15, 23, 42, 0.75);
+  --color-neon-accent: #38bdf8;
+  --color-neon-glow: rgba(56, 189, 248, 0.4);
+  --color-neon-emerald: #10b981;
+  --color-glass-border: rgba(248, 250, 252, 0.12);
+  --color-glass-border-hover: rgba(56, 189, 248, 0.35);
+  --color-text-slate: #f8fafc;
+  --color-text-muted: #94a3b8;
+}
+
+/* Base resets & smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-deep-void);
+  color: var(--color-text-slate);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--color-glass-border-hover);
+  box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+}
+
+.glass-card-interactive {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.2);
+}
+
+/* Gradient Texts */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #bae6fd 40%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Neon Glow Accents */
+.neon-glow {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+}
+
+.neon-glow-sm {
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+}
+
+.neon-border {
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Glowing Pulse & Float Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit-slow {
+  animation: orbitSpin 25s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbitSpin 35s linear infinite reverse;
+}
+
+/* Typing Cursor Effect */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 0.9s step-end infinite;
+  color: #38bdf8;
+  margin-left: 2px;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Active Nav link styling */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #38bdf8;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #38bdf8 !important;
+  font-weight: 600;
+}
+
+/* Lightbox Modal */
+#lightbox-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lightbox-modal .lightbox-content {
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#lightbox-modal.active .lightbox-content {
+  transform: scale(1);
+}
+
+/* Filter Tab Buttons */
+.filter-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn.active {
+  background-color: #38bdf8 !important;
+  color: #020617 !important;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Toast Notification */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Grid Pattern Background Overlay */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}

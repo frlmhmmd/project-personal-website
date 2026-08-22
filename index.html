@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Muhammad Firly - Backend, IoT & Data Science Developer</title>
+  <meta name="description" content="Portfolio Muhammad Firly - Backend Developer, IoT Hardware Systems Engineer, dan Data Science & AI Enthusiast. Menampilkan sertifikasi resmi, prototype hardware, dan sistem monitoring." />
+  <meta name="keywords" content="Muhammad Firly, Backend Developer, IoT Engineer, Data Science, Python, SQL, AI, Hardware, Portfolio" />
+  <meta name="author" content="Muhammad Firly" />
+  
+  <!-- OpenGraph / Social Media Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muhammad Firly - Personal Portfolio" />
+  <meta property="og:description" content="Backend Developer, IoT Hardware Engineer & Data Science Enthusiast." />
+  <meta property="og:image" content="profil/firly.png" />
+
+  <!-- Tailwind CSS CDN with Custom Plugins -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Config Customization -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "deep-void": "#020617",
+            "background": "#0c1324",
+            "primary-container": "#0f172a",
+            "neon-accent": "#38BDF8",
+            "neon-glow": "rgba(56, 189, 248, 0.4)",
+            "neon-emerald": "#10B981",
+            "slate-text": "#F8FAFC",
+            "on-surface-variant": "#94A3B8",
+            "glass-border": "rgba(248, 250, 252, 0.1)",
+            "surface-container": "#191f31",
+            "surface-container-high": "#23293c",
+          },
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"],
+          },
+          maxWidth: {
+            "container-max": "1280px",
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-deep-void text-slate-text selection:bg-neon-accent selection:text-deep-void antialiased">
+
+  <!-- =========================================================================
+       1. Top Navigation Bar
+       ========================================================================= -->
+  <header class="fixed top-0 w-full z-50 bg-deep-void/80 backdrop-blur-lg border-b border-glass-border shadow-[0_4px_25px_rgba(56,189,248,0.05)] transition-all duration-300">
+    <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      
+      <!-- Brand Logo -->
+      <a class="flex items-center gap-3 group" href="#home">
+        <div class="w-10 h-10 rounded-lg bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent font-mono font-bold text-xl group-hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] group-hover:scale-105 transition-all duration-300">
+          F
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-lg text-slate-text tracking-wide group-hover:text-neon-accent transition-colors duration-300">
+            Firly<span class="text-neon-accent">.dev</span>
+          </span>
+          <span class="text-[11px] font-mono text-neon-emerald flex items-center gap-1.5 -mt-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-neon-emerald animate-ping"></span>
+            Open to Work
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a class="nav-link text-slate-text font-medium text-sm hover:text-neon-accent py-1 active" href="#home">Home</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#about">About</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#skills">Skills</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#projects">Projects & Hardware</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#certifications">Certifications</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Trailing Action Buttons -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button class="btn-copy-email inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-xs font-mono text-slate-text hover:border-neon-accent hover:text-neon-accent transition-all duration-300" data-email="muhammadfirly.dev@gmail.com" title="Salin Email">
+          <span class="material-symbols-outlined text-[16px]">content_copy</span>
+          <span>Copy Email</span>
+        </button>
+        <a class="inline-flex items-center justify-center px-5 py-2.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobile-menu-toggle" class="lg:hidden p-2 text-on-surface-variant hover:text-neon-accent focus:outline-none transition-colors" aria-label="Toggle Mobile Menu">
+        <span class="material-symbols-outlined text-[30px]">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 z-50 w-72 bg-deep-void/95 backdrop-blur-2xl border-l border-glass-border p-6 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-glass-border">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent font-mono font-bold">F</div>
+          <span class="font-bold text-slate-text">Firly<span class="text-neon-accent">.dev</span></span>
+        </div>
+        <button id="mobile-drawer-close" class="text-on-surface-variant hover:text-neon-accent" aria-label="Close Mobile Menu">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4 mt-8">
+        <a class="mobile-nav-link text-slate-text hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#home">Home</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#about">About</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#skills">Skills</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#projects">Projects & Hardware</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#certifications">Certifications</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
+      <button class="btn-copy-email w-full py-2.5 rounded-lg glass-card text-xs font-mono text-slate-text flex items-center justify-center gap-2 hover:border-neon-accent transition-colors" data-email="muhammadfirly.dev@gmail.com">
+        <span class="material-symbols-outlined text-[16px]">content_copy</span>
+        <span>Copy Email</span>
+      </button>
+      <a class="w-full py-2.5 bg-neon-accent text-deep-void text-center font-semibold text-sm rounded-lg hover:shadow-lg transition-all" href="#contact">
+        Contact Me
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         2. Hero Section with WebGL Interactive Background
+         ========================================================================= -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-20 bg-grid-pattern" id="home">
+      <!-- WebGL Background Canvas -->
+      <div class="absolute inset-0 w-full h-full -z-10 opacity-70">
+        <canvas id="shader-canvas-hero" class="w-full h-full block"></canvas>
+      </div>
+
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center z-10">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left order-2 lg:order-1">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border-neon-accent/30 w-fit mx-auto lg:mx-0">
+            <span class="w-2 h-2 rounded-full bg-neon-accent animate-ping"></span>
+            <span class="font-mono text-xs text-neon-accent tracking-widest uppercase font-semibold">
+              Backend • IoT Engineering • Data Science
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-text leading-tight">
+            Hi, I'm <br class="hidden sm:inline" />
+            <span class="text-gradient">Muhammad Firly</span>
+          </h1>
+
+          <!-- Animated Dynamic Roles Typing Container -->
+          <div class="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-300 flex items-center justify-center lg:justify-start h-10">
+            <span class="text-on-surface-variant mr-2">I build:</span>
+            <span id="typing-text" class="text-neon-accent font-semibold"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="text-base sm:text-lg text-on-surface-variant max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Menghubungkan dunia sistem hardware, embedded devices, dan backend modern berkecepatan tinggi dengan analitik data berbasis Python, SQL, dan kecerdasan buatan.
+          </p>
+
+          <!-- CTA Action Buttons -->
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start items-center pt-2">
+            <a class="px-7 py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="#projects">
+              <span>Explore Projects</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+            </a>
+            <a class="px-7 py-3.5 glass-card text-slate-text font-semibold text-sm rounded-lg hover:bg-white/10 hover:border-neon-accent/50 transition-all duration-300 flex items-center gap-2" href="#certifications">
+              <span class="material-symbols-outlined text-[18px] text-neon-accent">verified</span>
+              <span>View Certifications</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links & Tags -->
+          <div class="flex items-center gap-6 justify-center lg:justify-start pt-4 text-xs font-mono text-on-surface-variant">
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-neon-accent">memory</span> Microcontroller</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-neon-accent">terminal</span> Python / SQL</span>
+            <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-neon-accent">network_check</span> Telemetry</span>
+          </div>
+        </div>
+
+        <!-- Right Hero Visual / Profile Portrait -->
+        <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
+          <div class="relative w-72 h-72 sm:w-88 sm:h-88 max-w-[340px] max-h-[340px] aspect-square">
+            
+            <!-- Background Glow & Orbital Rings -->
+            <div class="absolute inset-0 rounded-full bg-neon-accent/20 filter blur-3xl animate-pulse-glow"></div>
+            <div class="absolute -inset-4 border border-dashed border-neon-accent/30 rounded-full animate-orbit-slow pointer-events-none"></div>
+            <div class="absolute -inset-8 border border-neon-accent/15 rounded-full animate-orbit-reverse pointer-events-none"></div>
+
+            <!-- Profile Image Container -->
+            <div class="relative w-full h-full rounded-full glass-card p-3 animate-float shadow-[0_0_50px_rgba(56,189,248,0.25)] border-2 border-neon-accent/40 overflow-hidden group">
+              <img 
+                id="hero-profile-img"
+                class="w-full h-full object-cover rounded-full filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 cursor-pointer" 
+                src="profil/firly.png" 
+                alt="Muhammad Firly - Profile"
+                data-lightbox="true"
+                data-img-src="profil/firly.png"
+                data-title="Muhammad Firly"
+                data-category-label="Software & Hardware Engineer"
+                data-desc="Profile of Muhammad Firly - Passionate in Backend Architecture, IoT Hardware Prototyping, and Data Science."
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 pointer-events-none">
+                <span class="text-xs font-mono text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">zoom_in</span> Click to Enlarge
+                </span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 1: IoT & Hardware -->
+            <div class="absolute -bottom-2 -left-4 glass-card px-3.5 py-2 rounded-xl border border-neon-accent/40 flex items-center gap-2.5 shadow-xl animate-float" style="animation-delay: 1s;">
+              <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-neon-accent flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">developer_board</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] font-mono text-on-surface-variant uppercase">Specialization</span>
+                <span class="text-xs font-bold text-slate-text">IoT & Hardware</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Certified -->
+            <div class="absolute -top-3 -right-3 glass-card px-3.5 py-2 rounded-xl border border-emerald-500/40 flex items-center gap-2.5 shadow-xl animate-float" style="animation-delay: 2s;">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">verified</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="text-[10px] font-mono text-on-surface-variant uppercase">Credentials</span>
+                <span class="text-xs font-bold text-emerald-400">6x Certified</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. About Me Section & Metric Counters
+         ========================================================================= -->
+    <section class="py-24 relative border-t border-glass-border/50 bg-deep-void/60" id="about">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">person</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">About Me</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Passionate In Building <span class="text-neon-accent">End-to-End Solutions</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed">
+            Dari perancangan sirkuit perangkat keras mikroprosesor hingga pemrosesan data di sisi server dan visualisasi analitik.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Bio Summary Card -->
+          <div class="lg:col-span-7 glass-card p-8 rounded-2xl border border-glass-border flex flex-col justify-between">
+            <div class="space-y-4">
+              <h3 class="text-2xl font-bold text-slate-text flex items-center gap-2">
+                <span class="text-neon-accent font-mono text-lg">01.</span>
+                Engineering Philosophy & Profile
+              </h3>
+              <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                Halo! Saya <strong>Muhammad Firly</strong>, seorang pengembang yang memiliki ketertarikan mendalam dalam integrasi teknologi <strong>Backend Development</strong>, <strong>Internet of Things (IoT) Hardware</strong>, dan <strong>Data Science & AI</strong>.
+              </p>
+              <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                Saya terbiasa merancang arsitektur sistem dari dasar: mulai dari pemilihan komponen sensor dan modul mikrokontroler, perakitan sirkuit prototipe, pengiriman telemetri data real-time, hingga pengolahan basis data SQL dan visualisasi analitik untuk memecahkan masalah nyata.
+              </p>
+              <div class="pt-2 flex flex-wrap gap-2">
+                <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Clean Architecture</span>
+                <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Hardware Telemetry</span>
+                <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Data-Driven Insights</span>
+                <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Continuous Learning</span>
+              </div>
+            </div>
+
+            <div class="pt-8 border-t border-glass-border mt-8 flex flex-wrap items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent">
+                  <span class="material-symbols-outlined text-[20px]">location_on</span>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-on-surface-variant">Location</div>
+                  <div class="text-sm font-semibold text-slate-text">Indonesia</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                  <span class="material-symbols-outlined text-[20px]">check_circle</span>
+                </div>
+                <div>
+                  <div class="text-xs font-mono text-on-surface-variant">Work Status</div>
+                  <div class="text-sm font-semibold text-emerald-400">Available for Opportunities</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Metrics Grid -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-neon-accent/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-neon-accent/10 text-neon-accent flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">verified</span>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">6+</div>
+              <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Certified Skills</div>
+              <div class="text-[11px] text-slate-400 mt-2">AI, Data Science, Python, SQL, IT</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">developer_board</span>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">4+</div>
+              <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Hardware Devices</div>
+              <div class="text-[11px] text-slate-400 mt-2">IoT prototypes & sensor units</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-purple-500/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">monitoring</span>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">100%</div>
+              <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Field Validated</div>
+              <div class="text-[11px] text-slate-400 mt-2">Telemetry & monitoring tests</div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-amber-500/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">terminal</span>
+              </div>
+              <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">24/7</div>
+              <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Dedicated Passion</div>
+              <div class="text-[11px] text-slate-400 mt-2">Continuous growth & builds</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. Technical Skills Section
+         ========================================================================= -->
+    <section class="py-24 relative" id="skills">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">code</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Tech Stack</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Core Competencies & <span class="text-neon-accent">Capabilities</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Kombinasi keahlian teknis dalam perangkat keras, backend arsitektur, dan analitik data.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Backend & Programming -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-accent/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-neon-accent flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">terminal</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-text mb-2">Backend & Logic</h3>
+              <p class="text-xs text-on-surface-variant mb-6">Membangun logika aplikasi yang tangguh, modular, dan terstruktur rapi.</p>
+              
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Python</span>
+                  <span class="text-neon-accent">Advanced</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">SQL & Relational DB</span>
+                  <span class="text-neon-accent">Proficient</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">C / C++ (Embedded)</span>
+                  <span class="text-neon-accent">Proficient</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">RESTful APIs</span>
+                  <span class="text-neon-accent">Intermediate</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-glass-border flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">FastAPI</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">SQLite</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Category 2: IoT & Hardware Systems -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">memory</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-text mb-2">IoT & Hardware</h3>
+              <p class="text-xs text-on-surface-variant mb-6">Perancangan prototipe perangkat pintar, sensor, dan komunikasi data.</p>
+              
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Microcontrollers (ESP32)</span>
+                  <span class="text-emerald-400">Advanced</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Sensor Interfacing</span>
+                  <span class="text-emerald-400">Advanced</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">I2C / SPI / UART</span>
+                  <span class="text-emerald-400">Proficient</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Telemetry Streaming</span>
+                  <span class="text-emerald-400">Proficient</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-glass-border flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">MQTT</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">HTTP Telemetry</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Sensors</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Data Science & AI -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-purple-500/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">query_stats</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-text mb-2">Data & AI</h3>
+              <p class="text-xs text-on-surface-variant mb-6">Eksplorasi data, permodelan dasar kecerdasan buatan, dan visualisasi.</p>
+              
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Data Science Basics</span>
+                  <span class="text-purple-400">Certified</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Data Visualization</span>
+                  <span class="text-purple-400">Certified</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">AI & ML Concepts</span>
+                  <span class="text-purple-400">Certified</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">SQL Data Querying</span>
+                  <span class="text-purple-400">Certified</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-glass-border flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Pandas</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Matplotlib</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">EDA</span>
+            </div>
+          </div>
+
+          <!-- Category 4: IT Infrastructure & Systems -->
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-amber-500/50 transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-[28px]">lan</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-text mb-2">IT & Hardware Ops</h3>
+              <p class="text-xs text-on-surface-variant mb-6">Fondasi perangkat keras komputer, sistem operasi, jaringan & version control.</p>
+              
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Cisco IT Essentials</span>
+                  <span class="text-amber-400">Certified</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Git & GitHub</span>
+                  <span class="text-amber-400">Proficient</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Hardware Troubleshooting</span>
+                  <span class="text-amber-400">Advanced</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Basic Networking</span>
+                  <span class="text-amber-400">Proficient</span>
+                </div>
+              </div>
+            </div>
+            <div class="pt-6 mt-6 border-t border-glass-border flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Linux</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">CI/CD</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">TCP/IP</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. Featured Projects & Hardware Showcase
+         ========================================================================= -->
+    <section class="py-24 relative border-t border-glass-border/50 bg-deep-void/70" id="projects">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">rocket_launch</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Showcase</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Featured <span class="text-neon-accent">Projects & Hardware</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Dokumentasi prototipe fisik perangkat IoT, pengujian laboratorium, dan dashboard telemetri monitoring.
+          </p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+          <button class="filter-btn active px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="all">
+            All Works (6)
+          </button>
+          <button class="filter-btn glass-card text-on-surface-variant hover:text-slate-text px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="hardware">
+            Hardware Prototype (4)
+          </button>
+          <button class="filter-btn glass-card text-on-surface-variant hover:text-slate-text px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="monitoring">
+            Monitoring & Testing (2)
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+          
+          <!-- Project 1: Alat 1 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="gambar-alat-project/alat1.png" 
+                alt="Smart IoT Sensor Prototype & Wiring Assembly" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat1.png"
+                data-title="Smart IoT Multi-Sensor Prototype & Wiring Assembly"
+                data-category-label="Hardware & Embedded Systems"
+                data-desc="Prototipe perangkat keras IoT dengan integrasi kabel mikrokontroler, modul sensor, dan jalur transmisi sinyal data."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
+                  Hardware #01
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-neon-accent bg-neon-accent/10 px-2 py-0.5 rounded">ESP32 / MCU</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Sensor Wiring</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                IoT Sensor Interface & Microcontroller Unit
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Perakitan sirkuit sirkulasi sensor dan mikrokontroler untuk akuisisi sinyal fisik secara kontinu dengan proteksi interferensi tegangan.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat1.png"
+                data-title="IoT Sensor Interface & Microcontroller Unit"
+                data-category-label="Hardware & Embedded Systems"
+                data-desc="Perakitan sirkuit sirkulasi sensor dan mikrokontroler untuk akuisisi sinyal fisik secara kontinu dengan proteksi interferensi tegangan."
+              >
+                Inspect Prototype <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 2: Alat 2 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="gambar-alat-project/alat2.png" 
+                alt="Embedded System & Power Management Module" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat2.png"
+                data-title="Embedded System & Power Management Module"
+                data-category-label="Hardware & Power Circuitry"
+                data-desc="Modul distribusi daya dan unit mikrokontroler terpasang untuk menjaga kestabilan catu daya selama pembacaan sensor berkelanjutan."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-emerald-400 border border-emerald-400/30 font-semibold">
+                  Hardware #02
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Power Dist</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Embedded C++</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Embedded Power & Signal Regulator Hub
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Unit pengatur distribusi tegangan dan pembagian bus sinyal sensor agar perangkat mampu bekerja stabil tanpa fluktuasi data.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat2.png"
+                data-title="Embedded Power & Signal Regulator Hub"
+                data-category-label="Hardware & Power Circuitry"
+                data-desc="Unit pengatur distribusi tegangan dan pembagian bus sinyal sensor agar perangkat mampu bekerja stabil tanpa fluktuasi data."
+              >
+                Inspect Prototype <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 3: Alat 3 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="gambar-alat-project/alat3.png" 
+                alt="Compact Device Packaging & Telemetry Enclosure" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat3.png"
+                data-title="Compact Device Packaging & Telemetry Enclosure"
+                data-category-label="IoT Device Assembly"
+                data-desc="Pengemasan sirkuit prototipe dan tata letak internal box untuk melindungi komponen sensor dari benturan dan kondisi eksternal."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-purple-400 border border-purple-400/30 font-semibold">
+                  Hardware #03
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Enclosure</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Field-Ready</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Integrated Hardware Assembly & Enclosure
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Desain struktur kemasan pelindung perangkat keras agar praktis saat dibawa untuk pengujian lapangan dan instalasi monitoring.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat3.png"
+                data-title="Integrated Hardware Assembly & Enclosure"
+                data-category-label="IoT Device Assembly"
+                data-desc="Desain struktur kemasan pelindung perangkat keras agar praktis saat dibawa untuk pengujian lapangan dan instalasi monitoring."
+              >
+                Inspect Prototype <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 4: Alat 4 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="gambar-alat-project/alat4.png" 
+                alt="Precision Sensing Node & Telemetry Transceiver" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat4.png"
+                data-title="Precision Sensing Node & Telemetry Transceiver"
+                data-category-label="Field Telemetry Node"
+                data-desc="Node penginderaan presisi dengan kemampuan transmisi data nirkabel cepat menuju gateway pemantau."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-amber-400 border border-amber-400/30 font-semibold">
+                  Hardware #04
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Transceiver</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Precision Node</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Precision Field Sensing & Transceiver Node
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Unit penginderaan telemetri yang dioptimalkan untuk responsifitas data tingkat tinggi dengan konsumsi daya yang efisien.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="gambar-alat-project/alat4.png"
+                data-title="Precision Field Sensing & Transceiver Node"
+                data-category-label="Field Telemetry Node"
+                data-desc="Unit penginderaan telemetri yang dioptimalkan untuk responsifitas data tingkat tinggi dengan konsumsi daya yang efisien."
+              >
+                Inspect Prototype <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 5: Foto Monitoring 1 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="monitoring">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="ujicoba-alat/foto_monitoring1.png" 
+                alt="Real-Time Data Monitoring Dashboard & Calibration Test" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="ujicoba-alat/foto_monitoring1.png"
+                data-title="Real-Time Data Monitoring Dashboard & Calibration Test"
+                data-category-label="Telemetry & Monitoring"
+                data-desc="Pengujian transmisi data real-time pada sistem pemantauan dengan pembacaan grafik, batas toleransi sensor, dan sinkronisasi basis data."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
+                  Field Test #01
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-neon-accent bg-neon-accent/10 px-2 py-0.5 rounded">Monitoring UI</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Real-Time Data</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Live Telemetry & Sensor Monitoring System
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Antarmuka visualisasi pemantauan data sensor secara live untuk memverifikasi akurasi bacaan perangkat terhadap parameter acuan.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="ujicoba-alat/foto_monitoring1.png"
+                data-title="Live Telemetry & Sensor Monitoring System"
+                data-category-label="Telemetry & Monitoring"
+                data-desc="Antarmuka visualisasi pemantauan data sensor secara live untuk memverifikasi akurasi bacaan perangkat terhadap parameter acuan."
+              >
+                View Monitoring Test <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Project 6: Foto Monitoring 2 -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="monitoring">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+              <img 
+                src="ujicoba-alat/foto_monitoring2.png" 
+                alt="System Validation & Field Data Stream Testing" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="ujicoba-alat/foto_monitoring2.png"
+                data-title="System Validation & Field Data Stream Testing"
+                data-category-label="Testing & Validation"
+                data-desc="Validasi uji coba kestabilan komunikasi data telemetri jangka panjang, pencatatan log error, dan konsistensi koneksi."
+              />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-emerald-400 border border-emerald-400/30 font-semibold">
+                  Field Test #02
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Validation</span>
+                <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Stream Testing</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Field Deployment & System Validation Test
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Pengujian langsung kestabilan transfer data, logging riwayat pembacaan, dan analisis deviasi sinyal pada kondisi operasional sebenarnya.
+              </p>
+              <button 
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                data-lightbox="true"
+                data-img-src="ujicoba-alat/foto_monitoring2.png"
+                data-title="Field Deployment & System Validation Test"
+                data-category-label="Testing & Validation"
+                data-desc="Pengujian langsung kestabilan transfer data, logging riwayat pembacaan, dan analisis deviasi sinyal pada kondisi operasional sebenarnya."
+              >
+                View Validation Test <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. Official Certifications & Credentials Showcase
+         ========================================================================= -->
+    <section class="py-24 relative" id="certifications">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">verified</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Accreditations</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Official <span class="text-neon-accent">Certifications</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Sertifikasi keahlian terverifikasi di bidang Artificial Intelligence, Data Science, Python, SQL, dan IT Essentials. Klik untuk memperbesar dokumen resmi.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Cert 1: Belajar Dasar AI -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer" 
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
+                 data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
+                 data-category-label="Dicoding Academy - AI & Machine Learning"
+                 data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, computer vision, natural language processing, serta etika pengembangan AI.">
+              <img 
+                src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png" 
+                alt="Sertifikat Belajar Dasar AI" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar AI (Artificial Intelligence)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Pemahaman menyeluruh mengenai cara kerja kecerdasan buatan, konsep machine learning, neural networks, dan implementasi modern.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
+                        data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
+                        data-category-label="Dicoding Academy - AI & Machine Learning"
+                        data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, computer vision, natural language processing, serta etika pengembangan AI.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: Belajar Dasar Data Science -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
+                 data-title="Sertifikat: Belajar Dasar Data Science"
+                 data-category-label="Dicoding Academy - Data Science"
+                 data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis.">
+              <img 
+                src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png" 
+                alt="Sertifikat Belajar Dasar Data Science" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Data Science</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Metodologi analisis data, eksplorasi pola statistik, data wrangling, serta penerapan logika sains data untuk penyelesaian masalah.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
+                        data-title="Sertifikat: Belajar Dasar Data Science"
+                        data-category-label="Dicoding Academy - Data Science"
+                        data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 3: Belajar Dasar Python -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
+                 data-title="Sertifikat: Belajar Dasar Pemrograman Python"
+                 data-category-label="Dicoding Academy - Programming Language"
+                 data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python.">
+              <img 
+                src="gambar-sertifikasi/Belajar_Dasar_Python.png" 
+                alt="Sertifikat Belajar Dasar Pemrograman Python" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Pemrograman Python</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Fondasi sintaksis Python, manajemen memory, struktur kontrol alur, penanganan error, serta standard library untuk efisiensi coding.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
+                        data-title="Sertifikat: Belajar Dasar Pemrograman Python"
+                        data-category-label="Dicoding Academy - Programming Language"
+                        data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 4: Belajar Dasar SQL -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
+                 data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
+                 data-category-label="Dicoding Academy - Database Management"
+                 data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data.">
+              <img 
+                src="gambar-sertifikasi/Belajar_Dasar_Sql.png" 
+                alt="Sertifikat Belajar Dasar SQL" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Structured Query Language (SQL)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Pondasi pengoperasian database relasional, filter kueri lanjutan, operasi join, agregasi data grup, dan integritas data.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
+                        data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
+                        data-category-label="Dicoding Academy - Database Management"
+                        data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 5: Belajar Dasar Visualisasi Data -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
+                 data-title="Sertifikat: Belajar Dasar Visualisasi Data"
+                 data-category-label="Dicoding Academy - Data Analytics"
+                 data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis.">
+              <img 
+                src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png" 
+                alt="Sertifikat Belajar Dasar Visualisasi Data" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Visualisasi Data</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Prinsip visual storytelling data, representasi grafis informasi yang intuitif, serta pemilihan diagram yang akurat untuk laporan.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
+                        data-title="Sertifikat: Belajar Dasar Visualisasi Data"
+                        data-category-label="Dicoding Academy - Data Analytics"
+                        data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 6: Cisco IT Essentials -->
+          <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
+            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                 data-lightbox="true"
+                 data-img-src="gambar-sertifikasi/ItEssentials.png"
+                 data-title="Sertifikat: IT Essentials - PC Hardware and Software"
+                 data-category-label="Cisco Networking Academy - Systems & Hardware"
+                 data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT.">
+              <img 
+                src="gambar-sertifikasi/ItEssentials.png" 
+                alt="Sertifikat Cisco IT Essentials" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                </span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded">Cisco Networking Academy</span>
+                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2">IT Essentials: PC Hardware and Software</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
+                Arsitektur komputer, diagnostik perangkat keras, konfigurasi sistem operasi, jaringan dasar, dan prosedur keamanan infrastruktur IT.
+              </p>
+              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
+                <span class="text-[11px] font-mono text-slate-400">Global Certification</span>
+                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
+                        data-lightbox="true"
+                        data-img-src="gambar-sertifikasi/ItEssentials.png"
+                        data-title="Sertifikat: IT Essentials - PC Hardware and Software"
+                        data-category-label="Cisco Networking Academy - Systems & Hardware"
+                        data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT.">
+                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. Engineering Workflow & Field Testing Section
+         ========================================================================= -->
+    <section class="py-24 relative border-t border-glass-border/50 bg-deep-void/60">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">rebase_edit</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Methodology</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            How I Build & <span class="text-neon-accent">Validate Solutions</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Proses sistematis dari perencanaan arsitektur hingga deployment dan evaluasi telemetri.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
+            <div class="font-mono text-4xl font-extrabold text-neon-accent/20 absolute -top-1 right-3 select-none">01</div>
+            <div class="w-10 h-10 rounded-lg bg-neon-accent/10 text-neon-accent flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[24px]">architecture</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-text mb-2">1. System Planning</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Menganalisis kebutuhan data, spesifikasi komponen sensor, toleransi daya, dan pemilihan protokol komunikasi.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
+            <div class="font-mono text-4xl font-extrabold text-emerald-400/20 absolute -top-1 right-3 select-none">02</div>
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[24px]">build</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-text mb-2">2. Hardware Prototyping</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Perakitan sirkuit fisik, soldering, pengemasan modular, dan kalibrasi sensor menggunakan mikrokontroler.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
+            <div class="font-mono text-4xl font-extrabold text-purple-400/20 absolute -top-1 right-3 select-none">03</div>
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-text mb-2">3. Backend & Telemetry</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Pembangunan pipeline penerima data, pemrosesan logika backend dengan Python, dan penyimpanan database SQL.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
+            <div class="font-mono text-4xl font-extrabold text-amber-400/20 absolute -top-1 right-3 select-none">04</div>
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-[24px]">analytics</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-text mb-2">4. Field Testing & Analytics</h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+              Uji coba kestabilan di lapangan, visualisasi grafik telemetri live, serta evaluasi akurasi sistem secara komprehensif.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. Contact & Connect Section
+         ========================================================================= -->
+    <section class="py-24 relative border-t border-glass-border/50" id="contact">
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">mail</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Get in Touch</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Let's Build Something <span class="text-neon-accent">Extraordinary</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Terbuka untuk kolaborasi proyek, diskusi teknis sistem backend & IoT, maupun peluang karir.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Info Cards (Left) -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-accent/40 transition-all flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-neon-accent flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[24px]">email</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-mono text-on-surface-variant uppercase">Email Address</div>
+                <div class="text-sm font-semibold text-slate-text mt-0.5">muhammadfirly.dev@gmail.com</div>
+                <button class="btn-copy-email mt-2 text-xs font-mono text-neon-accent hover:underline flex items-center gap-1" data-email="muhammadfirly.dev@gmail.com">
+                  <span class="material-symbols-outlined text-[14px]">content_copy</span> Salin Email
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-emerald-500/40 transition-all flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[24px]">chat</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-mono text-on-surface-variant uppercase">Direct Message</div>
+                <div class="text-sm font-semibold text-slate-text mt-0.5">WhatsApp / Telegram</div>
+                <a href="https://wa.me/?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 hover:underline mt-2">
+                  <span>Mulai Obrolan</span> <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-purple-500/40 transition-all flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[24px]">hub</span>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-mono text-on-surface-variant uppercase">Profiles & Repositories</div>
+                <div class="flex gap-4 mt-2">
+                  <a href="https://github.com/frlmhmmd" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-slate-300 hover:text-neon-accent flex items-center gap-1">
+                    GitHub <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-slate-300 hover:text-neon-accent flex items-center gap-1">
+                    LinkedIn <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Form (Right) -->
+          <div class="lg:col-span-7 glass-card p-8 rounded-2xl border border-glass-border">
+            <h3 class="text-xl font-bold text-slate-text mb-2">Kirim Pesan Langsung</h3>
+            <p class="text-xs text-on-surface-variant mb-6">Formulir ini akan otomatis menyiapkan draft email langsung ke kotak masuk saya.</p>
+            
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-mono text-slate-300 mb-1.5">Nama Lengkap *</label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    required 
+                    placeholder="Contoh: Budi Pratama"
+                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                  />
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-xs font-mono text-slate-300 mb-1.5">Email Anda *</label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    required 
+                    placeholder="nama@domain.com"
+                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label for="contact-subject" class="block text-xs font-mono text-slate-300 mb-1.5">Topik / Subjek</label>
+                <input 
+                  type="text" 
+                  id="contact-subject" 
+                  placeholder="Contoh: Peluang Kerjasama / Pertanyaan Proyek IoT"
+                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-mono text-slate-300 mb-1.5">Pesan *</label>
+                <textarea 
+                  id="contact-message" 
+                  rows="4" 
+                  required 
+                  placeholder="Tuliskan pesan Anda di sini..."
+                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors resize-none"
+                ></textarea>
+              </div>
+
+              <button 
+                type="submit" 
+                class="w-full py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <span class="material-symbols-outlined text-[18px]">send</span>
+                <span>Kirim Pesan Sekarang</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       9. Footer
+       ========================================================================= -->
+  <footer class="w-full py-12 bg-deep-void border-t border-glass-border relative z-10">
+    <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+        <a href="#home" class="font-bold text-lg text-slate-text tracking-wide">
+          Muhammad Firly<span class="text-neon-accent">.dev</span>
+        </a>
+        <p class="text-xs text-on-surface-variant">
+          © 2026 Muhammad Firly. Designed & Built with Precision for GitHub Pages.
+        </p>
+      </div>
+
+      <!-- Quick Nav & Back to Top -->
+      <div class="flex items-center gap-6 text-xs font-mono text-on-surface-variant">
+        <a href="#home" class="hover:text-neon-accent transition-colors">Top ↑</a>
+        <a href="#about" class="hover:text-neon-accent transition-colors">About</a>
+        <a href="#skills" class="hover:text-neon-accent transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-neon-accent transition-colors">Projects</a>
+        <a href="#certifications" class="hover:text-neon-accent transition-colors">Certifications</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       10. Universal Lightbox Modal Component
+       ========================================================================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-deep-void/90 backdrop-blur-xl">
+    <div class="lightbox-backdrop absolute inset-0 cursor-pointer"></div>
+    
+    <!-- Modal Card Container -->
+    <div class="lightbox-content relative z-10 max-w-4xl w-full glass-card rounded-2xl border border-glass-border overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:px-6 flex items-center justify-between border-b border-glass-border bg-slate-900/60">
+        <div>
+          <span id="lightbox-category" class="font-mono text-xs text-neon-accent block uppercase tracking-wider">Category</span>
+          <h3 id="lightbox-title" class="text-base sm:text-lg font-bold text-slate-text">Preview Title</h3>
+        </div>
+        <button id="lightbox-close" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Lightbox">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Image View Area -->
+      <div class="relative flex-1 bg-black/50 flex items-center justify-center overflow-hidden min-h-[300px] max-h-[60vh] p-2">
+        <img id="lightbox-img" src="" alt="Fullscreen Lightbox Image" class="max-w-full max-h-full object-contain rounded select-none" />
+        
+        <!-- Navigation Prev / Next Controls -->
+        <button id="lightbox-prev" class="absolute left-3 p-2.5 rounded-full bg-deep-void/70 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Previous Image">
+          <span class="material-symbols-outlined text-[22px]">chevron_left</span>
+        </button>
+        <button id="lightbox-next" class="absolute right-3 p-2.5 rounded-full bg-deep-void/70 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Next Image">
+          <span class="material-symbols-outlined text-[22px]">chevron_right</span>
+        </button>
+      </div>
+
+      <!-- Modal Footer Description -->
+      <div class="p-4 sm:px-6 border-t border-glass-border bg-slate-900/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+        <p id="lightbox-desc" class="text-xs text-on-surface-variant leading-relaxed max-w-2xl"></p>
+        <div class="text-[11px] font-mono text-slate-500 shrink-0">
+          Gunakan panah &larr; &rarr; atau ESC
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/shader.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
