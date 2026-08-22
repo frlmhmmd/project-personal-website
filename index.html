@@ -90,6 +90,17 @@
         <div class="splash-progress-bar h-full bg-gradient-to-r from-neon-accent via-sky-300 to-neon-accent rounded-full"></div>
       </div>
     </div>
+    <script>
+      (function() {
+        setTimeout(function() {
+          var s = document.getElementById('splash-screen');
+          if (s) {
+            s.classList.add('splash-hidden');
+            setTimeout(function() { if (s) s.style.display = 'none'; }, 450);
+          }
+        }, 500);
+      })();
+    </script>
   </div>
 
   <!-- =========================================================================

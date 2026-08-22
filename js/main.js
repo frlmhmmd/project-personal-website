@@ -3,7 +3,7 @@
  * Muhammad Firly - Personal Portfolio
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   initSplashScreen();
   initTypingEffect();
   initProjectFilters();
@@ -13,7 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initToast();
   initCopyActions();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 /* ==========================================================================
    1. Dynamic Typing Effect for Hero Title
@@ -366,18 +372,22 @@ function initSplashScreen() {
       if (splash.parentNode) {
         splash.style.display = 'none';
       }
-    }, 700);
+    }, 450);
   };
 
-  // Dismiss splash gracefully after asset loading or maximum timeout
+  // Snappy display duration (400ms) so user is never blocked
+  setTimeout(hideSplash, 400);
+
   if (document.readyState === 'complete') {
-    setTimeout(hideSplash, 650);
+    setTimeout(hideSplash, 250);
   } else {
     window.addEventListener('load', () => {
-      setTimeout(hideSplash, 650);
+      setTimeout(hideSplash, 250);
     });
-    // Fallback timer so user experience is snappy and never blocked
-    setTimeout(hideSplash, 1200);
   }
 }
+
+// Immediate execution so splash starts dismissing right away
+initSplashScreen();
+
 
