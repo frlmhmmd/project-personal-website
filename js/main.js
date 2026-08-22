@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSplashScreen();
   initTypingEffect();
   initProjectFilters();
   initLightbox();
@@ -283,7 +284,7 @@ function initContactForm() {
     }
 
     // Build Mailto link with populated params
-    const mailtoLink = `mailto:muhammadfirly.dev@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:muhammadfirly68@gmail.com?subject=${encodeURIComponent(
       subject || `Pesan dari ${name} (Portfolio Website)`
     )}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
 
@@ -339,7 +340,7 @@ function initCopyActions() {
   copyEmailBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const email = btn.getAttribute('data-email') || 'muhammadfirly.dev@gmail.com';
+      const email = btn.getAttribute('data-email') || 'muhammadfirly68@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast(`Email (${email}) berhasil disalin ke clipboard!`, 'success');
       }).catch(() => {
@@ -348,3 +349,35 @@ function initCopyActions() {
     });
   });
 }
+
+/* ==========================================================================
+   8. Elegant Splash Screen Handler
+   ========================================================================== */
+function initSplashScreen() {
+  const splash = document.getElementById('splash-screen');
+  if (!splash) return;
+
+  let isHidden = false;
+  const hideSplash = () => {
+    if (isHidden) return;
+    isHidden = true;
+    splash.classList.add('splash-hidden');
+    setTimeout(() => {
+      if (splash.parentNode) {
+        splash.style.display = 'none';
+      }
+    }, 700);
+  };
+
+  // Dismiss splash gracefully after asset loading or maximum timeout
+  if (document.readyState === 'complete') {
+    setTimeout(hideSplash, 650);
+  } else {
+    window.addEventListener('load', () => {
+      setTimeout(hideSplash, 650);
+    });
+    // Fallback timer so user experience is snappy and never blocked
+    setTimeout(hideSplash, 1200);
+  }
+}
+

@@ -6,7 +6,8 @@ Personal Portfolio Website modern dengan tema *Deep-Void & Cyber Neon*, didesain
 
 ## 🌟 Fitur Utama Website
 
-1. **Desain Cyberpunk / Deep Void Modern**:
+1. **Desain Cyberpunk / Deep Void Modern & Splash Screen**:
+   - Splash screen intro elegan dengan logo inisial "F", cyber-minimalist glowing container, dan smooth state dismiss.
    - Dark background (`#020617`) dengan aksen neon cyan (`#38BDF8`), efek glassmorphism, dan glowing orbital rings.
    - Interactive WebGL Canvas Shader background yang merespons pergerakan kursor mouse.
    - Efek dinamis typing text pada headline hero section.
@@ -29,7 +30,8 @@ Personal Portfolio Website modern dengan tema *Deep-Void & Cyber Neon*, didesain
 
 4. **Interaktivitas & User Experience**:
    - Navigasi responsif (Desktop & Mobile Drawer Menu).
-   - Tombol salin email instan dengan **Toast Notification**.
+   - Tombol salin email instan (`muhammadfirly68@gmail.com`) dengan **Toast Notification**.
+   - Direct WhatsApp integration (`0881-0110-57900`).
    - Formulir kontak langsung yang otomatis membuka email client (`mailto:`).
    - Active ScrollSpy pada navigation bar.
 
@@ -56,21 +58,11 @@ Cukup buka file `index.html` langsung di browser favorit Anda (Chrome, Edge, Fir
 Website ini sudah 100% siap dihosting ke **GitHub Pages** secara gratis.
 
 ### Langkah-langkah:
-1. Buat repository baru di akun GitHub Anda (misal: `firly-portfolio` atau `username.github.io`).
-2. Buka terminal di folder project ini dan jalankan perintah git berikut:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: initial release of Muhammad Firly portfolio website"
-   git branch -M main
-   git remote add origin https://github.com/frlmhmmd/personal-website.git
-   git push -u origin main
-   ```
-3. Buka repository Anda di browser GitHub:
+1. Push branch `main` ke repository GitHub `frlmhmmd/project-personal-website`.
+2. Buka repository Anda di browser GitHub:
    - Klik tab **Settings** > Pilih menu **Pages** di sebelah kiri.
-   - Pada bagian **Build and deployment > Source**, pilih **Deploy from a branch**.
-   - Pada dropdown Branch, pilih **`main`** dan folder **`/ (root)`**, lalu klik **Save**.
-4. Tunggu sekitar 1 - 2 menit, link website portofolio Anda akan langsung aktif dan bisa diakses di: `https://frlmhmmd.github.io/personal-website/`!
+   - Pada bagian **Build and deployment > Source**, pilih **GitHub Actions** (atau **Deploy from a branch** > `main` > `/ (root)`).
+3. Website portofolio Anda akan langsung aktif dan bisa diakses di: `https://frlmhmmd.github.io/project-personal-website/`!
 
 *(Opsional: File workflow `.github/workflows/deploy.yml` juga sudah disertakan jika Anda ingin menggunakan GitHub Actions).*
 

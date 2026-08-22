@@ -62,6 +62,37 @@
 <body class="bg-deep-void text-slate-text selection:bg-neon-accent selection:text-deep-void antialiased">
 
   <!-- =========================================================================
+       0. Elegant Splash Screen Intro (Cyber-Minimal F Logo)
+       ========================================================================= -->
+  <div id="splash-screen" class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-deep-void transition-all duration-700 select-none pointer-events-auto">
+    <div class="relative flex flex-col items-center">
+      <!-- Glow ambient background -->
+      <div class="absolute -inset-10 bg-gradient-to-r from-neon-accent/20 via-sky-500/10 to-neon-accent/20 rounded-full blur-3xl animate-pulse-glow pointer-events-none"></div>
+      
+      <!-- Elegant F Emblem Card -->
+      <div class="relative w-20 h-20 rounded-2xl glass-card border border-neon-accent/40 flex items-center justify-center shadow-[0_0_35px_rgba(56,189,248,0.25)] mb-5 transform transition-transform duration-500 hover:scale-105">
+        <span class="font-mono text-3xl font-extrabold text-neon-accent tracking-wider drop-shadow-[0_0_15px_rgba(56,189,248,0.85)]">F</span>
+        <!-- Subtle corner tech accents -->
+        <div class="absolute top-1.5 left-1.5 w-2 h-2 border-t-2 border-l-2 border-neon-accent/80"></div>
+        <div class="absolute top-1.5 right-1.5 w-2 h-2 border-t-2 border-r-2 border-neon-accent/80"></div>
+        <div class="absolute bottom-1.5 left-1.5 w-2 h-2 border-b-2 border-l-2 border-neon-accent/80"></div>
+        <div class="absolute bottom-1.5 right-1.5 w-2 h-2 border-b-2 border-r-2 border-neon-accent/80"></div>
+      </div>
+
+      <!-- Identity Text -->
+      <div class="flex flex-col items-center gap-1 text-center">
+        <h2 class="text-sm font-bold tracking-[0.28em] text-slate-text uppercase">Muhammad Firly</h2>
+        <p class="text-[11px] font-mono text-neon-accent/80 tracking-widest uppercase">Backend & IoT Systems</p>
+      </div>
+
+      <!-- Minimal Loading Progress Bar -->
+      <div class="w-36 h-[2px] bg-slate-800/80 rounded-full mt-5 overflow-hidden relative border border-white/5">
+        <div class="splash-progress-bar h-full bg-gradient-to-r from-neon-accent via-sky-300 to-neon-accent rounded-full"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
        1. Top Navigation Bar
        ========================================================================= -->
   <header class="fixed top-0 w-full z-50 bg-deep-void/80 backdrop-blur-lg border-b border-glass-border shadow-[0_4px_25px_rgba(56,189,248,0.05)] transition-all duration-300">
@@ -74,7 +105,7 @@
         </div>
         <div class="flex flex-col">
           <span class="font-bold text-lg text-slate-text tracking-wide group-hover:text-neon-accent transition-colors duration-300">
-            Firly<span class="text-neon-accent">.dev</span>
+            Muhammad <span class="text-neon-accent">Firly</span>
           </span>
           <span class="text-[11px] font-mono text-neon-emerald flex items-center gap-1.5 -mt-1">
             <span class="w-1.5 h-1.5 rounded-full bg-neon-emerald animate-ping"></span>
@@ -95,7 +126,7 @@
 
       <!-- Trailing Action Buttons -->
       <div class="hidden sm:flex items-center gap-4">
-        <button class="btn-copy-email inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-xs font-mono text-slate-text hover:border-neon-accent hover:text-neon-accent transition-all duration-300" data-email="muhammadfirly.dev@gmail.com" title="Salin Email">
+        <button class="btn-copy-email inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-xs font-mono text-slate-text hover:border-neon-accent hover:text-neon-accent transition-all duration-300" data-email="muhammadfirly68@gmail.com" title="Salin Email">
           <span class="material-symbols-outlined text-[16px]">content_copy</span>
           <span>Copy Email</span>
         </button>
@@ -117,7 +148,7 @@
       <div class="flex items-center justify-between pb-6 border-b border-glass-border">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent font-mono font-bold">F</div>
-          <span class="font-bold text-slate-text">Firly<span class="text-neon-accent">.dev</span></span>
+          <span class="font-bold text-slate-text">Muhammad <span class="text-neon-accent">Firly</span></span>
         </div>
         <button id="mobile-drawer-close" class="text-on-surface-variant hover:text-neon-accent" aria-label="Close Mobile Menu">
           <span class="material-symbols-outlined text-[24px]">close</span>
@@ -133,7 +164,7 @@
       </nav>
     </div>
     <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
-      <button class="btn-copy-email w-full py-2.5 rounded-lg glass-card text-xs font-mono text-slate-text flex items-center justify-center gap-2 hover:border-neon-accent transition-colors" data-email="muhammadfirly.dev@gmail.com">
+      <button class="btn-copy-email w-full py-2.5 rounded-lg glass-card text-xs font-mono text-slate-text flex items-center justify-center gap-2 hover:border-neon-accent transition-colors" data-email="muhammadfirly68@gmail.com">
         <span class="material-symbols-outlined text-[16px]">content_copy</span>
         <span>Copy Email</span>
       </button>
@@ -1225,8 +1256,8 @@
               </div>
               <div class="flex-1">
                 <div class="text-xs font-mono text-on-surface-variant uppercase">Email Address</div>
-                <div class="text-sm font-semibold text-slate-text mt-0.5">muhammadfirly.dev@gmail.com</div>
-                <button class="btn-copy-email mt-2 text-xs font-mono text-neon-accent hover:underline flex items-center gap-1" data-email="muhammadfirly.dev@gmail.com">
+                <div class="text-sm font-semibold text-slate-text mt-0.5">muhammadfirly68@gmail.com</div>
+                <button class="btn-copy-email mt-2 text-xs font-mono text-neon-accent hover:underline flex items-center gap-1" data-email="muhammadfirly68@gmail.com">
                   <span class="material-symbols-outlined text-[14px]">content_copy</span> Salin Email
                 </button>
               </div>
@@ -1238,7 +1269,7 @@
               </div>
               <div class="flex-1">
                 <div class="text-xs font-mono text-on-surface-variant uppercase">Direct WhatsApp</div>
-                <div class="text-sm font-semibold text-slate-text mt-0.5">0881-0110-57900 (+62 881011057900)</div>
+                <div class="text-sm font-semibold text-slate-text mt-0.5">0881-0110-57900</div>
                 <a href="https://wa.me/62881011057900?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 hover:underline mt-2">
                   <span>Chat WhatsApp Sekarang</span> <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                 </a>
@@ -1339,7 +1370,7 @@
       <!-- Brand & Copyright -->
       <div class="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
         <a href="#home" class="font-bold text-lg text-slate-text tracking-wide">
-          Muhammad Firly<span class="text-neon-accent">.dev</span>
+          Muhammad <span class="text-neon-accent">Firly</span>
         </a>
         <p class="text-xs text-on-surface-variant">
           © 2026 Muhammad Firly. Designed & Built with Precision for GitHub Pages.
