@@ -22,10 +22,13 @@ html {
   color-scheme: dark;
 }
 
+body, input, button, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a {
+  font-family: 'Times New Roman', Times, Georgia, serif;
+}
+
 body {
   background-color: var(--color-deep-void);
   color: var(--color-text-slate);
-  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
