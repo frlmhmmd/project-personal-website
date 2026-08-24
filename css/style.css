@@ -197,6 +197,51 @@ body {
   transform: scale(1);
 }
 
+/* Certification Detail Modal */
+#cert-detail-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cert-detail-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#cert-detail-modal .cert-modal-content {
+  transform: scale(0.94) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cert-detail-modal.active .cert-modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Media Highlight Accent */
+.media-badge-pulse {
+  position: relative;
+}
+.media-badge-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #38bdf8);
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(4px);
+  animation: pulseGlow 3s infinite;
+}
+
+.media-glow {
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+}
+
+.media-glow:hover {
+  box-shadow: 0 0 55px rgba(56, 189, 248, 0.28);
+}
+
 /* Filter Tab Buttons */
 .filter-btn {
   transition: all 0.2s ease-in-out;

@@ -131,6 +131,7 @@
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#about">About</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#skills">Skills</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#projects">Projects & Hardware</a>
+        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#media">Media & Press</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#certifications">Certifications</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#contact">Contact</a>
       </nav>
@@ -170,6 +171,7 @@
         <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#about">About</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#skills">Skills</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#projects">Projects & Hardware</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#media">Media & Press</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#certifications">Certifications</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-neon-accent font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#contact">Contact</a>
       </nav>
@@ -878,21 +880,158 @@
     </section>
 
     <!-- =========================================================================
-         6. Official Certifications & Credentials Showcase
+         6. Media Recognition & Press Highlight (Radar Bekasi)
          ========================================================================= -->
-    <section class="py-24 relative" id="certifications">
+    <section class="py-24 relative border-t border-glass-border/50 bg-deep-void/80 overflow-hidden" id="media">
+      <!-- Ambient Glow Behind Card -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-neon-accent/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
+            <span class="material-symbols-outlined text-[14px] text-neon-accent">newspaper</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Media Recognition</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
+            Featured In <span class="text-neon-accent">Radar Bekasi</span>
+          </h2>
+          <p class="text-on-surface-variant text-base sm:text-lg">
+            Dokumentasi liputan media cetak dan portal berita digital resmi atas inovasi penelitian tugas akhir perangkat sistem IoT di lapangan.
+          </p>
+        </div>
+
+        <!-- Featured Media Showcase Card -->
+        <div class="glass-card media-glow rounded-3xl border border-neon-accent/30 overflow-hidden p-6 sm:p-10 relative">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+            
+            <!-- Left: Press Image & Visual Preview with Lightbox -->
+            <div class="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-glass-border bg-slate-900 aspect-[4/3] sm:aspect-[16/10] lg:aspect-square flex items-center justify-center">
+              <img 
+                src="ujicoba-alat/foto_monitoring1.png" 
+                alt="Uji Coba Lapangan Sistem IoT oleh Muhammad Firly - Radar Bekasi" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cursor-pointer"
+                data-lightbox="true"
+                data-img-src="ujicoba-alat/foto_monitoring1.png"
+                data-title="Uji Coba Sistem Monitoring IoT di Jalan Mayor Madmuin Hasibuan"
+                data-category-label="Media Coverage • Radar Bekasi (04 Agustus 2026)"
+                data-desc="Muhammad Firly saat melaksanakan kegiatan uji coba lapangan Sistem Monitoring Volume dan Kecepatan Kendaraan Berbasis IoT di Jalan Mayor Madmuin Hasibuan, Bekasi Timur yang diliput oleh media Radar Bekasi."
+              />
+              
+              <!-- Floating Badge over image -->
+              <div class="absolute top-3 left-3">
+                <span class="px-3 py-1 text-xs font-mono rounded-full bg-deep-void/90 text-neon-accent border border-neon-accent/40 font-semibold flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-neon-accent animate-pulse"></span>
+                  Radar Bekasi • 04/08/2026
+                </span>
+              </div>
+
+              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
+                <span class="text-xs font-mono text-neon-accent flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">zoom_in</span> Klik untuk perbesar foto liputan
+                </span>
+              </div>
+            </div>
+
+            <!-- Right: Story, Quote, and Direct External Link -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-6">
+              
+              <div>
+                <!-- Publication Tag / Category -->
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-sky-500/10 text-neon-accent border border-neon-accent/30">
+                    Liputan Khusus Pendidikan & Inovasi
+                  </span>
+                  <span class="px-3 py-1 text-xs font-mono rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    Universitas Bani Saleh (UBS)
+                  </span>
+                </div>
+
+                <!-- Headline -->
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-text leading-tight">
+                  “Manfaatkan Perkembangan Teknologi Digital, UBS Dorong Mahasiswa Berinovasi”
+                </h3>
+
+                <!-- Context Story & Self-Appreciation -->
+                <p class="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+                  Setelah berhasil menyelesaikan riset dan perakitan perangkat keras proyek <strong>Internet of Things (IoT)</strong>, karya inovasi ini mendapatkan apresiasi dan diliput secara resmi oleh surat kabar dan media digital <strong>Radar Bekasi</strong>.
+                </p>
+                <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
+                  Riset ini mengembangkan <em>Sistem Monitoring Volume dan Kecepatan Kendaraan Berbasis IoT</em> sebagai rekomendasi cerdas penentuan lokasi pemasangan media iklan luar ruang di Jalan Mayor Madmuin Hasibuan, Bekasi Timur.
+                </p>
+              </div>
+
+              <!-- Firly's Direct Statement Quote Card -->
+              <div class="p-4 sm:p-5 rounded-xl bg-slate-900/80 border-l-4 border-neon-accent border-y border-r border-glass-border">
+                <div class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-neon-accent text-[24px] shrink-0 opacity-80">format_quote</span>
+                  <div class="space-y-1.5">
+                    <p class="text-xs sm:text-sm italic text-slate-200 leading-relaxed font-serif">
+                      “Melalui pengambilan data ini, kami ingin memastikan sistem mampu merekam volume kendaraan dan kecepatan secara akurat. Hasil penelitian diharapkan dapat menjadi solusi berbasis teknologi yang membantu dalam menentukan lokasi pemasangan media iklan yang lebih tepat dan efektif.”
+                    </p>
+                    <div class="text-xs font-mono font-semibold text-neon-accent pt-1">
+                      — Muhammad Firly <span class="text-on-surface-variant font-normal">| Mahasiswa Teknik Informatika UBS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tags & CTAs -->
+              <div class="space-y-4 pt-2 border-t border-glass-border">
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                  <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#IoTTelemetry</span>
+                  <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#SmartCityAnalytics</span>
+                  <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#FieldTesting</span>
+                  <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#RadarBekasi</span>
+                </div>
+
+                <div class="flex flex-wrap gap-4 items-center">
+                  <a 
+                    href="https://radarbekasi.id/2026/08/04/manfaatkan-perkembangan-teknologi-digital-ubs-dorong-mahasiswa-berinovasi/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="px-6 py-3 bg-neon-accent text-deep-void font-semibold text-xs sm:text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2"
+                  >
+                    <span>Baca Berita Lengkap di Radar Bekasi</span>
+                    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                  </a>
+                  <a 
+                    href="#projects" 
+                    class="px-6 py-3 glass-card text-slate-text hover:text-neon-accent font-semibold text-xs sm:text-sm rounded-lg hover:border-neon-accent/50 transition-all flex items-center gap-2"
+                  >
+                    <span class="material-symbols-outlined text-[16px]">memory</span>
+                    <span>Lihat Dokumentasi Hardware</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. Official Certifications & Knowledge Hub
+         ========================================================================= -->
+    <section class="py-24 relative border-t border-glass-border/50" id="certifications">
       <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div class="text-center max-w-3xl mx-auto mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card border-neon-accent/30 mb-3">
             <span class="material-symbols-outlined text-[14px] text-neon-accent">verified</span>
-            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Accreditations</span>
+            <span class="font-mono text-xs text-neon-accent uppercase tracking-widest">Accreditations & Knowledge</span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-text mb-4">
-            Official <span class="text-neon-accent">Certifications</span>
+            Official <span class="text-neon-accent">Certifications & Knowledge</span>
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg">
-            Sertifikasi keahlian terverifikasi di bidang Artificial Intelligence, Data Science, Python, SQL, dan IT Essentials. Klik untuk memperbesar dokumen resmi.
+            Sertifikasi terverifikasi di bidang AI, Data Science, Python, SQL, dan IT Infrastructure. Klik <strong>“Lihat Lebih Lanjut”</strong> untuk eksplorasi konsep keilmuan atau <strong>“Lihat Sertifikat”</strong> untuk dokumen resmi.
           </p>
         </div>
 
@@ -900,43 +1039,64 @@
           
           <!-- Cert 1: Belajar Dasar AI -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer" 
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
-                 data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
-                 data-category-label="Dicoding Academy - AI & Machine Learning"
-                 data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, computer vision, natural language processing, serta etika pengembangan AI.">
-              <img 
-                src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png" 
-                alt="Sertifikat Belajar Dasar AI" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer" 
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
+                   data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
+                   data-category-label="Dicoding Academy - AI & Machine Learning"
+                   data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, neural networks, computer vision, natural language processing, serta etika pengembangan AI.">
+                <img 
+                  src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png" 
+                  alt="Sertifikat Belajar Dasar AI" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar AI (Artificial Intelligence)</h3>
+                
+                <!-- Apa Itu AI Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu Artificial Intelligence?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Sistem komputasi cerdas yang meniru kecerdasan manusia: penalaran pola, machine learning, deep neural networks, computer vision, dan NLP.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar AI (Artificial Intelligence)</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Pemahaman menyeluruh mengenai cara kerja kecerdasan buatan, konsep machine learning, neural networks, dan implementasi modern.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
-                        data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
-                        data-category-label="Dicoding Academy - AI & Machine Learning"
-                        data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, computer vision, natural language processing, serta etika pengembangan AI.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="ai"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
+                  data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
+                  data-category-label="Dicoding Academy - AI & Machine Learning"
+                  data-desc="Memahami konsep fundamental Artificial Intelligence, machine learning workflow, neural networks, computer vision, natural language processing, serta etika pengembangan AI."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -944,43 +1104,64 @@
 
           <!-- Cert 2: Belajar Dasar Data Science -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
-                 data-title="Sertifikat: Belajar Dasar Data Science"
-                 data-category-label="Dicoding Academy - Data Science"
-                 data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis.">
-              <img 
-                src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png" 
-                alt="Sertifikat Belajar Dasar Data Science" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
+                   data-title="Sertifikat: Belajar Dasar Data Science"
+                   data-category-label="Dicoding Academy - Data Science"
+                   data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis.">
+                <img 
+                  src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png" 
+                  alt="Sertifikat Belajar Dasar Data Science" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Data Science</h3>
+                
+                <!-- Apa Itu Data Science Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu Data Science?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Ilmu interdisipliner penggabung statistika dan komputasi untuk membersihkan data (wrangling), analisis pola (EDA), dan ekstraksi wawasan strategis.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Data Science</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Metodologi analisis data, eksplorasi pola statistik, data wrangling, serta penerapan logika sains data untuk penyelesaian masalah.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
-                        data-title="Sertifikat: Belajar Dasar Data Science"
-                        data-category-label="Dicoding Academy - Data Science"
-                        data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="datascience"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
+                  data-title="Sertifikat: Belajar Dasar Data Science"
+                  data-category-label="Dicoding Academy - Data Science"
+                  data-desc="Menguasai tahapan data science lifecycle, pengumpulan dan pembersihan data (data wrangling), exploratory data analysis (EDA), dan ekstraksi insight bisnis."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -988,43 +1169,64 @@
 
           <!-- Cert 3: Belajar Dasar Python -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
-                 data-title="Sertifikat: Belajar Dasar Pemrograman Python"
-                 data-category-label="Dicoding Academy - Programming Language"
-                 data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python.">
-              <img 
-                src="gambar-sertifikasi/Belajar_Dasar_Python.png" 
-                alt="Sertifikat Belajar Dasar Pemrograman Python" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
+                   data-title="Sertifikat: Belajar Dasar Pemrograman Python"
+                   data-category-label="Dicoding Academy - Programming Language"
+                   data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python.">
+                <img 
+                  src="gambar-sertifikasi/Belajar_Dasar_Python.png" 
+                  alt="Sertifikat Belajar Dasar Pemrograman Python" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Pemrograman Python</h3>
+                
+                <!-- Apa Itu Python Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu Python?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Bahasa pemrograman serbaguna berorientasi objek yang menjadi standar dunia untuk backend API, automasi telemetri IoT, dan machine learning.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Pemrograman Python</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Fondasi sintaksis Python, manajemen memory, struktur kontrol alur, penanganan error, serta standard library untuk efisiensi coding.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
-                        data-title="Sertifikat: Belajar Dasar Pemrograman Python"
-                        data-category-label="Dicoding Academy - Programming Language"
-                        data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="python"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
+                  data-title="Sertifikat: Belajar Dasar Pemrograman Python"
+                  data-category-label="Dicoding Academy - Programming Language"
+                  data-desc="Sertifikasi resmi penguasaan struktur data, paradigma pemrograman berbasis objek (OOP), modularitas kode, manipulasi teks, dan logika algoritma dengan Python."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -1032,43 +1234,64 @@
 
           <!-- Cert 4: Belajar Dasar SQL -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
-                 data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
-                 data-category-label="Dicoding Academy - Database Management"
-                 data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data.">
-              <img 
-                src="gambar-sertifikasi/Belajar_Dasar_Sql.png" 
-                alt="Sertifikat Belajar Dasar SQL" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
+                   data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
+                   data-category-label="Dicoding Academy - Database Management"
+                   data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data.">
+                <img 
+                  src="gambar-sertifikasi/Belajar_Dasar_Sql.png" 
+                  alt="Sertifikat Belajar Dasar SQL" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Structured Query Language (SQL)</h3>
+                
+                <!-- Apa Itu SQL Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu SQL?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Bahasa baku manajemen database relasional (RDBMS) untuk manipulasi data (DML), pembuatan tabel (DDL), multi-table join, dan agregasi data terstruktur.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Structured Query Language (SQL)</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Pondasi pengoperasian database relasional, filter kueri lanjutan, operasi join, agregasi data grup, dan integritas data.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
-                        data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
-                        data-category-label="Dicoding Academy - Database Management"
-                        data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="sql"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
+                  data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
+                  data-category-label="Dicoding Academy - Database Management"
+                  data-desc="Keahlian merancang skema relasional, query DDL & DML, join multi-tabel, agregasi data kompleks, subqueries, dan optimasi kueri basis data."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -1076,43 +1299,64 @@
 
           <!-- Cert 5: Belajar Dasar Visualisasi Data -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
-                 data-title="Sertifikat: Belajar Dasar Visualisasi Data"
-                 data-category-label="Dicoding Academy - Data Analytics"
-                 data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis.">
-              <img 
-                src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png" 
-                alt="Sertifikat Belajar Dasar Visualisasi Data" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
+                   data-title="Sertifikat: Belajar Dasar Visualisasi Data"
+                   data-category-label="Dicoding Academy - Data Analytics"
+                   data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis.">
+                <img 
+                  src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png" 
+                  alt="Sertifikat Belajar Dasar Visualisasi Data" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Visualisasi Data</h3>
+                
+                <!-- Apa Itu Visualisasi Data Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu Visualisasi Data?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Representasi grafis data untuk memudahkan persepsi visual manusia dalam membaca tren, membandingkan metrik, dan storytelling data telemetri.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">Belajar Dasar Visualisasi Data</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Prinsip visual storytelling data, representasi grafis informasi yang intuitif, serta pemilihan diagram yang akurat untuk laporan.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Credential ID Verified</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
-                        data-title="Sertifikat: Belajar Dasar Visualisasi Data"
-                        data-category-label="Dicoding Academy - Data Analytics"
-                        data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="dataviz"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
+                  data-title="Sertifikat: Belajar Dasar Visualisasi Data"
+                  data-category-label="Dicoding Academy - Data Analytics"
+                  data-desc="Kemampuan menyajikan data secara visual yang komunikatif dan efektif, memilih tipe chart yang tepat, visual storytelling, serta prinsip persepsi grafis."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -1120,43 +1364,64 @@
 
           <!-- Cert 6: Cisco IT Essentials -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
-            <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
-                 data-lightbox="true"
-                 data-img-src="gambar-sertifikasi/ItEssentials.png"
-                 data-title="Sertifikat: IT Essentials - PC Hardware and Software"
-                 data-category-label="Cisco Networking Academy - Systems & Hardware"
-                 data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT.">
-              <img 
-                src="gambar-sertifikasi/ItEssentials.png" 
-                alt="Sertifikat Cisco IT Essentials" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
-                <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
-                </span>
+            <div>
+              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+                   data-lightbox="true"
+                   data-img-src="gambar-sertifikasi/ItEssentials.png"
+                   data-title="Sertifikat: IT Essentials - PC Hardware and Software"
+                   data-category-label="Cisco Networking Academy - Systems & Hardware"
+                   data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT.">
+                <img 
+                  src="gambar-sertifikasi/ItEssentials.png" 
+                  alt="Sertifikat Cisco IT Essentials" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-deep-void/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="font-mono text-xs text-neon-accent flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">fullscreen</span> Klik untuk melihat sertifikat
+                  </span>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded">Cisco Networking Academy</span>
+                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-text mb-2">IT Essentials: PC Hardware and Software</h3>
+                
+                <!-- Apa Itu IT Essentials Summary -->
+                <div class="mb-4">
+                  <span class="text-[11px] font-mono text-neon-accent uppercase tracking-wider block mb-1">Apa itu IT Essentials?</span>
+                  <p class="text-xs text-on-surface-variant leading-relaxed">
+                    Standar global Cisco untuk penguasaan arsitektur hardware PC, proteksi kelistrikan (ESD), konfigurasi OS, troubleshooting, dan jaringan dasar TCP/IP.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded">Cisco Networking Academy</span>
-                <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
-                  <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
-                </span>
-              </div>
-              <h3 class="text-lg font-bold text-slate-text mb-2">IT Essentials: PC Hardware and Software</h3>
-              <p class="text-xs text-on-surface-variant leading-relaxed mb-4">
-                Arsitektur komputer, diagnostik perangkat keras, konfigurasi sistem operasi, jaringan dasar, dan prosedur keamanan infrastruktur IT.
-              </p>
-              <div class="pt-3 border-t border-glass-border flex items-center justify-between">
-                <span class="text-[11px] font-mono text-slate-400">Global Certification</span>
-                <button class="text-xs font-mono text-neon-accent hover:underline flex items-center gap-1"
-                        data-lightbox="true"
-                        data-img-src="gambar-sertifikasi/ItEssentials.png"
-                        data-title="Sertifikat: IT Essentials - PC Hardware and Software"
-                        data-category-label="Cisco Networking Academy - Systems & Hardware"
-                        data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT.">
-                  Lihat Full <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+
+            <!-- Actions -->
+            <div class="p-6 pt-0">
+              <div class="pt-3 border-t border-glass-border flex items-center gap-2">
+                <button 
+                  class="btn-cert-detail flex-1 py-2 px-3 rounded-lg bg-neon-accent/15 hover:bg-neon-accent text-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1.5 border border-neon-accent/40"
+                  data-open-cert="cisco"
+                >
+                  <span class="material-symbols-outlined text-[15px]">menu_book</span>
+                  <span>Lihat Lebih Lanjut</span>
+                </button>
+                <button 
+                  class="py-2 px-3 rounded-lg glass-card hover:border-neon-accent text-slate-300 hover:text-white text-xs font-mono font-semibold transition-all flex items-center justify-center gap-1"
+                  data-lightbox="true"
+                  data-img-src="gambar-sertifikasi/ItEssentials.png"
+                  data-title="Sertifikat: IT Essentials - PC Hardware and Software"
+                  data-category-label="Cisco Networking Academy - Systems & Hardware"
+                  data-desc="Kompetensi internasional dalam arsitektur perangkat keras komputer, perakitan PC, instalasi sistem operasi, troubleshooting jaringan komputer, serta protokol keamanan IT."
+                  title="Lihat Gambar Sertifikat"
+                >
+                  <span class="material-symbols-outlined text-[15px]">verified</span>
+                  <span>Sertifikat</span>
                 </button>
               </div>
             </div>
@@ -1394,11 +1659,88 @@
         <a href="#about" class="hover:text-neon-accent transition-colors">About</a>
         <a href="#skills" class="hover:text-neon-accent transition-colors">Skills</a>
         <a href="#projects" class="hover:text-neon-accent transition-colors">Projects</a>
+        <a href="#media" class="hover:text-neon-accent transition-colors">Media</a>
         <a href="#certifications" class="hover:text-neon-accent transition-colors">Certifications</a>
       </div>
 
     </div>
   </footer>
+
+  <!-- =========================================================================
+       10. Certification Deep-Knowledge & Curriculum Detail Modal
+       ========================================================================= -->
+  <div id="cert-detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-deep-void/90 backdrop-blur-xl">
+    <div class="cert-modal-backdrop absolute inset-0 cursor-pointer"></div>
+    
+    <!-- Modal Dialog Box -->
+    <div class="cert-modal-content relative z-10 max-w-2xl w-full glass-card rounded-2xl border border-glass-border overflow-hidden shadow-2xl flex flex-col max-h-[88vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-5 sm:px-6 flex items-start justify-between border-b border-glass-border bg-slate-900/80">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <span id="cert-modal-issuer" class="font-mono text-xs text-neon-accent uppercase tracking-wider">Dicoding Academy</span>
+            <span class="text-slate-600">•</span>
+            <span id="cert-modal-badge" class="font-mono text-xs text-emerald-400">Verified Credential</span>
+          </div>
+          <h3 id="cert-modal-title" class="text-lg sm:text-xl font-bold text-slate-text">Detail Sertifikasi</h3>
+        </div>
+        <button id="cert-modal-close" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Modal">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-5 sm:p-6 overflow-y-auto space-y-6 flex-1 text-slate-text">
+        
+        <!-- Section: Apa Itu Konsep Ini? -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-neon-accent mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">info</span>
+            <span>Konsep & Definisi Keilmuan</span>
+          </h4>
+          <p id="cert-modal-whatis" class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-white/5 p-4 rounded-xl border border-glass-border"></p>
+        </div>
+
+        <!-- Section: Topik & Materi Kunci yang Dipelajari -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-neon-accent mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">checklist</span>
+            <span>Kurikulum & Materi Inti yang Dikuasai</span>
+          </h4>
+          <ul id="cert-modal-topics" class="space-y-2 bg-slate-900/60 p-4 rounded-xl border border-glass-border"></ul>
+        </div>
+
+        <!-- Section: Penerapan Nyata pada Proyek Firly -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">psychology</span>
+            <span>Implementasi Praktis pada Portfolio</span>
+          </h4>
+          <p id="cert-modal-app" class="text-xs sm:text-sm text-slate-300 leading-relaxed bg-emerald-950/20 p-4 rounded-xl border border-emerald-500/30"></p>
+        </div>
+
+        <!-- Section: Skills Gained Tags -->
+        <div>
+          <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 mb-2">Verified Skillsets</h4>
+          <div id="cert-modal-skills" class="flex flex-wrap gap-1.5"></div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer Action Buttons -->
+      <div class="p-4 sm:px-6 border-t border-glass-border bg-slate-900/80 flex items-center justify-between gap-3">
+        <button id="cert-modal-close-btn" class="px-4 py-2 rounded-lg glass-card text-xs font-mono text-slate-300 hover:text-white transition-colors">
+          Tutup
+        </button>
+        <button id="cert-modal-view-doc" class="px-5 py-2 rounded-lg bg-neon-accent text-deep-void font-semibold text-xs font-mono hover:shadow-[0_0_20px_rgba(56,189,248,0.4)] transition-all flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">verified</span>
+          <span>Lihat Sertifikat Asli</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- =========================================================================
        10. Universal Lightbox Modal Component
