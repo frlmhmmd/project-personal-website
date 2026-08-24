@@ -1,130 +1,49 @@
-# Muhammad Firly - Personal Portfolio Website
+# Muhammad Firly — Portfolio & Engineering Showcase
 
-Personal Portfolio Website modern dengan tema *Deep-Void & Cyber Neon*, didesain khusus untuk **Muhammad Firly** dengan spesialisasi di bidang **Backend Development**, **Internet of Things (IoT) Hardware Engineering**, serta **Data Science & AI**.
-
----
-
-## 🌟 Fitur Utama Website
-
-1. **Direct Download CV ATS-Friendly**:
-   - Integrasi tombol download Curriculum Vitae format ATS (`cv_ats/CV_Muhammad_Firly_ATS.pdf`) di Navbar Desktop, Mobile Drawer, Hero CTA Section, dan About Me.
-   - Dilengkapi notifikasi Toast dan efek audio saat pengunduhan dimulai.
-
-2. **SEO & OpenGraph Rich Snippet Meta Tags**:
-   - Tag OpenGraph & Twitter Card lengkap (`og:title`, `og:image`, `og:description`, `og:url`, dll.) untuk tampilan pratinjau yang memukau saat link dibagikan di WhatsApp, LinkedIn, Twitter/X, dan Facebook.
-   - Structured Data JSON-LD Schema.org (`Person` & `WebSite`) untuk visibilitas optimal pada mesin pencari Google.
-
-3. **Audio / Micro-Interaction Sound Effects (Web Audio API)**:
-   - Synthesizer suara sci-fi murni berbasis browser Web Audio API (zero external asset, instan tanpa latency).
-   - Efek suara futuristik untuk klik tombol, hover micro-ticks, modal lightbox open/close sweep, serta success chime untuk copy email & download CV.
-   - Floating widget di pojok kiri bawah untuk toggle `SFX: ON / OFF` dengan status tersimpan di `localStorage`.
-
-4. **Media Recognition & Press Coverage (Radar Bekasi)**:
-   - Section liputan media resmi dari surat kabar & portal online **Radar Bekasi** (04 Agustus 2026) terkait inovasi uji coba sistem monitoring IoT di Jalan Mayor Madmuin Hasibuan, Bekasi Timur.
-
-5. **Desain Cyberpunk / Deep Void Modern & Splash Screen**:
-   - Splash screen intro elegan dengan logo inisial "F", cyber glowing ring, dan *snappy auto-dismiss*.
-   - Dark background (`#020617`) dengan aksen neon cyan (`#38BDF8`), efek glassmorphism, dan glowing orbital rings.
-   - Interactive WebGL Canvas Shader background yang merespons pergerakan kursor mouse.
-   - Efek dinamis typing text pada headline hero section.
-
-6. **Showcase Foto Profil & Hardware IoT Lengkap**:
-   - Foto profil resmi dari `profil/firly.png` dengan animasi floating dan orbital ring glow.
-   - Showcase 4 prototype perangkat keras dari folder `gambar-alat-project/` (`alat1.png` - `alat4.png`).
-   - Showcase 2 hasil pengujian dan sistem monitoring dari folder `ujicoba-alat/` (`foto_monitoring1.png`, `foto_monitoring2.png`).
-   - Filter interaktif kategori: *All Works*, *Hardware Prototype*, dan *Monitoring & Testing*.
-
-7. **Showcase Sertifikasi Resmi & Lightbox Modal**:
-   - Menampilkan 6 sertifikat resmi dari folder `gambar-sertifikasi/`:
-     - *Belajar Dasar AI (Artificial Intelligence)* - Dicoding
-     - *Belajar Dasar Data Science* - Dicoding
-     - *Belajar Dasar Pemrograman Python* - Dicoding
-     - *Belajar Dasar SQL* - Dicoding
-     - *Belajar Dasar Visualisasi Data* - Dicoding
-     - *IT Essentials: PC Hardware and Software* - Cisco Networking Academy
-   - **Interactive Lightbox Modal**: Klik kartu sertifikat atau foto alat mana pun untuk melihat gambar resolusi penuh, navigasi panah kiri/kanan, dan tombol ESC.
-
-8. **Interaktivitas & Kontak Cepat**:
-   - Tombol salin email instan (`muhammadfirly68@gmail.com`) dengan **Toast Notification**.
-   - Direct WhatsApp integration (`0881-0110-57900`).
-   - Formulir kontak langsung (`mailto:`).
-   - Active ScrollSpy pada navigation bar.
+Personal portfolio of **Muhammad Firly**, focused on **Backend Development**, **Cybersecurity & Reverse Engineering Tooling**, **Internet of Things (IoT) Hardware Systems**, and **Data Science & AI**.
 
 ---
 
-## 🚀 Cara Menjalankan Secara Lokal (Preview)
+## 🌟 Key Highlights & Projects
 
-Website ini dibuat dengan arsitektur web murni (HTML5, Tailwind via CDN, Vanilla JS & CSS, WebGL) sehingga **tidak memerlukan instalasi dependensi atau build server yang rumit**.
+### 1. 🛡️ [Secretlee — Terminal-Based HTTP(S) Intercepting Proxy & Security Toolkit](https://github.com/frlmhmmd/secretlee)
+A lightweight, zero-dependency security testing and traffic inspection toolkit inspired by Burp Suite and mitmproxy console mode. Built entirely in pure **Go (1.22+)** with a reactive terminal UI framework (**Bubble Tea** & **Lip Gloss**).
+- **Dynamic TLS MITM Engine**: On-the-fly SSL/TLS certificate signing and custom Root CA generation (`~/.secretlee/ca.pem`).
+- **Live Traffic Stream**: Real-time request/response inspector with JSON formatting, syntax highlights, and search/filter.
+- **HTTP Repeater & Multi-Tab**: Interactive raw request editor with side-by-side round-trip duration and payload analysis.
+- **Intruder (Fuzzing Engine)**: High-concurrency worker pool with rate-limiting for parameter brute-forcing and fuzzing.
+- **Security Scanner**: Passive & active vulnerability auditor (CORS, CSP, HSTS, JWT integrity, server header leakage, sensitive token detection).
+- **Multi-Codec Decoder & JWT Inspector**: URL/Base64/Hex/MD5/SHA-256 transformations with automated Unix timestamp conversion.
+- **Pure-Go SQLite Storage**: Thread-safe persistent history without requiring C compiler dependencies (*zero-cgo*).
 
-### Cara 1: Menggunakan Python (Simple HTTP Server)
-Buka terminal / PowerShell di folder project ini dan jalankan:
-```bash
-python -m http.server 8000
-```
-Buka browser dan akses: `http://localhost:8000`
+### 2. ⚡ Smart IoT Hardware & Telemetry Monitoring
+- Multi-sensor IoT node assembly with microcontrollers (ESP32/MCU), sensor interfacing (I2C/SPI/UART), and regulated power circuit design.
+- Real-time wireless telemetry data streaming and edge calibration.
+- **Media Recognition (Radar Bekasi)**: Official press coverage on *04 August 2026* for the field trial testing of the IoT Vehicle Volume & Speed Monitoring System at Jl. Mayor Madmuin Hasibuan, Bekasi Timur.
 
-### Cara 2: Menggunakan VS Code Live Server / Double-Click
-Cukup buka file `index.html` langsung di browser favorit Anda (Chrome, Edge, Firefox, Brave).
-
----
-
-## 📤 Panduan Lengkap Update ke Repository GitHub
-
-Untuk mengirim (*push*) seluruh pembaruan terbaru ke repository GitHub Anda (`frlmhmmd/project-personal-website`), jalankan perintah berikut secara berurutan di terminal / PowerShell:
-
-```bash
-# 1. Masuk ke folder project (jika belum)
-cd "c:\Users\Windows 11\OneDrive\Documents\project-personal-website"
-
-# 2. Cek status file yang telah diubah
-git status
-
-# 3. Tambahkan semua file yang diperbarui ke staging area
-git add .
-
-# 4. Buat commit dengan pesan deskriptif
-git commit -m "feat: add ATS CV download, rich SEO OpenGraph tags, and Web Audio SFX engine"
-
-# 5. Push perubahan ke GitHub branch main
-git push origin main
-```
-
-Setelah `git push` selesai, GitHub Pages akan otomatis memperbarui website online Anda dalam beberapa detik di:
-👉 **`https://frlmhmmd.github.io/project-personal-website/`**
+### 3. 📜 Official Certifications & Credentials
+- **Belajar Dasar AI (Artificial Intelligence)** — *Dicoding Indonesia*
+- **Belajar Dasar Data Science** — *Dicoding Indonesia*
+- **Belajar Dasar Pemrograman Python** — *Dicoding Indonesia*
+- **Belajar Dasar SQL** — *Dicoding Indonesia*
+- **Belajar Dasar Visualisasi Data** — *Dicoding Indonesia*
+- **IT Essentials: PC Hardware and Software** — *Cisco Networking Academy*
 
 ---
 
-## 📁 Struktur Folder Project
+## 🛠️ Technical Capabilities
 
-```
-project-personal-website/
-├── index.html                   # Halaman utama portofolio (SEO & OpenGraph ready)
-├── css/
-│   └── style.css                # Custom style, glassmorphism, SFX & CV styles
-├── js/
-│   ├── main.js                  # Logika interaktif, SFX synth, typing, filter, modal
-│   └── shader.js                # WebGL interactive background shader
-├── profil/
-│   └── firly.png                # Foto profil Muhammad Firly
-├── cv_ats/
-│   └── CV_Muhammad_Firly_ATS.pdf # Curriculum Vitae format ATS resmi
-├── gambar-sertifikasi/          # 6 Sertifikat resmi terverifikasi
-│   ├── Belajar_Dasar_Data_Science.png
-│   ├── Belajar_Dasar_Python.png
-│   ├── Belajar_Dasar_Sql.png
-│   ├── Belajar_Dasar_Visualisasi_Data.png
-│   ├── ItEssentials.png
-│   └── Sertifikat_Belajar_Dasar_Ai.png
-├── gambar-alat-project/         # 4 Dokumentasi prototype perangkat keras
-│   ├── alat1.png
-│   ├── alat2.png
-│   ├── alat3.png
-│   └── alat4.png
-├── ujicoba-alat/                # 2 Foto hasil uji coba & dashboard monitoring
-│   ├── foto_monitoring1.png
-│   └── foto_monitoring2.png
-├── .github/
-│   └── workflows/
-│       └── deploy.yml           # GitHub Pages automated workflow
-└── README.md                    # Dokumentasi panduan lengkap
-```
+- **Languages & Frameworks**: Python, Go (Golang), C/C++ (Embedded), SQL, HTML5, CSS3, JavaScript.
+- **Cybersecurity & Networking**: MITM Proxying, Dynamic TLS Handshake, Packet Analysis, TCP/IP, RESTful APIs, JWT, Security Auditing.
+- **IoT & Embedded Systems**: ESP32, Arduino, Sensor Wiring, Microcontroller Interfacing, MQTT, Telemetry Streaming.
+- **Data & Analytics**: Data Science Principles, Exploratory Data Analysis (EDA), Data Visualization, Relational Database Design.
+- **Systems & Tools**: Linux (Kali / Ubuntu / Debian), Windows Terminal, Git, GitHub Actions CI/CD, SQLite, Cisco Hardware Diagnostics.
+
+---
+
+## 📬 Contact & Connect
+
+- **Email**: [muhammadfirly68@gmail.com](mailto:muhammadfirly68@gmail.com)
+- **WhatsApp**: [+62 881-0110-57900](https://wa.me/62881011057900)
+- **GitHub**: [github.com/frlmhmmd](https://github.com/frlmhmmd)
+- **Website**: [frlmhmmd.github.io/project-personal-website](https://frlmhmmd.github.io/project-personal-website/)

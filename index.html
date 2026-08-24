@@ -555,6 +555,10 @@
               
               <div class="space-y-3">
                 <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-200">Go (Golang)</span>
+                  <span class="text-neon-accent">Proficient</span>
+                </div>
+                <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Python</span>
                   <span class="text-neon-accent">Advanced</span>
                 </div>
@@ -563,19 +567,20 @@
                   <span class="text-neon-accent">Proficient</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
-                  <span class="text-slate-200">C / C++ (Embedded)</span>
+                  <span class="text-slate-200">Security & MITM Proxy</span>
                   <span class="text-neon-accent">Proficient</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
-                  <span class="text-slate-200">RESTful APIs</span>
-                  <span class="text-neon-accent">Intermediate</span>
+                  <span class="text-slate-200">C / C++ (Embedded)</span>
+                  <span class="text-neon-accent">Proficient</span>
                 </div>
               </div>
             </div>
             <div class="pt-6 mt-6 border-t border-glass-border flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Go 1.22+</span>
+              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">Bubble Tea</span>
               <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">FastAPI</span>
               <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">SQLite</span>
-              <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-slate-300">PostgreSQL</span>
             </div>
           </div>
 
@@ -704,14 +709,138 @@
             Featured <span class="text-neon-accent">Projects & Hardware</span>
           </h2>
           <p class="text-on-surface-variant text-base sm:text-lg">
-            Dokumentasi prototipe fisik perangkat IoT, pengujian laboratorium, dan dashboard telemetri monitoring.
+            Dokumentasi perangkat lunak keamanan siber, prototipe perangkat keras IoT, dan dashboard telemetri monitoring.
           </p>
+        </div>
+
+        <!-- =====================================================================
+             FEATURED FLAGSHIP: Secretlee - Terminal-Based MITM Proxy & Security Toolkit
+             ===================================================================== -->
+        <div class="mb-16 glass-card p-6 sm:p-8 rounded-3xl border border-neon-accent/40 shadow-[0_0_40px_rgba(56,189,248,0.15)] relative overflow-hidden group">
+          <!-- Background Ambient Glow -->
+          <div class="absolute -right-20 -top-20 w-80 h-80 bg-neon-accent/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            
+            <!-- Left Info Column -->
+            <div class="lg:col-span-7 flex flex-col gap-4">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 text-xs font-mono font-bold rounded-full bg-neon-accent/20 border border-neon-accent/40 text-neon-accent flex items-center gap-1.5 shadow-[0_0_15px_rgba(56,189,248,0.25)]">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neon-accent animate-ping"></span>
+                  FLAGSHIP SECURITY PROJECT
+                </span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                  Go 1.22+ • Bubble Tea TUI
+                </span>
+                <span class="px-2.5 py-1 text-xs font-mono rounded-full bg-white/5 border border-glass-border text-slate-300">
+                  MITM Proxy & Security Toolkit
+                </span>
+              </div>
+
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-text tracking-tight">
+                <span class="text-gradient">Secretlee</span> — Terminal-Based HTTP(S) Intercepting Proxy & Security Toolkit
+              </h3>
+
+              <p class="text-on-surface-variant text-sm sm:text-base leading-relaxed">
+                Security testing and traffic debugging toolkit interaktif berbasis terminal (TUI) yang terinspirasi dari keandalan <strong>Burp Suite</strong> dan kepraktisan <strong>mitmproxy console mode</strong>. Dibuat murni dengan bahasa <strong>Go</strong> tanpa runtime dependency eksternal (*zero-cgo SQLite*).
+              </p>
+
+              <!-- Modules Grid -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1 text-xs font-mono">
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-neon-accent shrink-0">lock</span>
+                  <span>Dynamic TLS MITM</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-400 shrink-0">replay</span>
+                  <span>HTTP Repeater</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-purple-400 shrink-0">bolt</span>
+                  <span>Intruder Fuzzing</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-red-400 shrink-0">shield</span>
+                  <span>Security Scanner</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-amber-400 shrink-0">code</span>
+                  <span>JWT & Codec Decoder</span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
+                  <span class="material-symbols-outlined text-[16px] text-sky-400 shrink-0">difference</span>
+                  <span>Diff Comparer</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div class="flex flex-wrap items-center gap-3 pt-2">
+                <a 
+                  href="https://github.com/frlmhmmd/secretlee" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="px-6 py-3 rounded-xl bg-neon-accent text-deep-void font-bold text-xs font-mono flex items-center gap-2 hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-105 transition-all duration-300 shadow-lg"
+                >
+                  <span class="material-symbols-outlined text-[18px]">code</span>
+                  <span>View on GitHub (frlmhmmd/secretlee)</span>
+                  <span class="material-symbols-outlined text-[14px]">north_east</span>
+                </a>
+                <span class="text-xs font-mono text-on-surface-variant flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/5 border border-glass-border">
+                  <span class="text-neon-emerald">●</span> Standalone Binary (Windows & Linux)
+                </span>
+              </div>
+            </div>
+
+            <!-- Right Terminal ASCII & TUI Visualizer -->
+            <div class="lg:col-span-5 flex flex-col">
+              <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-950/90 shadow-2xl font-mono text-[11px] leading-relaxed">
+                <!-- Terminal Window Bar -->
+                <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                    <span class="text-slate-400 text-xs ml-2 font-mono">secretlee - TUI Console</span>
+                  </div>
+                  <span class="text-[10px] text-neon-accent font-mono">MITM :8080</span>
+                </div>
+                
+                <!-- Terminal Content Body -->
+                <div class="p-4 text-slate-300 space-y-2 overflow-x-auto select-none">
+                  <div class="text-sky-400 font-bold">
+                    SECRETLEE <span class="text-white">1 Traffic</span> <span class="text-slate-500">2 Repeater</span> <span class="text-slate-500">3 Intruder</span> <span class="text-red-400">4 Scanner(3)</span>
+                  </div>
+                  <div class="text-slate-600 border-b border-slate-800 pb-1">
+                    #  | METHOD | STATUS | HOST           | PATH            | TIME
+                  </div>
+                  <div class="text-emerald-400">
+                    ★1 | GET    | 200    | api.github.com | /user/repos     | 142ms
+                  </div>
+                  <div class="text-amber-400">
+                     2 | POST   | 401    | target.internal| /api/v1/auth    | 85ms
+                  </div>
+                  <div class="text-slate-400">
+                     3 | GET    | 404    | httpbin.org    | /status/404     | 310ms
+                  </div>
+                  <div class="mt-3 pt-2 border-t border-slate-800 text-[10px] text-slate-400 flex justify-between">
+                    <span class="text-neon-accent">[PASSIVE AUDIT: ACTIVE]</span>
+                    <span class="text-slate-500">[r] Repeat [i] Intrude [q] Quit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         <!-- Filter Category Tabs -->
         <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
           <button class="filter-btn active px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="all">
-            All Works (6)
+            All Works (7)
+          </button>
+          <button class="filter-btn glass-card text-on-surface-variant hover:text-slate-text px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="security">
+            Security & Tools (1)
           </button>
           <button class="filter-btn glass-card text-on-surface-variant hover:text-slate-text px-5 py-2 rounded-lg text-xs font-mono transition-all" data-filter="hardware">
             Hardware Prototype (4)
@@ -724,6 +853,53 @@
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
           
+          <!-- Project 0: Secretlee (Security & Developer Tools) -->
+          <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group border border-neon-accent/30" data-category="security">
+            <div class="h-56 w-full relative overflow-hidden bg-slate-950 p-4 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neon-accent/15 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[14px]">shield</span> Security Tool #01
+                </span>
+                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
+                  Pure Go 1.22+
+                </span>
+              </div>
+              <div class="font-mono text-[11px] text-slate-400 bg-black/60 p-3 rounded-lg border border-white/5 space-y-1">
+                <p class="text-sky-300 font-bold">$ secretlee start --port 8080</p>
+                <p class="text-slate-500">> Dynamic TLS MITM Proxy Started</p>
+                <p class="text-emerald-400">> Reactive Bubble Tea TUI Ready</p>
+              </div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span>SQLite (Zero-CGO)</span>
+                <span class="text-neon-accent">Burp Alternative</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="font-mono text-xs text-neon-accent bg-neon-accent/10 px-2 py-0.5 rounded">Go (Golang)</span>
+                <span class="font-mono text-xs text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">MITM Proxy</span>
+                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">TUI Toolkit</span>
+              </div>
+              <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
+                Secretlee — Terminal HTTP(S) Intercepting Proxy
+              </h3>
+              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+                Toolkit pengujian keamanan web dan reverse engineering berbasis terminal dengan engine TLS MITM, HTTP Repeater, Fuzzing Intruder, dan Vulnerability Scanner otomatis.
+              </p>
+              <div class="flex items-center justify-between pt-2 border-t border-glass-border">
+                <a 
+                  href="https://github.com/frlmhmmd/secretlee" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="inline-flex items-center gap-1.5 text-xs font-mono text-neon-accent hover:text-white font-semibold transition-colors"
+                >
+                  GitHub Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                </a>
+                <span class="text-[11px] font-mono text-slate-400">MIT License</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Project 1: Alat 1 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
             <div class="h-56 w-full relative overflow-hidden bg-slate-900">

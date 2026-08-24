@@ -270,10 +270,11 @@ function initTypingEffect() {
 
   const roles = [
     'Backend & API Developer',
+    'Cybersecurity & Network Tooling',
     'IoT & Hardware Systems Engineer',
+    'Secretlee (MITM Proxy) Creator',
     'Data Science & AI Enthusiast',
-    'Python & Embedded Specialist',
-    'Database & Telemetry Architect'
+    'Python & Go Specialist'
   ];
 
   let roleIdx = 0;
@@ -333,8 +334,8 @@ function initProjectFilters() {
       const filterValue = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue || (filterValue === 'iot' && category.includes('iot'))) {
+        const category = card.getAttribute('data-category') || '';
+        if (filterValue === 'all' || category === filterValue || category.includes(filterValue)) {
           card.style.display = 'block';
           setTimeout(() => {
             card.style.opacity = '1';
