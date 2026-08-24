@@ -197,27 +197,6 @@ body {
   transform: scale(1);
 }
 
-/* Certification Detail Modal */
-#cert-detail-modal {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#cert-detail-modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#cert-detail-modal .cert-modal-content {
-  transform: scale(0.94) translateY(10px);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#cert-detail-modal.active .cert-modal-content {
-  transform: scale(1) translateY(0);
-}
-
 /* Media Highlight Accent */
 .media-badge-pulse {
   position: relative;
