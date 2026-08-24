@@ -3,16 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Muhammad Firly - Backend, IoT & Data Science Developer</title>
-  <meta name="description" content="Portfolio Muhammad Firly - Backend Developer, IoT Hardware Systems Engineer, dan Data Science & AI Enthusiast. Menampilkan sertifikasi resmi, prototype hardware, dan sistem monitoring." />
-  <meta name="keywords" content="Muhammad Firly, Backend Developer, IoT Engineer, Data Science, Python, SQL, AI, Hardware, Portfolio" />
+  <title>Muhammad Firly - Backend Developer, IoT Engineer & Data Science</title>
+  <meta name="description" content="Portfolio resmi Muhammad Firly - Backend Developer, IoT Hardware Systems Engineer, dan Data Science & AI Specialist. Menampilkan prototype hardware, sistem monitoring jalan, dan 6 sertifikasi resmi." />
+  <meta name="keywords" content="Muhammad Firly, Backend Developer, IoT Engineer, Data Science, Python, SQL, AI, Hardware, Telemetry, Radar Bekasi, Dicoding, Cisco, Portfolio" />
   <meta name="author" content="Muhammad Firly" />
-  
-  <!-- OpenGraph / Social Media Meta Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#020617" />
+  <link rel="canonical" href="https://frlmhmmd.github.io/project-personal-website/" />
+
+  <!-- OpenGraph / Facebook / LinkedIn / WhatsApp Rich Preview -->
+  <meta property="og:site_name" content="Muhammad Firly Portfolio" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Muhammad Firly - Personal Portfolio" />
-  <meta property="og:description" content="Backend Developer, IoT Hardware Engineer & Data Science Enthusiast." />
-  <meta property="og:image" content="profil/firly.png" />
+  <meta property="og:url" content="https://frlmhmmd.github.io/project-personal-website/" />
+  <meta property="og:title" content="Muhammad Firly - Backend Developer, IoT Engineer & Data Science" />
+  <meta property="og:description" content="Portfolio resmi Muhammad Firly: Proyek IoT Hardware, liputan media Radar Bekasi, sistem monitoring telemetri, dan 6 sertifikasi resmi Dicoding & Cisco." />
+  <meta property="og:image" content="https://frlmhmmd.github.io/project-personal-website/profil/firly.png" />
+  <meta property="og:image:secure_url" content="https://frlmhmmd.github.io/project-personal-website/profil/firly.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Muhammad Firly - Backend & IoT Engineer" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://frlmhmmd.github.io/project-personal-website/" />
+  <meta name="twitter:title" content="Muhammad Firly - Backend Developer & IoT Hardware Engineer" />
+  <meta name="twitter:description" content="Portfolio Muhammad Firly: Proyek IoT Hardware, liputan media Radar Bekasi, dan 6 sertifikasi resmi." />
+  <meta name="twitter:image" content="https://frlmhmmd.github.io/project-personal-website/profil/firly.png" />
+  <meta name="twitter:image:alt" content="Muhammad Firly - Backend & IoT Engineer" />
+
+  <!-- JSON-LD Structured Data for Google Rich Snippets & Search Engine Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://frlmhmmd.github.io/project-personal-website/#person",
+        "name": "Muhammad Firly",
+        "jobTitle": [
+          "Backend Developer",
+          "IoT Hardware Systems Engineer",
+          "Data Science Specialist"
+        ],
+        "url": "https://frlmhmmd.github.io/project-personal-website/",
+        "image": "https://frlmhmmd.github.io/project-personal-website/profil/firly.png",
+        "email": "muhammadfirly68@gmail.com",
+        "telephone": "+62881011057900",
+        "nationality": "Indonesian",
+        "sameAs": [
+          "https://github.com/frlmhmmd",
+          "https://radarbekasi.id/2026/08/04/manfaatkan-perkembangan-teknologi-digital-ubs-dorong-mahasiswa-berinovasi/"
+        ],
+        "knowsAbout": [
+          "Backend Architecture & APIs",
+          "Python & SQL Database Management",
+          "Internet of Things (IoT) Prototyping",
+          "Microcontroller & Sensor Interfacing",
+          "Data Science & Visual Storytelling",
+          "Machine Learning & Artificial Intelligence",
+          "Cisco IT Essentials & Hardware Systems"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://frlmhmmd.github.io/project-personal-website/#website",
+        "url": "https://frlmhmmd.github.io/project-personal-website/",
+        "name": "Muhammad Firly - Personal Portfolio Website",
+        "description": "Portfolio resmi Muhammad Firly: Proyek IoT Hardware, liputan media Radar Bekasi, dan 6 sertifikasi resmi.",
+        "inLanguage": "id",
+        "publisher": {
+          "@id": "https://frlmhmmd.github.io/project-personal-website/#person"
+        }
+      }
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS CDN with Custom Plugins -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -126,7 +193,7 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-7">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-7">
         <a class="nav-link text-slate-text font-medium text-sm hover:text-neon-accent py-1 active" href="#home">Home</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#about">About</a>
         <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-neon-accent py-1" href="#skills">Skills</a>
@@ -137,12 +204,28 @@
       </nav>
 
       <!-- Trailing Action Buttons -->
-      <div class="hidden sm:flex items-center gap-4">
-        <button class="btn-copy-email inline-flex items-center gap-2 px-4 py-2 rounded-lg glass-card text-xs font-mono text-slate-text hover:border-neon-accent hover:text-neon-accent transition-all duration-300" data-email="muhammadfirly68@gmail.com" title="Salin Email">
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Direct ATS CV Download Button -->
+        <a 
+          href="cv_ats/CV_Muhammad_Firly_ATS.pdf" 
+          download="CV_Muhammad_Firly_ATS.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-cv-download inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_12px_rgba(56,189,248,0.15)]" 
+          title="Unduh CV ATS Muhammad Firly"
+        >
+          <span class="material-symbols-outlined text-[16px]">download</span>
+          <span>CV ATS</span>
+        </a>
+
+        <!-- Copy Email Button -->
+        <button class="btn-copy-email inline-flex items-center gap-2 px-3.5 py-2 rounded-lg glass-card text-xs font-mono text-slate-text hover:border-neon-accent hover:text-neon-accent transition-all duration-300" data-email="muhammadfirly68@gmail.com" title="Salin Email">
           <span class="material-symbols-outlined text-[16px]">content_copy</span>
           <span>Copy Email</span>
         </button>
-        <a class="inline-flex items-center justify-center px-5 py-2.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
+
+        <!-- Get in Touch CTA -->
+        <a class="inline-flex items-center justify-center px-4 py-2 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
           Get in Touch
         </a>
       </div>
@@ -177,6 +260,11 @@
       </nav>
     </div>
     <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
+      <!-- Direct ATS CV Download Button for Mobile -->
+      <a class="btn-cv-download w-full py-2.5 bg-neon-accent/15 text-neon-accent border border-neon-accent/40 text-center font-semibold text-xs rounded-lg hover:bg-neon-accent hover:text-deep-void transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(56,189,248,0.2)]" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-[16px]">download</span>
+        <span>Download CV (ATS Format)</span>
+      </a>
       <button class="btn-copy-email w-full py-2.5 rounded-lg glass-card text-xs font-mono text-slate-text flex items-center justify-center gap-2 hover:border-neon-accent transition-colors" data-email="muhammadfirly68@gmail.com">
         <span class="material-symbols-outlined text-[16px]">content_copy</span>
         <span>Copy Email</span>
@@ -234,9 +322,13 @@
               <span>Explore Projects</span>
               <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
             </a>
-            <a class="px-7 py-3.5 glass-card text-slate-text font-semibold text-sm rounded-lg hover:bg-white/10 hover:border-neon-accent/50 transition-all duration-300 flex items-center gap-2" href="#certifications">
+            <a class="btn-cv-download px-6 py-3.5 bg-neon-accent/10 border border-neon-accent/50 text-neon-accent hover:bg-neon-accent hover:text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.3)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer" title="Unduh Curriculum Vitae (ATS Friendly)">
+              <span class="material-symbols-outlined text-[18px]">download</span>
+              <span>Download CV (ATS)</span>
+            </a>
+            <a class="px-6 py-3.5 glass-card text-slate-text font-semibold text-sm rounded-lg hover:bg-white/10 hover:border-neon-accent/50 transition-all duration-300 flex items-center gap-2" href="#certifications">
               <span class="material-symbols-outlined text-[18px] text-neon-accent">verified</span>
-              <span>View Certifications</span>
+              <span>Certifications</span>
             </a>
           </div>
 
@@ -344,6 +436,22 @@
                 <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Hardware Telemetry</span>
                 <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Data-Driven Insights</span>
                 <span class="px-3 py-1 text-xs font-mono rounded bg-white/5 border border-glass-border text-slate-300">Continuous Learning</span>
+              </div>
+
+              <!-- Dedicated CV Download Banner -->
+              <div class="pt-3">
+                <a 
+                  href="cv_ats/CV_Muhammad_Firly_ATS.pdf" 
+                  download="CV_Muhammad_Firly_ATS.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn-cv-download inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(56,189,248,0.15)] group"
+                  title="Unduh Curriculum Vitae (ATS Format)"
+                >
+                  <span class="material-symbols-outlined text-[18px] group-hover:animate-bounce">download</span>
+                  <span>Unduh CV Resmi (Format ATS)</span>
+                  <span class="text-[10px] px-1.5 py-0.5 rounded bg-neon-accent/20 border border-neon-accent/30 text-neon-accent group-hover:bg-deep-void/40 group-hover:text-deep-void">PDF • 172 KB</span>
+                </a>
               </div>
             </div>
 
@@ -1708,6 +1816,24 @@
       </div>
 
     </div>
+  </div>
+
+  <!-- =========================================================================
+       11. Floating Cyber Sound FX Toggle Widget
+       ========================================================================= -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <button 
+      id="sfx-toggle-btn" 
+      class="sfx-toggle-btn px-3.5 py-2 rounded-xl flex items-center gap-2.5 text-xs font-mono text-slate-text cursor-pointer transition-all duration-300 group" 
+      aria-label="Toggle Audio Sound Effects" 
+      title="Aktifkan / Nonaktifkan Efek Suara Interaktif"
+    >
+      <span class="relative flex h-2 w-2">
+        <span class="sfx-indicator absolute inline-flex h-full w-full rounded-full bg-slate-500 transition-colors"></span>
+      </span>
+      <span id="sfx-icon" class="material-symbols-outlined text-[18px] text-slate-400 group-hover:text-neon-accent transition-colors">volume_off</span>
+      <span id="sfx-label" class="tracking-wider text-slate-300 group-hover:text-slate-100 transition-colors">SFX: OFF</span>
+    </button>
   </div>
 
   <!-- Toast Notification Container -->

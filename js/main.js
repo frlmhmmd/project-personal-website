@@ -5,6 +5,7 @@
 
 function initApp() {
   initSplashScreen();
+  initSoundEngine();
   initTypingEffect();
   initProjectFilters();
   initLightbox();
@@ -13,12 +14,251 @@ function initApp() {
   initContactForm();
   initToast();
   initCopyActions();
+  initCvDownload();
 }
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
+}
+
+/* ==========================================================================
+   0. Web Audio API - Futuristic Cyber Sound Synthesizer
+   ========================================================================== */
+const SoundEngine = {
+  ctx: null,
+  enabled: false,
+  initialized: false,
+
+  init() {
+    if (this.initialized) return;
+    const savedState = localStorage.getItem('firly_portfolio_sfx');
+    this.enabled = savedState === 'enabled';
+    this.updateUI();
+    this.initialized = true;
+  },
+
+  getContext() {
+    if (!this.ctx) {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (AudioCtx) {
+        this.ctx = new AudioCtx();
+      }
+    }
+    if (this.ctx && this.ctx.state === 'suspended') {
+      this.ctx.resume();
+    }
+    return this.ctx;
+  },
+
+  toggle() {
+    this.enabled = !this.enabled;
+    localStorage.setItem('firly_portfolio_sfx', this.enabled ? 'enabled' : 'disabled');
+    this.updateUI();
+
+    if (this.enabled) {
+      this.getContext();
+      this.playSuccess();
+      showToast('Efek Suara Interaktif Diaktifkan (SFX ON)', 'info');
+    } else {
+      showToast('Efek Suara Dimatikan (SFX OFF)', 'info');
+    }
+  },
+
+  updateUI() {
+    const btn = document.getElementById('sfx-toggle-btn');
+    const label = document.getElementById('sfx-label');
+    const icon = document.getElementById('sfx-icon');
+    if (!btn) return;
+
+    if (this.enabled) {
+      btn.classList.add('sfx-active', 'border-emerald-500/50');
+      btn.classList.remove('border-glass-border');
+      if (label) label.textContent = 'SFX: ON';
+      if (icon) {
+        icon.textContent = 'volume_up';
+        icon.classList.add('text-emerald-400');
+        icon.classList.remove('text-slate-400');
+      }
+    } else {
+      btn.classList.remove('sfx-active', 'border-emerald-500/50');
+      btn.classList.add('border-glass-border');
+      if (label) label.textContent = 'SFX: OFF';
+      if (icon) {
+        icon.textContent = 'volume_off';
+        icon.classList.remove('text-emerald-400');
+        icon.classList.add('text-slate-400');
+      }
+    }
+  },
+
+  // High-tech snappy click chirp
+  playClick() {
+    if (!this.enabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.04);
+
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.045);
+    } catch (e) {
+      // Audio context policy fallback
+    }
+  },
+
+  // Subtle low-volume micro tick for hover
+  playHover() {
+    if (!this.enabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(450, ctx.currentTime);
+
+      gain.gain.setValueAtTime(0.015, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.02);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.025);
+    } catch (e) {}
+  },
+
+  // Futuristic 2-tone melodic chime for toast / copy / download
+  playSuccess() {
+    if (!this.enabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const now = ctx.currentTime;
+      const notes = [587.33, 880]; // D5 -> A5
+
+      notes.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + i * 0.08);
+
+        gain.gain.setValueAtTime(0.06, now + i * 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.18);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now + i * 0.08);
+        osc.stop(now + i * 0.08 + 0.2);
+      });
+    } catch (e) {}
+  },
+
+  // Sci-fi power-up sweep for Lightbox open
+  playModalOpen() {
+    if (!this.enabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(260, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(680, ctx.currentTime + 0.12);
+
+      gain.gain.setValueAtTime(0.05, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.13);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.14);
+    } catch (e) {}
+  },
+
+  // Sci-fi power-down sweep for Lightbox close
+  playModalClose() {
+    if (!this.enabled) return;
+    try {
+      const ctx = this.getContext();
+      if (!ctx) return;
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(600, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.1);
+
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.11);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.12);
+    } catch (e) {}
+  }
+};
+
+function initSoundEngine() {
+  SoundEngine.init();
+
+  const toggleBtn = document.getElementById('sfx-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      SoundEngine.toggle();
+    });
+  }
+
+  // Attach hover sounds with throttle
+  let lastHoverTime = 0;
+  const attachSoundListeners = () => {
+    const interactiveEls = document.querySelectorAll('button, a, .glass-card-interactive, .filter-btn, [data-lightbox]');
+    interactiveEls.forEach(el => {
+      if (el.dataset.sfxBound) return;
+      el.dataset.sfxBound = 'true';
+
+      el.addEventListener('mouseenter', () => {
+        const now = Date.now();
+        if (now - lastHoverTime > 75) {
+          SoundEngine.playHover();
+          lastHoverTime = now;
+        }
+      }, { passive: true });
+
+      el.addEventListener('click', () => {
+        if (el.id !== 'sfx-toggle-btn') {
+          SoundEngine.playClick();
+        }
+      });
+    });
+  };
+
+  attachSoundListeners();
 }
 
 /* ==========================================================================
@@ -151,11 +391,13 @@ function initLightbox() {
     updateLightboxContent();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    SoundEngine.playModalOpen();
   }
 
   function closeLightbox() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    SoundEngine.playModalClose();
   }
 
   function updateLightboxContent() {
@@ -171,11 +413,13 @@ function initLightbox() {
   function showNext() {
     currentLightboxIndex = (currentLightboxIndex + 1) % lightboxItems.length;
     updateLightboxContent();
+    SoundEngine.playClick();
   }
 
   function showPrev() {
     currentLightboxIndex = (currentLightboxIndex - 1 + lightboxItems.length) % lightboxItems.length;
     updateLightboxContent();
+    SoundEngine.playClick();
   }
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
@@ -204,7 +448,6 @@ function initNavbarScrollSpy() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
-  // Scroll effect on header
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header?.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]', 'bg-opacity-90');
@@ -212,7 +455,6 @@ function initNavbarScrollSpy() {
       header?.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]', 'bg-opacity-90');
     }
 
-    // Active link highlighting based on scroll position
     let currentId = '';
     const scrollPos = window.scrollY + 120;
 
@@ -250,10 +492,12 @@ function initMobileMenu() {
       mobileMenu.classList.remove('translate-x-0');
       mobileMenu.classList.add('translate-x-full');
       document.body.style.overflow = '';
+      SoundEngine.playModalClose();
     } else {
       mobileMenu.classList.remove('translate-x-full');
       mobileMenu.classList.add('translate-x-0');
       document.body.style.overflow = 'hidden';
+      SoundEngine.playModalOpen();
     }
   }
 
@@ -289,7 +533,6 @@ function initContactForm() {
       return;
     }
 
-    // Build Mailto link with populated params
     const mailtoLink = `mailto:muhammadfirly68@gmail.com?subject=${encodeURIComponent(
       subject || `Pesan dari ${name} (Portfolio Website)`
     )}&body=${encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`)}`;
@@ -335,6 +578,10 @@ function showToast(message, type = 'info') {
   container.appendChild(toast);
   setTimeout(() => toast.classList.add('show'), 10);
 
+  if (type === 'success' || type === 'info') {
+    SoundEngine.playSuccess();
+  }
+
   setTimeout(() => {
     toast.classList.remove('show');
     setTimeout(() => toast.remove(), 300);
@@ -357,7 +604,20 @@ function initCopyActions() {
 }
 
 /* ==========================================================================
-   8. Elegant Splash Screen Handler
+   8. Direct ATS CV Download Handler
+   ========================================================================== */
+function initCvDownload() {
+  const cvButtons = document.querySelectorAll('.btn-cv-download');
+  cvButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      showToast('Mengunduh CV Muhammad Firly (Format ATS)...', 'success');
+      SoundEngine.playSuccess();
+    });
+  });
+}
+
+/* ==========================================================================
+   9. Elegant Splash Screen Handler
    ========================================================================== */
 function initSplashScreen() {
   const splash = document.getElementById('splash-screen');
@@ -375,7 +635,6 @@ function initSplashScreen() {
     }, 450);
   };
 
-  // Snappy display duration (400ms)
   setTimeout(hideSplash, 400);
 
   if (document.readyState === 'complete') {
@@ -389,6 +648,3 @@ function initSplashScreen() {
 
 // Immediate execution so splash starts dismissing right away
 initSplashScreen();
-
-
-

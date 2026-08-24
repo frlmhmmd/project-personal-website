@@ -6,19 +6,35 @@ Personal Portfolio Website modern dengan tema *Deep-Void & Cyber Neon*, didesain
 
 ## 🌟 Fitur Utama Website
 
-1. **Desain Cyberpunk / Deep Void Modern & Splash Screen**:
-   - Splash screen intro elegan dengan logo inisial "F", cyber-minimalist glowing container, dan smooth state dismiss.
+1. **Direct Download CV ATS-Friendly**:
+   - Integrasi tombol download Curriculum Vitae format ATS (`cv_ats/CV_Muhammad_Firly_ATS.pdf`) di Navbar Desktop, Mobile Drawer, Hero CTA Section, dan About Me.
+   - Dilengkapi notifikasi Toast dan efek audio saat pengunduhan dimulai.
+
+2. **SEO & OpenGraph Rich Snippet Meta Tags**:
+   - Tag OpenGraph & Twitter Card lengkap (`og:title`, `og:image`, `og:description`, `og:url`, dll.) untuk tampilan pratinjau yang memukau saat link dibagikan di WhatsApp, LinkedIn, Twitter/X, dan Facebook.
+   - Structured Data JSON-LD Schema.org (`Person` & `WebSite`) untuk visibilitas optimal pada mesin pencari Google.
+
+3. **Audio / Micro-Interaction Sound Effects (Web Audio API)**:
+   - Synthesizer suara sci-fi murni berbasis browser Web Audio API (zero external asset, instan tanpa latency).
+   - Efek suara futuristik untuk klik tombol, hover micro-ticks, modal lightbox open/close sweep, serta success chime untuk copy email & download CV.
+   - Floating widget di pojok kiri bawah untuk toggle `SFX: ON / OFF` dengan status tersimpan di `localStorage`.
+
+4. **Media Recognition & Press Coverage (Radar Bekasi)**:
+   - Section liputan media resmi dari surat kabar & portal online **Radar Bekasi** (04 Agustus 2026) terkait inovasi uji coba sistem monitoring IoT di Jalan Mayor Madmuin Hasibuan, Bekasi Timur.
+
+5. **Desain Cyberpunk / Deep Void Modern & Splash Screen**:
+   - Splash screen intro elegan dengan logo inisial "F", cyber glowing ring, dan *snappy auto-dismiss*.
    - Dark background (`#020617`) dengan aksen neon cyan (`#38BDF8`), efek glassmorphism, dan glowing orbital rings.
    - Interactive WebGL Canvas Shader background yang merespons pergerakan kursor mouse.
    - Efek dinamis typing text pada headline hero section.
 
-2. **Showcase Foto Profil & Hardware IoT Lengkap**:
+6. **Showcase Foto Profil & Hardware IoT Lengkap**:
    - Foto profil resmi dari `profil/firly.png` dengan animasi floating dan orbital ring glow.
    - Showcase 4 prototype perangkat keras dari folder `gambar-alat-project/` (`alat1.png` - `alat4.png`).
    - Showcase 2 hasil pengujian dan sistem monitoring dari folder `ujicoba-alat/` (`foto_monitoring1.png`, `foto_monitoring2.png`).
    - Filter interaktif kategori: *All Works*, *Hardware Prototype*, dan *Monitoring & Testing*.
 
-3. **Showcase Sertifikasi Resmi & Lightbox Modal**:
+7. **Showcase Sertifikasi Resmi & Lightbox Modal**:
    - Menampilkan 6 sertifikat resmi dari folder `gambar-sertifikasi/`:
      - *Belajar Dasar AI (Artificial Intelligence)* - Dicoding
      - *Belajar Dasar Data Science* - Dicoding
@@ -28,11 +44,10 @@ Personal Portfolio Website modern dengan tema *Deep-Void & Cyber Neon*, didesain
      - *IT Essentials: PC Hardware and Software* - Cisco Networking Academy
    - **Interactive Lightbox Modal**: Klik kartu sertifikat atau foto alat mana pun untuk melihat gambar resolusi penuh, navigasi panah kiri/kanan, dan tombol ESC.
 
-4. **Interaktivitas & User Experience**:
-   - Navigasi responsif (Desktop & Mobile Drawer Menu).
+8. **Interaktivitas & Kontak Cepat**:
    - Tombol salin email instan (`muhammadfirly68@gmail.com`) dengan **Toast Notification**.
    - Direct WhatsApp integration (`0881-0110-57900`).
-   - Formulir kontak langsung yang otomatis membuka email client (`mailto:`).
+   - Formulir kontak langsung (`mailto:`).
    - Active ScrollSpy pada navigation bar.
 
 ---
@@ -53,18 +68,29 @@ Cukup buka file `index.html` langsung di browser favorit Anda (Chrome, Edge, Fir
 
 ---
 
-## 🌐 Cara Hosting ke GitHub Pages (1-Klik)
+## 📤 Panduan Lengkap Update ke Repository GitHub
 
-Website ini sudah 100% siap dihosting ke **GitHub Pages** secara gratis.
+Untuk mengirim (*push*) seluruh pembaruan terbaru ke repository GitHub Anda (`frlmhmmd/project-personal-website`), jalankan perintah berikut secara berurutan di terminal / PowerShell:
 
-### Langkah-langkah:
-1. Push branch `main` ke repository GitHub `frlmhmmd/project-personal-website`.
-2. Buka repository Anda di browser GitHub:
-   - Klik tab **Settings** > Pilih menu **Pages** di sebelah kiri.
-   - Pada bagian **Build and deployment > Source**, pilih **GitHub Actions** (atau **Deploy from a branch** > `main` > `/ (root)`).
-3. Website portofolio Anda akan langsung aktif dan bisa diakses di: `https://frlmhmmd.github.io/project-personal-website/`!
+```bash
+# 1. Masuk ke folder project (jika belum)
+cd "c:\Users\Windows 11\OneDrive\Documents\project-personal-website"
 
-*(Opsional: File workflow `.github/workflows/deploy.yml` juga sudah disertakan jika Anda ingin menggunakan GitHub Actions).*
+# 2. Cek status file yang telah diubah
+git status
+
+# 3. Tambahkan semua file yang diperbarui ke staging area
+git add .
+
+# 4. Buat commit dengan pesan deskriptif
+git commit -m "feat: add ATS CV download, rich SEO OpenGraph tags, and Web Audio SFX engine"
+
+# 5. Push perubahan ke GitHub branch main
+git push origin main
+```
+
+Setelah `git push` selesai, GitHub Pages akan otomatis memperbarui website online Anda dalam beberapa detik di:
+👉 **`https://frlmhmmd.github.io/project-personal-website/`**
 
 ---
 
@@ -72,14 +98,16 @@ Website ini sudah 100% siap dihosting ke **GitHub Pages** secara gratis.
 
 ```
 project-personal-website/
-├── index.html                   # Halaman utama portofolio
+├── index.html                   # Halaman utama portofolio (SEO & OpenGraph ready)
 ├── css/
-│   └── style.css                # Custom style, glassmorphism, animasi & lightbox
+│   └── style.css                # Custom style, glassmorphism, SFX & CV styles
 ├── js/
-│   ├── main.js                  # Logika interaktif, typing, filter, modal, toast
+│   ├── main.js                  # Logika interaktif, SFX synth, typing, filter, modal
 │   └── shader.js                # WebGL interactive background shader
 ├── profil/
 │   └── firly.png                # Foto profil Muhammad Firly
+├── cv_ats/
+│   └── CV_Muhammad_Firly_ATS.pdf # Curriculum Vitae format ATS resmi
 ├── gambar-sertifikasi/          # 6 Sertifikat resmi terverifikasi
 │   ├── Belajar_Dasar_Data_Science.png
 │   ├── Belajar_Dasar_Python.png
