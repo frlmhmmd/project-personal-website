@@ -1,6 +1,7 @@
 /**
  * Main Application Logic & Interactivity
  * Muhammad Firly - Personal Portfolio
+ * Luxury Champaign Theme & Interaction Engine
  */
 
 function initApp() {
@@ -24,7 +25,7 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================================================
-   0. Web Audio API - Futuristic Cyber Sound Synthesizer
+   0. Web Audio API - Elegant Ambient Sound Synthesizer
    ========================================================================== */
 const SoundEngine = {
   ctx: null,
@@ -73,27 +74,27 @@ const SoundEngine = {
     if (!btn) return;
 
     if (this.enabled) {
-      btn.classList.add('sfx-active', 'border-emerald-500/50');
+      btn.classList.add('sfx-active', 'border-neon-accent/60');
       btn.classList.remove('border-glass-border');
       if (label) label.textContent = 'SFX: ON';
       if (icon) {
         icon.textContent = 'volume_up';
-        icon.classList.add('text-emerald-400');
-        icon.classList.remove('text-slate-400');
+        icon.classList.add('text-neon-accent');
+        icon.classList.remove('text-on-surface-variant');
       }
     } else {
-      btn.classList.remove('sfx-active', 'border-emerald-500/50');
+      btn.classList.remove('sfx-active', 'border-neon-accent/60');
       btn.classList.add('border-glass-border');
       if (label) label.textContent = 'SFX: OFF';
       if (icon) {
         icon.textContent = 'volume_off';
-        icon.classList.remove('text-emerald-400');
-        icon.classList.add('text-slate-400');
+        icon.classList.remove('text-neon-accent');
+        icon.classList.add('text-on-surface-variant');
       }
     }
   },
 
-  // High-tech snappy click chirp
+  // Elegant subtle warm click chirp
   playClick() {
     if (!this.enabled) return;
     try {
@@ -104,10 +105,10 @@ const SoundEngine = {
       const gain = ctx.createGain();
 
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(800, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.04);
+      osc.frequency.setValueAtTime(650, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.04);
 
-      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.setValueAtTime(0.06, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
 
       osc.connect(gain);
@@ -131,9 +132,9 @@ const SoundEngine = {
       const gain = ctx.createGain();
 
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(450, ctx.currentTime);
+      osc.frequency.setValueAtTime(420, ctx.currentTime);
 
-      gain.gain.setValueAtTime(0.015, ctx.currentTime);
+      gain.gain.setValueAtTime(0.012, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.02);
 
       osc.connect(gain);
@@ -144,7 +145,7 @@ const SoundEngine = {
     } catch (e) {}
   },
 
-  // Futuristic 2-tone melodic chime for toast / copy / download
+  // Warm champagne harmonic chord for toast / copy / download
   playSuccess() {
     if (!this.enabled) return;
     try {
@@ -152,28 +153,28 @@ const SoundEngine = {
       if (!ctx) return;
 
       const now = ctx.currentTime;
-      const notes = [587.33, 880]; // D5 -> A5
+      const notes = [523.25, 659.25, 783.99]; // C5 -> E5 -> G5 Major chord
 
       notes.forEach((freq, i) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
 
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, now + i * 0.08);
+        osc.frequency.setValueAtTime(freq, now + i * 0.06);
 
-        gain.gain.setValueAtTime(0.06, now + i * 0.08);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.18);
+        gain.gain.setValueAtTime(0.04, now + i * 0.06);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.18);
 
         osc.connect(gain);
         gain.connect(ctx.destination);
 
-        osc.start(now + i * 0.08);
-        osc.stop(now + i * 0.08 + 0.2);
+        osc.start(now + i * 0.06);
+        osc.stop(now + i * 0.06 + 0.2);
       });
     } catch (e) {}
   },
 
-  // Sci-fi power-up sweep for Lightbox open
+  // Soft resonant opening sweep for Lightbox
   playModalOpen() {
     if (!this.enabled) return;
     try {
@@ -184,10 +185,10 @@ const SoundEngine = {
       const gain = ctx.createGain();
 
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(260, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(680, ctx.currentTime + 0.12);
+      osc.frequency.setValueAtTime(280, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(560, ctx.currentTime + 0.12);
 
-      gain.gain.setValueAtTime(0.05, ctx.currentTime);
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.13);
 
       osc.connect(gain);
@@ -198,7 +199,7 @@ const SoundEngine = {
     } catch (e) {}
   },
 
-  // Sci-fi power-down sweep for Lightbox close
+  // Soft descending sweep for Lightbox close
   playModalClose() {
     if (!this.enabled) return;
     try {
@@ -209,10 +210,10 @@ const SoundEngine = {
       const gain = ctx.createGain();
 
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(600, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.1);
+      osc.frequency.setValueAtTime(520, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.1);
 
-      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.setValueAtTime(0.035, ctx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.11);
 
       osc.connect(gain);
@@ -273,7 +274,7 @@ function initTypingEffect() {
     'Cybersecurity & Network Tooling',
     'IoT & Hardware Systems Engineer',
     'Secretlee (MITM Proxy) Creator',
-    'Data Science & AI Enthusiast',
+    'Data Science & AI Specialist',
     'Python & Go Specialist'
   ];
 
@@ -451,9 +452,9 @@ function initNavbarScrollSpy() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      header?.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]', 'bg-opacity-90');
+      header?.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.6)]', 'bg-opacity-95');
     } else {
-      header?.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]', 'bg-opacity-90');
+      header?.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.6)]', 'bg-opacity-95');
     }
 
     let currentId = '';
@@ -561,18 +562,19 @@ function showToast(message, type = 'info') {
   if (!container) return;
 
   const toast = document.createElement('div');
-  toast.className = `toast glass-card px-5 py-3 rounded-lg border flex items-center gap-3 text-sm font-medium shadow-xl ${
+  toast.className = `toast glass-card px-5 py-3 rounded-xl border flex items-center gap-3 text-sm font-medium shadow-2xl ${
     type === 'success'
-      ? 'border-emerald-500/40 text-emerald-300 bg-emerald-950/80'
+      ? 'border-emerald-500/40 text-emerald-200 bg-[#221812]/95'
       : type === 'error'
-      ? 'border-red-500/40 text-red-300 bg-red-950/80'
-      : 'border-neon-accent/40 text-sky-200 bg-slate-900/90'
+      ? 'border-red-500/40 text-red-200 bg-[#221812]/95'
+      : 'border-neon-accent/40 text-[#f5e6d3] bg-[#221812]/95'
   }`;
 
   const iconName = type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info';
+  const iconColor = type === 'success' ? 'text-emerald-400' : type === 'error' ? 'text-red-400' : 'text-neon-accent';
 
   toast.innerHTML = `
-    <span class="material-symbols-outlined text-[20px]">${iconName}</span>
+    <span class="material-symbols-outlined text-[20px] ${iconColor}">${iconName}</span>
     <span>${message}</span>
   `;
 

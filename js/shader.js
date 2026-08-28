@@ -1,6 +1,7 @@
 /**
  * Interactive WebGL Ambient Shader for Hero Section
  * Muhammad Firly - Portfolio
+ * Luxury Champaign & Silk Aesthetic
  */
 
 (function initHeroShader() {
@@ -49,38 +50,39 @@
       vec2 uv = v_texCoord;
       vec2 mouseNorm = u_mouse / u_resolution;
       
-      // Base dark void gradient
-      vec3 deepVoid = vec3(0.008, 0.024, 0.090);  // #020617
-      vec3 darkSurface = vec3(0.047, 0.075, 0.141); // #0C1324
+      // Base luxury dark mocha & warm espresso background
+      vec3 deepVoid = vec3(0.078, 0.055, 0.039);    // #140e0a
+      vec3 darkSurface = vec3(0.125, 0.086, 0.063); // #201610
       
-      // Dynamic fluid wave
-      float wave1 = sin(uv.x * 6.0 + u_time * 0.4) * 0.04;
-      float wave2 = cos(uv.y * 6.0 - u_time * 0.3) * 0.04;
-      float gridNoise = sin((uv.x + wave1) * 35.0) * cos((uv.y + wave2) * 35.0) * 0.015;
+      // Dynamic fluid silk wave
+      float wave1 = sin(uv.x * 5.0 + u_time * 0.35) * 0.045;
+      float wave2 = cos(uv.y * 5.0 - u_time * 0.28) * 0.045;
+      float gridNoise = sin((uv.x + wave1) * 30.0) * cos((uv.y + wave2) * 30.0) * 0.012;
       
       vec3 base = mix(deepVoid, darkSurface, uv.y + wave1 + gridNoise);
       
-      // Mouse interactive radial glow
+      // Mouse interactive radial warm champagne glow
       float distToMouse = length(uv - vec2(mouseNorm.x, 1.0 - mouseNorm.y));
-      float mouseGlow = 0.015 / (distToMouse * distToMouse + 0.08);
+      float mouseGlow = 0.018 / (distToMouse * distToMouse + 0.07);
       
-      // Constellation / glowing particle nodes
+      // Constellation / glowing champagne particle nodes
       float particleGlow = 0.0;
       for (float i = 0.0; i < 6.0; i++) {
         vec2 p = vec2(
-          sin(u_time * 0.18 + i * 1.35) * 0.42 + 0.5,
-          cos(u_time * 0.22 + i * 1.82) * 0.42 + 0.5
+          sin(u_time * 0.16 + i * 1.35) * 0.42 + 0.5,
+          cos(u_time * 0.20 + i * 1.82) * 0.42 + 0.5
         );
         float d = length(uv - p);
-        particleGlow += 0.0018 / (d * d + 0.012);
+        particleGlow += 0.0019 / (d * d + 0.012);
       }
       
-      // Cyan and indigo glow mixing
-      vec3 cyanAccent = vec3(0.22, 0.74, 0.97); // #38BDF8
-      vec3 indigoAccent = vec3(0.51, 0.55, 0.98); // #818CF8
+      // Champagne gold, warm silk caramel, and almond highlights
+      vec3 champagneAccent = vec3(0.847, 0.698, 0.545); // #D8B28B
+      vec3 caramelAccent = vec3(0.729, 0.580, 0.467);   // #BA9477
+      vec3 silkLight = vec3(0.953, 0.898, 0.843);       // #F3E5D8
       
-      vec3 glowColor = mix(cyanAccent, indigoAccent, sin(u_time * 0.5) * 0.5 + 0.5);
-      vec3 finalColor = base + (particleGlow * cyanAccent) + (mouseGlow * 0.4 * glowColor);
+      vec3 glowColor = mix(champagneAccent, caramelAccent, sin(u_time * 0.4) * 0.5 + 0.5);
+      vec3 finalColor = base + (particleGlow * champagneAccent * 1.1) + (mouseGlow * 0.45 * glowColor);
       
       gl_FragColor = vec4(finalColor, 1.0);
     }

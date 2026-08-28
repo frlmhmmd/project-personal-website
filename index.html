@@ -8,7 +8,7 @@
   <meta name="keywords" content="Muhammad Firly, Backend Developer, IoT Engineer, Data Science, Python, SQL, AI, Hardware, Telemetry, Radar Bekasi, Dicoding, Cisco, Portfolio" />
   <meta name="author" content="Muhammad Firly" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#020617" />
+  <meta name="theme-color" content="#140e0a" />
   <link rel="canonical" href="https://frlmhmmd.github.io/project-personal-website/" />
 
   <!-- OpenGraph / Facebook / LinkedIn / WhatsApp Rich Preview -->
@@ -90,24 +90,29 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind Config Customization -->
+  <!-- Tailwind Config Customization (Luxury Champaign Theme) -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "deep-void": "#020617",
-            "background": "#0c1324",
-            "primary-container": "#0f172a",
-            "neon-accent": "#38BDF8",
-            "neon-glow": "rgba(56, 189, 248, 0.4)",
-            "neon-emerald": "#10B981",
-            "slate-text": "#F8FAFC",
-            "on-surface-variant": "#94A3B8",
-            "glass-border": "rgba(248, 250, 252, 0.1)",
-            "surface-container": "#191f31",
-            "surface-container-high": "#23293c",
+            "deep-void": "#140e0a",
+            "background": "#1e1510",
+            "primary-container": "#241a13",
+            "neon-accent": "#d8b28b",
+            "neon-glow": "rgba(216, 178, 139, 0.4)",
+            "neon-emerald": "#c5a059",
+            "slate-text": "#faf6f0",
+            "on-surface-variant": "#c5b4a5",
+            "glass-border": "rgba(240, 226, 212, 0.12)",
+            "surface-container": "#2a1e17",
+            "surface-container-high": "#35261e",
+            "champagne-light": "#f5e6d3",
+            "champagne-gold": "#d8b28b",
+            "champagne-caramel": "#ba9477",
+            "champagne-mocha": "#8d6d56",
+            "champagne-dark": "#140e0a"
           },
           fontFamily: {
             sans: ['"Times New Roman"', "Times", "Georgia", "serif"],
@@ -129,17 +134,17 @@
 <body class="bg-deep-void text-slate-text selection:bg-neon-accent selection:text-deep-void antialiased">
 
   <!-- =========================================================================
-       0. Elegant Splash Screen Intro (Cyber-Minimal F Logo)
+       0. Elegant Splash Screen Intro (Champaign Silk Minimal F Logo)
        ========================================================================= -->
   <div id="splash-screen" class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-deep-void transition-all duration-700 select-none pointer-events-auto">
     <div class="relative flex flex-col items-center">
-      <!-- Glow ambient background -->
-      <div class="absolute -inset-10 bg-gradient-to-r from-neon-accent/20 via-sky-500/10 to-neon-accent/20 rounded-full blur-3xl animate-pulse-glow pointer-events-none"></div>
+      <!-- Glow ambient champagne background -->
+      <div class="absolute -inset-10 bg-gradient-to-r from-neon-accent/20 via-amber-600/10 to-neon-accent/20 rounded-full blur-3xl animate-pulse-glow pointer-events-none"></div>
       
       <!-- Elegant F Emblem Card -->
-      <div class="relative w-20 h-20 rounded-2xl glass-card border border-neon-accent/40 flex items-center justify-center shadow-[0_0_35px_rgba(56,189,248,0.25)] mb-5 transform transition-transform duration-500 hover:scale-105">
-        <span class="font-mono text-3xl font-extrabold text-neon-accent tracking-wider drop-shadow-[0_0_15px_rgba(56,189,248,0.85)]">F</span>
-        <!-- Subtle corner tech accents -->
+      <div class="relative w-20 h-20 rounded-2xl glass-card border border-neon-accent/40 flex items-center justify-center shadow-[0_0_35px_rgba(216,178,139,0.25)] mb-5 transform transition-transform duration-500 hover:scale-105">
+        <span class="font-mono text-3xl font-extrabold text-neon-accent tracking-wider drop-shadow-[0_0_15px_rgba(216,178,139,0.85)]">F</span>
+        <!-- Subtle corner champagne gold accents -->
         <div class="absolute top-1.5 left-1.5 w-2 h-2 border-t-2 border-l-2 border-neon-accent/80"></div>
         <div class="absolute top-1.5 right-1.5 w-2 h-2 border-t-2 border-r-2 border-neon-accent/80"></div>
         <div class="absolute bottom-1.5 left-1.5 w-2 h-2 border-b-2 border-l-2 border-neon-accent/80"></div>
@@ -149,12 +154,12 @@
       <!-- Identity Text -->
       <div class="flex flex-col items-center gap-1 text-center">
         <h2 class="text-sm font-bold tracking-[0.28em] text-slate-text uppercase">Muhammad Firly</h2>
-        <p class="text-[11px] font-mono text-neon-accent/80 tracking-widest uppercase">Backend & IoT Systems</p>
+        <p class="text-[11px] font-mono text-neon-accent/85 tracking-widest uppercase">Backend & IoT Systems</p>
       </div>
 
       <!-- Minimal Loading Progress Bar -->
-      <div class="w-36 h-[2px] bg-slate-800/80 rounded-full mt-5 overflow-hidden relative border border-white/5">
-        <div class="splash-progress-bar h-full bg-gradient-to-r from-neon-accent via-sky-300 to-neon-accent rounded-full"></div>
+      <div class="w-36 h-[2px] bg-white/10 rounded-full mt-5 overflow-hidden relative border border-white/5">
+        <div class="splash-progress-bar h-full bg-gradient-to-r from-[#ba9477] via-[#f5e6d3] to-[#d8b28b] rounded-full"></div>
       </div>
     </div>
     <script>
@@ -173,12 +178,12 @@
   <!-- =========================================================================
        1. Top Navigation Bar
        ========================================================================= -->
-  <header class="fixed top-0 w-full z-50 bg-deep-void/80 backdrop-blur-lg border-b border-glass-border shadow-[0_4px_25px_rgba(56,189,248,0.05)] transition-all duration-300">
+  <header class="fixed top-0 w-full z-50 bg-deep-void/85 backdrop-blur-lg border-b border-glass-border shadow-[0_4px_25px_rgba(0,0,0,0.5)] transition-all duration-300">
     <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
       
       <!-- Brand Logo -->
       <a class="flex items-center gap-3 group" href="#home">
-        <div class="w-10 h-10 rounded-lg bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent font-mono font-bold text-xl group-hover:shadow-[0_0_15px_rgba(56,189,248,0.5)] group-hover:scale-105 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-neon-accent/10 border border-neon-accent/30 flex items-center justify-center text-neon-accent font-mono font-bold text-xl group-hover:shadow-[0_0_15px_rgba(216,178,139,0.5)] group-hover:scale-105 transition-all duration-300">
           F
         </div>
         <div class="flex flex-col">
@@ -211,7 +216,7 @@
           download="CV_Muhammad_Firly_ATS.pdf" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="btn-cv-download inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_12px_rgba(56,189,248,0.15)]" 
+          class="btn-cv-download inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_12px_rgba(216,178,139,0.15)]" 
           title="Unduh CV ATS Muhammad Firly"
         >
           <span class="material-symbols-outlined text-[16px]">download</span>
@@ -225,7 +230,7 @@
         </button>
 
         <!-- Get in Touch CTA -->
-        <a class="inline-flex items-center justify-center px-4 py-2 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
+        <a class="inline-flex items-center justify-center px-4 py-2 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(216,178,139,0.45)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
           Get in Touch
         </a>
       </div>
@@ -261,7 +266,7 @@
     </div>
     <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
       <!-- Direct ATS CV Download Button for Mobile -->
-      <a class="btn-cv-download w-full py-2.5 bg-neon-accent/15 text-neon-accent border border-neon-accent/40 text-center font-semibold text-xs rounded-lg hover:bg-neon-accent hover:text-deep-void transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(56,189,248,0.2)]" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer">
+      <a class="btn-cv-download w-full py-2.5 bg-neon-accent/15 text-neon-accent border border-neon-accent/40 text-center font-semibold text-xs rounded-lg hover:bg-neon-accent hover:text-deep-void transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(216,178,139,0.2)]" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer">
         <span class="material-symbols-outlined text-[16px]">download</span>
         <span>Download CV (ATS Format)</span>
       </a>
@@ -269,7 +274,7 @@
         <span class="material-symbols-outlined text-[16px]">content_copy</span>
         <span>Copy Email</span>
       </button>
-      <a class="w-full py-2.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-center font-semibold text-xs rounded-lg hover:bg-emerald-500/30 transition-all flex items-center justify-center gap-2" href="https://wa.me/62881011057900?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer">
+      <a class="w-full py-2.5 bg-neon-accent/20 text-neon-accent border border-neon-accent/40 text-center font-semibold text-xs rounded-lg hover:bg-neon-accent hover:text-deep-void transition-all flex items-center justify-center gap-2" href="https://wa.me/62881011057900?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer">
         <span class="material-symbols-outlined text-[16px]">chat</span>
         <span>Chat WhatsApp</span>
       </a>
@@ -285,7 +290,7 @@
          ========================================================================= -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-20 bg-grid-pattern" id="home">
       <!-- WebGL Background Canvas -->
-      <div class="absolute inset-0 w-full h-full -z-10 opacity-70">
+      <div class="absolute inset-0 w-full h-full -z-10 opacity-75">
         <canvas id="shader-canvas-hero" class="w-full h-full block"></canvas>
       </div>
 
@@ -306,7 +311,7 @@
           </h1>
 
           <!-- Animated Dynamic Roles Typing Container -->
-          <div class="text-xl sm:text-2xl lg:text-3xl font-medium text-slate-300 flex items-center justify-center lg:justify-start h-10">
+          <div class="text-xl sm:text-2xl lg:text-3xl font-medium text-[#f5e6d3] flex items-center justify-center lg:justify-start h-10">
             <span class="text-on-surface-variant mr-2">I build:</span>
             <span id="typing-text" class="text-neon-accent font-semibold"></span>
             <span class="typing-cursor"></span>
@@ -318,11 +323,11 @@
 
           <!-- CTA Action Buttons -->
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start items-center pt-2">
-            <a class="px-7 py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="#projects">
+            <a class="px-7 py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(216,178,139,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="#projects">
               <span>Explore Projects</span>
               <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
             </a>
-            <a class="btn-cv-download px-6 py-3.5 bg-neon-accent/10 border border-neon-accent/50 text-neon-accent hover:bg-neon-accent hover:text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.3)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer" title="Unduh Curriculum Vitae (ATS Friendly)">
+            <a class="btn-cv-download px-6 py-3.5 bg-neon-accent/10 border border-neon-accent/50 text-neon-accent hover:bg-neon-accent hover:text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(216,178,139,0.3)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer" title="Unduh Curriculum Vitae (ATS Friendly)">
               <span class="material-symbols-outlined text-[18px]">download</span>
               <span>Download CV (ATS)</span>
             </a>
@@ -350,10 +355,10 @@
             <div class="absolute -inset-8 border border-neon-accent/15 rounded-full animate-orbit-reverse pointer-events-none"></div>
 
             <!-- Profile Image Container -->
-            <div class="relative w-full h-full rounded-full glass-card p-3 animate-float shadow-[0_0_50px_rgba(56,189,248,0.25)] border-2 border-neon-accent/40 overflow-hidden group">
+            <div class="relative w-full h-full rounded-full glass-card p-3 animate-float shadow-[0_0_50px_rgba(216,178,139,0.25)] border-2 border-neon-accent/40 overflow-hidden group">
               <img 
                 id="hero-profile-img"
-                class="w-full h-full object-cover rounded-full filter grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 cursor-pointer" 
+                class="w-full h-full object-cover rounded-full filter grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 cursor-pointer" 
                 src="profil/firly.png" 
                 alt="Muhammad Firly - Profile"
                 data-lightbox="true"
@@ -371,7 +376,7 @@
 
             <!-- Floating Badge 1: IoT & Hardware -->
             <div class="absolute -bottom-2 -left-4 glass-card px-3.5 py-2 rounded-xl border border-neon-accent/40 flex items-center gap-2.5 shadow-xl animate-float" style="animation-delay: 1s;">
-              <div class="w-7 h-7 rounded-lg bg-sky-500/20 text-neon-accent flex items-center justify-center">
+              <div class="w-7 h-7 rounded-lg bg-neon-accent/20 text-neon-accent flex items-center justify-center">
                 <span class="material-symbols-outlined text-[18px]">developer_board</span>
               </div>
               <div class="flex flex-col">
@@ -381,13 +386,13 @@
             </div>
 
             <!-- Floating Badge 2: Certified -->
-            <div class="absolute -top-3 -right-3 glass-card px-3.5 py-2 rounded-xl border border-emerald-500/40 flex items-center gap-2.5 shadow-xl animate-float" style="animation-delay: 2s;">
-              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <div class="absolute -top-3 -right-3 glass-card px-3.5 py-2 rounded-xl border border-neon-emerald/40 flex items-center gap-2.5 shadow-xl animate-float" style="animation-delay: 2s;">
+              <div class="w-7 h-7 rounded-lg bg-neon-emerald/20 text-neon-emerald flex items-center justify-center">
                 <span class="material-symbols-outlined text-[18px]">verified</span>
               </div>
               <div class="flex flex-col">
                 <span class="text-[10px] font-mono text-on-surface-variant uppercase">Credentials</span>
-                <span class="text-xs font-bold text-emerald-400">6x Certified</span>
+                <span class="text-xs font-bold text-neon-emerald">6x Certified</span>
               </div>
             </div>
 
@@ -445,7 +450,7 @@
                   download="CV_Muhammad_Firly_ATS.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  class="btn-cv-download inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(56,189,248,0.15)] group"
+                  class="btn-cv-download inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-neon-accent/10 border border-neon-accent/40 text-neon-accent hover:bg-neon-accent hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(216,178,139,0.15)] group"
                   title="Unduh Curriculum Vitae (ATS Format)"
                 >
                   <span class="material-symbols-outlined text-[18px] group-hover:animate-bounce">download</span>
@@ -466,12 +471,12 @@
                 </div>
               </div>
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <div class="w-10 h-10 rounded-full bg-neon-emerald/10 border border-neon-emerald/30 flex items-center justify-center text-neon-emerald">
                   <span class="material-symbols-outlined text-[20px]">check_circle</span>
                 </div>
                 <div>
                   <div class="text-xs font-mono text-on-surface-variant">Work Status</div>
-                  <div class="text-sm font-semibold text-emerald-400">Available for Opportunities</div>
+                  <div class="text-sm font-semibold text-neon-emerald">Available for Opportunities</div>
                 </div>
               </div>
             </div>
@@ -486,34 +491,34 @@
               </div>
               <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">6+</div>
               <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Certified Skills</div>
-              <div class="text-[11px] text-slate-400 mt-2">AI, Data Science, Python, SQL, IT</div>
+              <div class="text-[11px] text-[#c5b4a5] mt-2">AI, Data Science, Python, SQL, IT</div>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-emerald-500/50 transition-all">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-champagne-caramel/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-champagne-caramel/15 text-champagne-caramel flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-[28px]">developer_board</span>
               </div>
               <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">4+</div>
               <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Hardware Devices</div>
-              <div class="text-[11px] text-slate-400 mt-2">IoT prototypes & sensor units</div>
+              <div class="text-[11px] text-[#c5b4a5] mt-2">IoT prototypes & sensor units</div>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-purple-500/50 transition-all">
-              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-neon-emerald/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-neon-emerald/15 text-neon-emerald flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-[28px]">monitoring</span>
               </div>
               <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">100%</div>
               <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Field Validated</div>
-              <div class="text-[11px] text-slate-400 mt-2">Telemetry & monitoring tests</div>
+              <div class="text-[11px] text-[#c5b4a5] mt-2">Telemetry & monitoring tests</div>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-amber-500/50 transition-all">
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <div class="glass-card p-6 rounded-2xl border border-glass-border flex flex-col justify-center items-center text-center group hover:border-neon-accent/50 transition-all">
+              <div class="w-12 h-12 rounded-xl bg-neon-accent/10 text-neon-accent flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <span class="material-symbols-outlined text-[28px]">terminal</span>
               </div>
               <div class="text-3xl sm:text-4xl font-extrabold text-slate-text font-mono">24/7</div>
               <div class="text-xs font-mono text-on-surface-variant uppercase mt-1 tracking-wider">Dedicated Passion</div>
-              <div class="text-[11px] text-slate-400 mt-2">Continuous growth & builds</div>
+              <div class="text-[11px] text-[#c5b4a5] mt-2">Continuous growth & builds</div>
             </div>
 
           </div>
@@ -547,7 +552,7 @@
           <!-- Category 1: Backend & Programming -->
           <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-accent/50 transition-all flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-neon-accent flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-xl bg-neon-accent/15 text-neon-accent flex items-center justify-center mb-4">
                 <span class="material-symbols-outlined text-[28px]">terminal</span>
               </div>
               <h3 class="text-xl font-bold text-slate-text mb-2">Backend & Logic</h3>
@@ -585,9 +590,9 @@
           </div>
 
           <!-- Category 2: IoT & Hardware Systems -->
-          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-emerald-500/50 transition-all flex flex-col justify-between">
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-champagne-caramel/50 transition-all flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-xl bg-champagne-caramel/15 text-champagne-caramel flex items-center justify-center mb-4">
                 <span class="material-symbols-outlined text-[28px]">memory</span>
               </div>
               <h3 class="text-xl font-bold text-slate-text mb-2">IoT & Hardware</h3>
@@ -596,19 +601,19 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Microcontrollers (ESP32)</span>
-                  <span class="text-emerald-400">Advanced</span>
+                  <span class="text-champagne-caramel">Advanced</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Sensor Interfacing</span>
-                  <span class="text-emerald-400">Advanced</span>
+                  <span class="text-champagne-caramel">Advanced</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">I2C / SPI / UART</span>
-                  <span class="text-emerald-400">Proficient</span>
+                  <span class="text-champagne-caramel">Proficient</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Telemetry Streaming</span>
-                  <span class="text-emerald-400">Proficient</span>
+                  <span class="text-champagne-caramel">Proficient</span>
                 </div>
               </div>
             </div>
@@ -620,9 +625,9 @@
           </div>
 
           <!-- Category 3: Data Science & AI -->
-          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-purple-500/50 transition-all flex flex-col justify-between">
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-emerald/50 transition-all flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-xl bg-neon-emerald/15 text-neon-emerald flex items-center justify-center mb-4">
                 <span class="material-symbols-outlined text-[28px]">query_stats</span>
               </div>
               <h3 class="text-xl font-bold text-slate-text mb-2">Data & AI</h3>
@@ -631,19 +636,19 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Data Science Basics</span>
-                  <span class="text-purple-400">Certified</span>
+                  <span class="text-neon-emerald">Certified</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Data Visualization</span>
-                  <span class="text-purple-400">Certified</span>
+                  <span class="text-neon-emerald">Certified</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">AI & ML Concepts</span>
-                  <span class="text-purple-400">Certified</span>
+                  <span class="text-neon-emerald">Certified</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">SQL Data Querying</span>
-                  <span class="text-purple-400">Certified</span>
+                  <span class="text-neon-emerald">Certified</span>
                 </div>
               </div>
             </div>
@@ -655,9 +660,9 @@
           </div>
 
           <!-- Category 4: IT Infrastructure & Systems -->
-          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-amber-500/50 transition-all flex flex-col justify-between">
+          <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-accent/50 transition-all flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <div class="w-12 h-12 rounded-xl bg-neon-accent/15 text-neon-accent flex items-center justify-center mb-4">
                 <span class="material-symbols-outlined text-[28px]">lan</span>
               </div>
               <h3 class="text-xl font-bold text-slate-text mb-2">IT & Hardware Ops</h3>
@@ -666,19 +671,19 @@
               <div class="space-y-3">
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Cisco IT Essentials</span>
-                  <span class="text-amber-400">Certified</span>
+                  <span class="text-neon-accent">Certified</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Git & GitHub</span>
-                  <span class="text-amber-400">Proficient</span>
+                  <span class="text-neon-accent">Proficient</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Hardware Troubleshooting</span>
-                  <span class="text-amber-400">Advanced</span>
+                  <span class="text-neon-accent">Advanced</span>
                 </div>
                 <div class="flex items-center justify-between text-xs font-mono">
                   <span class="text-slate-200">Basic Networking</span>
-                  <span class="text-amber-400">Proficient</span>
+                  <span class="text-neon-accent">Proficient</span>
                 </div>
               </div>
             </div>
@@ -716,21 +721,21 @@
         <!-- =====================================================================
              FEATURED FLAGSHIP: Secretlee - Terminal-Based MITM Proxy & Security Toolkit
              ===================================================================== -->
-        <div class="mb-16 glass-card p-6 sm:p-8 rounded-3xl border border-neon-accent/40 shadow-[0_0_40px_rgba(56,189,248,0.15)] relative overflow-hidden group">
+        <div class="mb-16 glass-card p-6 sm:p-8 rounded-3xl border border-neon-accent/40 shadow-[0_0_40px_rgba(216,178,139,0.18)] relative overflow-hidden group">
           <!-- Background Ambient Glow -->
           <div class="absolute -right-20 -top-20 w-80 h-80 bg-neon-accent/15 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-champagne-caramel/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
             <!-- Left Info Column -->
             <div class="lg:col-span-7 flex flex-col gap-4">
               <div class="flex flex-wrap items-center gap-2">
-                <span class="px-3 py-1 text-xs font-mono font-bold rounded-full bg-neon-accent/20 border border-neon-accent/40 text-neon-accent flex items-center gap-1.5 shadow-[0_0_15px_rgba(56,189,248,0.25)]">
+                <span class="px-3 py-1 text-xs font-mono font-bold rounded-full bg-neon-accent/20 border border-neon-accent/40 text-neon-accent flex items-center gap-1.5 shadow-[0_0_15px_rgba(216,178,139,0.25)]">
                   <span class="w-1.5 h-1.5 rounded-full bg-neon-accent animate-ping"></span>
                   FLAGSHIP SECURITY PROJECT
                 </span>
-                <span class="px-2.5 py-1 text-xs font-mono rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                <span class="px-2.5 py-1 text-xs font-mono rounded-full bg-neon-emerald/15 border border-neon-emerald/30 text-neon-emerald">
                   Go 1.22+ • Bubble Tea TUI
                 </span>
                 <span class="px-2.5 py-1 text-xs font-mono rounded-full bg-white/5 border border-glass-border text-slate-300">
@@ -753,23 +758,23 @@
                   <span>Dynamic TLS MITM</span>
                 </div>
                 <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
-                  <span class="material-symbols-outlined text-[16px] text-emerald-400 shrink-0">replay</span>
+                  <span class="material-symbols-outlined text-[16px] text-champagne-caramel shrink-0">replay</span>
                   <span>HTTP Repeater</span>
                 </div>
                 <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
-                  <span class="material-symbols-outlined text-[16px] text-purple-400 shrink-0">bolt</span>
+                  <span class="material-symbols-outlined text-[16px] text-neon-emerald shrink-0">bolt</span>
                   <span>Intruder Fuzzing</span>
                 </div>
                 <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
-                  <span class="material-symbols-outlined text-[16px] text-red-400 shrink-0">shield</span>
+                  <span class="material-symbols-outlined text-[16px] text-rose-300 shrink-0">shield</span>
                   <span>Security Scanner</span>
                 </div>
                 <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
-                  <span class="material-symbols-outlined text-[16px] text-amber-400 shrink-0">code</span>
+                  <span class="material-symbols-outlined text-[16px] text-neon-accent shrink-0">code</span>
                   <span>JWT & Codec Decoder</span>
                 </div>
                 <div class="p-2.5 rounded-lg bg-white/5 border border-glass-border flex items-center gap-2 text-slate-200">
-                  <span class="material-symbols-outlined text-[16px] text-sky-400 shrink-0">difference</span>
+                  <span class="material-symbols-outlined text-[16px] text-champagne-light shrink-0">difference</span>
                   <span>Diff Comparer</span>
                 </div>
               </div>
@@ -780,7 +785,7 @@
                   href="https://github.com/frlmhmmd/secretlee" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  class="px-6 py-3 rounded-xl bg-neon-accent text-deep-void font-bold text-xs font-mono flex items-center gap-2 hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-105 transition-all duration-300 shadow-lg"
+                  class="px-6 py-3 rounded-xl bg-neon-accent text-deep-void font-bold text-xs font-mono flex items-center gap-2 hover:shadow-[0_0_25px_rgba(216,178,139,0.45)] hover:scale-105 transition-all duration-300 shadow-lg"
                 >
                   <span class="material-symbols-outlined text-[18px]">code</span>
                   <span>View on GitHub (frlmhmmd/secretlee)</span>
@@ -794,38 +799,38 @@
 
             <!-- Right Terminal ASCII & TUI Visualizer -->
             <div class="lg:col-span-5 flex flex-col">
-              <div class="rounded-xl overflow-hidden border border-slate-700 bg-slate-950/90 shadow-2xl font-mono text-[11px] leading-relaxed">
+              <div class="rounded-xl overflow-hidden border border-[#3e2b20] bg-[#18110b]/95 shadow-2xl font-mono text-[11px] leading-relaxed">
                 <!-- Terminal Window Bar -->
-                <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <div class="px-4 py-2.5 bg-[#251b14] border-b border-[#3e2b20] flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
-                    <span class="text-slate-400 text-xs ml-2 font-mono">secretlee - TUI Console</span>
+                    <span class="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                    <span class="text-[#c5b4a5] text-xs ml-2 font-mono">secretlee - TUI Console</span>
                   </div>
                   <span class="text-[10px] text-neon-accent font-mono">MITM :8080</span>
                 </div>
                 
                 <!-- Terminal Content Body -->
-                <div class="p-4 text-slate-300 space-y-2 overflow-x-auto select-none">
-                  <div class="text-sky-400 font-bold">
-                    SECRETLEE <span class="text-white">1 Traffic</span> <span class="text-slate-500">2 Repeater</span> <span class="text-slate-500">3 Intruder</span> <span class="text-red-400">4 Scanner(3)</span>
+                <div class="p-4 text-[#e2d5c8] space-y-2 overflow-x-auto select-none">
+                  <div class="text-[#f5e6d3] font-bold">
+                    SECRETLEE <span class="text-white">1 Traffic</span> <span class="text-[#968375]">2 Repeater</span> <span class="text-[#968375]">3 Intruder</span> <span class="text-rose-300">4 Scanner(3)</span>
                   </div>
-                  <div class="text-slate-600 border-b border-slate-800 pb-1">
+                  <div class="text-[#968375] border-b border-[#3e2b20] pb-1">
                     #  | METHOD | STATUS | HOST           | PATH            | TIME
                   </div>
-                  <div class="text-emerald-400">
+                  <div class="text-neon-accent">
                     ★1 | GET    | 200    | api.github.com | /user/repos     | 142ms
                   </div>
-                  <div class="text-amber-400">
+                  <div class="text-neon-emerald">
                      2 | POST   | 401    | target.internal| /api/v1/auth    | 85ms
                   </div>
-                  <div class="text-slate-400">
+                  <div class="text-[#b8a799]">
                      3 | GET    | 404    | httpbin.org    | /status/404     | 310ms
                   </div>
-                  <div class="mt-3 pt-2 border-t border-slate-800 text-[10px] text-slate-400 flex justify-between">
+                  <div class="mt-3 pt-2 border-t border-[#3e2b20] text-[10px] text-[#968375] flex justify-between">
                     <span class="text-neon-accent">[PASSIVE AUDIT: ACTIVE]</span>
-                    <span class="text-slate-500">[r] Repeat [i] Intrude [q] Quit</span>
+                    <span class="text-[#b8a799]">[r] Repeat [i] Intrude [q] Quit</span>
                   </div>
                 </div>
               </div>
@@ -855,21 +860,21 @@
           
           <!-- Project 0: Secretlee (Security & Developer Tools) -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group border border-neon-accent/30" data-category="security">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-950 p-4 flex flex-col justify-between">
+            <div class="h-56 w-full relative overflow-hidden bg-[#1a120c] p-4 flex flex-col justify-between">
               <div class="flex items-center justify-between">
                 <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-neon-accent/15 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold flex items-center gap-1">
                   <span class="material-symbols-outlined text-[14px]">shield</span> Security Tool #01
                 </span>
-                <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
+                <span class="text-[11px] font-mono text-neon-emerald bg-neon-emerald/15 px-2 py-0.5 rounded border border-neon-emerald/30">
                   Pure Go 1.22+
                 </span>
               </div>
-              <div class="font-mono text-[11px] text-slate-400 bg-black/60 p-3 rounded-lg border border-white/5 space-y-1">
-                <p class="text-sky-300 font-bold">$ secretlee start --port 8080</p>
-                <p class="text-slate-500">> Dynamic TLS MITM Proxy Started</p>
-                <p class="text-emerald-400">> Reactive Bubble Tea TUI Ready</p>
+              <div class="font-mono text-[11px] text-[#c5b4a5] bg-black/60 p-3 rounded-lg border border-white/5 space-y-1">
+                <p class="text-[#f5e6d3] font-bold">$ secretlee start --port 8080</p>
+                <p class="text-[#968375]">> Dynamic TLS MITM Proxy Started</p>
+                <p class="text-neon-accent">> Reactive Bubble Tea TUI Ready</p>
               </div>
-              <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <div class="flex items-center justify-between text-[11px] font-mono text-[#c5b4a5]">
                 <span>SQLite (Zero-CGO)</span>
                 <span class="text-neon-accent">Burp Alternative</span>
               </div>
@@ -877,8 +882,8 @@
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
                 <span class="font-mono text-xs text-neon-accent bg-neon-accent/10 px-2 py-0.5 rounded">Go (Golang)</span>
-                <span class="font-mono text-xs text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">MITM Proxy</span>
-                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">TUI Toolkit</span>
+                <span class="font-mono text-xs text-champagne-caramel bg-champagne-caramel/10 px-2 py-0.5 rounded">MITM Proxy</span>
+                <span class="font-mono text-xs text-neon-emerald bg-neon-emerald/10 px-2 py-0.5 rounded">TUI Toolkit</span>
               </div>
               <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
                 Secretlee — Terminal HTTP(S) Intercepting Proxy
@@ -895,14 +900,14 @@
                 >
                   GitHub Repository <span class="material-symbols-outlined text-[16px]">open_in_new</span>
                 </a>
-                <span class="text-[11px] font-mono text-slate-400">MIT License</span>
+                <span class="text-[11px] font-mono text-[#c5b4a5]">MIT License</span>
               </div>
             </div>
           </div>
 
           <!-- Project 1: Alat 1 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="gambar-alat-project/alat1.png" 
                 alt="Smart IoT Sensor Prototype & Wiring Assembly" 
@@ -914,7 +919,7 @@
                 data-desc="Prototipe perangkat keras IoT dengan integrasi kabel mikrokontroler, modul sensor, dan jalur transmisi sinyal data."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
                   Hardware #01
                 </span>
               </div>
@@ -945,7 +950,7 @@
 
           <!-- Project 2: Alat 2 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="gambar-alat-project/alat2.png" 
                 alt="Embedded System & Power Management Module" 
@@ -957,14 +962,14 @@
                 data-desc="Modul distribusi daya dan unit mikrokontroler terpasang untuk menjaga kestabilan catu daya selama pembacaan sensor berkelanjutan."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-emerald-400 border border-emerald-400/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-champagne-caramel border border-champagne-caramel/30 font-semibold">
                   Hardware #02
                 </span>
               </div>
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Power Dist</span>
+                <span class="font-mono text-xs text-champagne-caramel bg-champagne-caramel/10 px-2 py-0.5 rounded">Power Dist</span>
                 <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Embedded C++</span>
               </div>
               <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
@@ -988,7 +993,7 @@
 
           <!-- Project 3: Alat 3 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="gambar-alat-project/alat3.png" 
                 alt="Compact Device Packaging & Telemetry Enclosure" 
@@ -1000,14 +1005,14 @@
                 data-desc="Pengemasan sirkuit prototipe dan tata letak internal box untuk melindungi komponen sensor dari benturan dan kondisi eksternal."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-purple-400 border border-purple-400/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-neon-emerald border border-neon-emerald/30 font-semibold">
                   Hardware #03
                 </span>
               </div>
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="font-mono text-xs text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">Enclosure</span>
+                <span class="font-mono text-xs text-neon-emerald bg-neon-emerald/10 px-2 py-0.5 rounded">Enclosure</span>
                 <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Field-Ready</span>
               </div>
               <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
@@ -1031,7 +1036,7 @@
 
           <!-- Project 4: Alat 4 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="hardware">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="gambar-alat-project/alat4.png" 
                 alt="Precision Sensing Node & Telemetry Transceiver" 
@@ -1043,14 +1048,14 @@
                 data-desc="Node penginderaan presisi dengan kemampuan transmisi data nirkabel cepat menuju gateway pemantau."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-amber-400 border border-amber-400/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
                   Hardware #04
                 </span>
               </div>
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">Transceiver</span>
+                <span class="font-mono text-xs text-neon-accent bg-neon-accent/10 px-2 py-0.5 rounded">Transceiver</span>
                 <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Precision Node</span>
               </div>
               <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
@@ -1074,7 +1079,7 @@
 
           <!-- Project 5: Foto Monitoring 1 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="monitoring">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="ujicoba-alat/foto_monitoring1.png" 
                 alt="Real-Time Data Monitoring Dashboard & Calibration Test" 
@@ -1086,7 +1091,7 @@
                 data-desc="Pengujian transmisi data real-time pada sistem pemantauan dengan pembacaan grafik, batas toleransi sensor, dan sinkronisasi basis data."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-neon-accent border border-neon-accent/30 font-semibold">
                   Field Test #01
                 </span>
               </div>
@@ -1117,7 +1122,7 @@
 
           <!-- Project 6: Foto Monitoring 2 -->
           <div class="project-card glass-card-interactive rounded-2xl overflow-hidden group" data-category="monitoring">
-            <div class="h-56 w-full relative overflow-hidden bg-slate-900">
+            <div class="h-56 w-full relative overflow-hidden bg-[#241a13]">
               <img 
                 src="ujicoba-alat/foto_monitoring2.png" 
                 alt="System Validation & Field Data Stream Testing" 
@@ -1129,14 +1134,14 @@
                 data-desc="Validasi uji coba kestabilan komunikasi data telemetri jangka panjang, pencatatan log error, dan konsistensi koneksi."
               />
               <div class="absolute top-3 left-3">
-                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/80 backdrop-blur-md text-emerald-400 border border-emerald-400/30 font-semibold">
+                <span class="px-2.5 py-1 text-[11px] font-mono rounded-md bg-deep-void/85 backdrop-blur-md text-champagne-caramel border border-champagne-caramel/30 font-semibold">
                   Field Test #02
                 </span>
               </div>
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
-                <span class="font-mono text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Validation</span>
+                <span class="font-mono text-xs text-champagne-caramel bg-champagne-caramel/10 px-2 py-0.5 rounded">Validation</span>
                 <span class="font-mono text-xs text-slate-300 bg-white/5 px-2 py-0.5 rounded">Stream Testing</span>
               </div>
               <h3 class="text-lg font-bold text-slate-text mb-2 group-hover:text-neon-accent transition-colors">
@@ -1192,7 +1197,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
             
             <!-- Left: Press Image & Visual Preview with Lightbox -->
-            <div class="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-glass-border bg-slate-900 aspect-[4/3] sm:aspect-[16/10] lg:aspect-square flex items-center justify-center">
+            <div class="lg:col-span-5 relative group overflow-hidden rounded-2xl border border-glass-border bg-[#241a13] aspect-[4/3] sm:aspect-[16/10] lg:aspect-square flex items-center justify-center">
               <img 
                 src="ujicoba-alat/foto_monitoring1.png" 
                 alt="Uji Coba Lapangan Sistem IoT oleh Muhammad Firly - Radar Bekasi" 
@@ -1225,10 +1230,10 @@
               <div>
                 <!-- Publication Tag / Category -->
                 <div class="flex flex-wrap items-center gap-2 mb-3">
-                  <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-sky-500/10 text-neon-accent border border-neon-accent/30">
+                  <span class="px-3 py-1 text-xs font-mono font-semibold rounded-full bg-neon-accent/15 text-neon-accent border border-neon-accent/30">
                     Liputan Khusus Pendidikan & Inovasi
                   </span>
-                  <span class="px-3 py-1 text-xs font-mono rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  <span class="px-3 py-1 text-xs font-mono rounded-full bg-neon-emerald/15 text-neon-emerald border border-neon-emerald/30">
                     Universitas Bani Saleh (UBS)
                   </span>
                 </div>
@@ -1248,7 +1253,7 @@
               </div>
 
               <!-- Firly's Direct Statement Quote Card -->
-              <div class="p-4 sm:p-5 rounded-xl bg-slate-900/80 border-l-4 border-neon-accent border-y border-r border-glass-border">
+              <div class="p-4 sm:p-5 rounded-xl bg-[#251b14]/90 border-l-4 border-neon-accent border-y border-r border-glass-border">
                 <div class="flex items-start gap-3">
                   <span class="material-symbols-outlined text-neon-accent text-[24px] shrink-0 opacity-80">format_quote</span>
                   <div class="space-y-1.5">
@@ -1264,7 +1269,7 @@
 
               <!-- Tags & CTAs -->
               <div class="space-y-4 pt-2 border-t border-glass-border">
-                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+                <div class="flex flex-wrap gap-2 text-[11px] font-mono text-[#c5b4a5]">
                   <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#IoTTelemetry</span>
                   <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#SmartCityAnalytics</span>
                   <span class="px-2.5 py-1 rounded bg-white/5 border border-glass-border text-slate-300">#FieldTesting</span>
@@ -1276,7 +1281,7 @@
                     href="https://radarbekasi.id/2026/08/04/manfaatkan-perkembangan-teknologi-digital-ubs-dorong-mahasiswa-berinovasi/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="px-6 py-3 bg-neon-accent text-deep-void font-semibold text-xs sm:text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2"
+                    class="px-6 py-3 bg-neon-accent text-deep-void font-semibold text-xs sm:text-sm rounded-lg hover:shadow-[0_0_25px_rgba(216,178,139,0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center gap-2"
                   >
                     <span>Baca Berita Lengkap di Radar Bekasi</span>
                     <span class="material-symbols-outlined text-[16px]">open_in_new</span>
@@ -1324,7 +1329,7 @@
           <!-- Cert 1: Belajar Dasar AI -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer" 
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer" 
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/Sertifikat_Belajar_Dasar_Ai.png"
                    data-title="Sertifikat: Belajar Dasar AI (Artificial Intelligence)"
@@ -1344,7 +1349,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1389,7 +1394,7 @@
           <!-- Cert 2: Belajar Dasar Data Science -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer"
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/Belajar_Dasar_Data_Science.png"
                    data-title="Sertifikat: Belajar Dasar Data Science"
@@ -1409,7 +1414,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1454,7 +1459,7 @@
           <!-- Cert 3: Belajar Dasar Python -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer"
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/Belajar_Dasar_Python.png"
                    data-title="Sertifikat: Belajar Dasar Pemrograman Python"
@@ -1474,7 +1479,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1519,7 +1524,7 @@
           <!-- Cert 4: Belajar Dasar SQL -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer"
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/Belajar_Dasar_Sql.png"
                    data-title="Sertifikat: Belajar Dasar Structured Query Language (SQL)"
@@ -1539,7 +1544,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1584,7 +1589,7 @@
           <!-- Cert 5: Belajar Dasar Visualisasi Data -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer"
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/Belajar_Dasar_Visualisasi_Data.png"
                    data-title="Sertifikat: Belajar Dasar Visualisasi Data"
@@ -1604,7 +1609,7 @@
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
                   <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Dicoding Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1649,7 +1654,7 @@
           <!-- Cert 6: Cisco IT Essentials -->
           <div class="glass-card-interactive rounded-2xl overflow-hidden group border border-glass-border flex flex-col justify-between">
             <div>
-              <div class="relative bg-slate-900 h-52 overflow-hidden cursor-pointer"
+              <div class="relative bg-[#241a13] h-52 overflow-hidden cursor-pointer"
                    data-lightbox="true"
                    data-img-src="gambar-sertifikasi/ItEssentials.png"
                    data-title="Sertifikat: IT Essentials - PC Hardware and Software"
@@ -1668,8 +1673,8 @@
               </div>
               <div class="p-6">
                 <div class="flex items-center justify-between mb-2">
-                  <span class="text-xs font-mono text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded">Cisco Networking Academy</span>
-                  <span class="text-xs font-mono text-emerald-400 flex items-center gap-1">
+                  <span class="text-xs font-mono text-neon-accent bg-neon-accent/10 px-2.5 py-0.5 rounded">Cisco Networking Academy</span>
+                  <span class="text-xs font-mono text-neon-emerald flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
                   </span>
                 </div>
@@ -1739,7 +1744,7 @@
           
           <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
             <div class="font-mono text-4xl font-extrabold text-neon-accent/20 absolute -top-1 right-3 select-none">01</div>
-            <div class="w-10 h-10 rounded-lg bg-neon-accent/10 text-neon-accent flex items-center justify-center mb-4">
+            <div class="w-10 h-10 rounded-lg bg-neon-accent/15 text-neon-accent flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-[24px]">architecture</span>
             </div>
             <h3 class="text-lg font-bold text-slate-text mb-2">1. System Planning</h3>
@@ -1749,8 +1754,8 @@
           </div>
 
           <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
-            <div class="font-mono text-4xl font-extrabold text-emerald-400/20 absolute -top-1 right-3 select-none">02</div>
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+            <div class="font-mono text-4xl font-extrabold text-champagne-caramel/20 absolute -top-1 right-3 select-none">02</div>
+            <div class="w-10 h-10 rounded-lg bg-champagne-caramel/15 text-champagne-caramel flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-[24px]">build</span>
             </div>
             <h3 class="text-lg font-bold text-slate-text mb-2">2. Hardware Prototyping</h3>
@@ -1760,8 +1765,8 @@
           </div>
 
           <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
-            <div class="font-mono text-4xl font-extrabold text-purple-400/20 absolute -top-1 right-3 select-none">03</div>
-            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <div class="font-mono text-4xl font-extrabold text-neon-emerald/20 absolute -top-1 right-3 select-none">03</div>
+            <div class="w-10 h-10 rounded-lg bg-neon-emerald/15 text-neon-emerald flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-[24px]">cloud_sync</span>
             </div>
             <h3 class="text-lg font-bold text-slate-text mb-2">3. Backend & Telemetry</h3>
@@ -1771,8 +1776,8 @@
           </div>
 
           <div class="glass-card p-6 rounded-2xl border border-glass-border relative overflow-hidden group">
-            <div class="font-mono text-4xl font-extrabold text-amber-400/20 absolute -top-1 right-3 select-none">04</div>
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+            <div class="font-mono text-4xl font-extrabold text-neon-accent/20 absolute -top-1 right-3 select-none">04</div>
+            <div class="w-10 h-10 rounded-lg bg-neon-accent/15 text-neon-accent flex items-center justify-center mb-4">
               <span class="material-symbols-outlined text-[24px]">analytics</span>
             </div>
             <h3 class="text-lg font-bold text-slate-text mb-2">4. Field Testing & Analytics</h3>
@@ -1811,7 +1816,7 @@
           <div class="lg:col-span-5 space-y-4">
             
             <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-accent/40 transition-all flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-neon-accent flex items-center justify-center shrink-0">
+              <div class="w-12 h-12 rounded-xl bg-neon-accent/15 text-neon-accent flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[24px]">email</span>
               </div>
               <div class="flex-1">
@@ -1823,21 +1828,21 @@
               </div>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-emerald-500/40 transition-all flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-neon-emerald/40 transition-all flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-neon-emerald/15 text-neon-emerald flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[24px]">chat</span>
               </div>
               <div class="flex-1">
                 <div class="text-xs font-mono text-on-surface-variant uppercase">Direct WhatsApp</div>
                 <div class="text-sm font-semibold text-slate-text mt-0.5">0881-0110-57900</div>
-                <a href="https://wa.me/62881011057900?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 hover:underline mt-2">
+                <a href="https://wa.me/62881011057900?text=Halo%20Firly,%20saya%20tertarik%20dengan%20portfolio%20Anda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-neon-emerald hover:underline mt-2">
                   <span>Chat WhatsApp Sekarang</span> <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                 </a>
               </div>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-purple-500/40 transition-all flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+            <div class="glass-card p-6 rounded-2xl border border-glass-border hover:border-champagne-caramel/40 transition-all flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-champagne-caramel/15 text-champagne-caramel flex items-center justify-center shrink-0">
                 <span class="material-symbols-outlined text-[24px]">hub</span>
               </div>
               <div class="flex-1">
@@ -1869,7 +1874,7 @@
                     id="contact-name" 
                     required 
                     placeholder="Contoh: Budi Pratama"
-                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-on-surface-variant/50 transition-colors"
                   />
                 </div>
                 <div>
@@ -1879,7 +1884,7 @@
                     id="contact-email" 
                     required 
                     placeholder="nama@domain.com"
-                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                    class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-on-surface-variant/50 transition-colors"
                   />
                 </div>
               </div>
@@ -1890,7 +1895,7 @@
                   type="text" 
                   id="contact-subject" 
                   placeholder="Contoh: Peluang Kerjasama / Pertanyaan Proyek IoT"
-                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors"
+                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-on-surface-variant/50 transition-colors"
                 />
               </div>
 
@@ -1901,13 +1906,13 @@
                   rows="4" 
                   required 
                   placeholder="Tuliskan pesan Anda di sini..."
-                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-slate-500 transition-colors resize-none"
+                  class="w-full px-4 py-2.5 rounded-lg bg-deep-void/70 border border-glass-border focus:border-neon-accent focus:ring-1 focus:ring-neon-accent text-sm text-slate-text placeholder-on-surface-variant/50 transition-colors resize-none"
                 ></textarea>
               </div>
 
               <button 
                 type="submit" 
-                class="w-full py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(56,189,248,0.45)] hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+                class="w-full py-3.5 bg-neon-accent text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(216,178,139,0.45)] hover:scale-[1.01] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <span class="material-symbols-outlined text-[18px]">send</span>
                 <span>Kirim Pesan Sekarang</span>
@@ -1960,12 +1965,12 @@
     <div class="lightbox-content relative z-10 max-w-4xl w-full glass-card rounded-2xl border border-glass-border overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
       
       <!-- Modal Header -->
-      <div class="p-4 sm:px-6 flex items-center justify-between border-b border-glass-border bg-slate-900/60">
+      <div class="p-4 sm:px-6 flex items-center justify-between border-b border-glass-border bg-[#221812]/90">
         <div>
           <span id="lightbox-category" class="font-mono text-xs text-neon-accent block uppercase tracking-wider">Category</span>
           <h3 id="lightbox-title" class="text-base sm:text-lg font-bold text-slate-text">Preview Title</h3>
         </div>
-        <button id="lightbox-close" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Lightbox">
+        <button id="lightbox-close" class="p-1.5 rounded-lg text-on-surface-variant hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Lightbox">
           <span class="material-symbols-outlined text-[24px]">close</span>
         </button>
       </div>
@@ -1975,18 +1980,18 @@
         <img id="lightbox-img" src="" alt="Fullscreen Lightbox Image" class="max-w-full max-h-full object-contain rounded select-none" />
         
         <!-- Navigation Prev / Next Controls -->
-        <button id="lightbox-prev" class="absolute left-3 p-2.5 rounded-full bg-deep-void/70 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Previous Image">
+        <button id="lightbox-prev" class="absolute left-3 p-2.5 rounded-full bg-deep-void/80 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Previous Image">
           <span class="material-symbols-outlined text-[22px]">chevron_left</span>
         </button>
-        <button id="lightbox-next" class="absolute right-3 p-2.5 rounded-full bg-deep-void/70 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Next Image">
+        <button id="lightbox-next" class="absolute right-3 p-2.5 rounded-full bg-deep-void/80 border border-glass-border text-white hover:border-neon-accent hover:text-neon-accent transition-colors" aria-label="Next Image">
           <span class="material-symbols-outlined text-[22px]">chevron_right</span>
         </button>
       </div>
 
       <!-- Modal Footer Description -->
-      <div class="p-4 sm:px-6 border-t border-glass-border bg-slate-900/60 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+      <div class="p-4 sm:px-6 border-t border-glass-border bg-[#221812]/90 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <p id="lightbox-desc" class="text-xs text-on-surface-variant leading-relaxed max-w-2xl"></p>
-        <div class="text-[11px] font-mono text-slate-500 shrink-0">
+        <div class="text-[11px] font-mono text-[#968375] shrink-0">
           Gunakan panah &larr; &rarr; atau ESC
         </div>
       </div>
@@ -1995,7 +2000,7 @@
   </div>
 
   <!-- =========================================================================
-       11. Floating Cyber Sound FX Toggle Widget
+       11. Floating Champaign Sound FX Toggle Widget
        ========================================================================= -->
   <div class="fixed bottom-6 left-6 z-40">
     <button 
@@ -2005,9 +2010,9 @@
       title="Aktifkan / Nonaktifkan Efek Suara Interaktif"
     >
       <span class="relative flex h-2 w-2">
-        <span class="sfx-indicator absolute inline-flex h-full w-full rounded-full bg-slate-500 transition-colors"></span>
+        <span class="sfx-indicator absolute inline-flex h-full w-full rounded-full bg-[#968375] transition-colors"></span>
       </span>
-      <span id="sfx-icon" class="material-symbols-outlined text-[18px] text-slate-400 group-hover:text-neon-accent transition-colors">volume_off</span>
+      <span id="sfx-icon" class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-neon-accent transition-colors">volume_off</span>
       <span id="sfx-label" class="tracking-wider text-slate-300 group-hover:text-slate-100 transition-colors">SFX: OFF</span>
     </button>
   </div>
