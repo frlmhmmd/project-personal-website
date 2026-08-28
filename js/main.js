@@ -1,14 +1,15 @@
 /**
  * Main Application Logic & Interactivity Hub
  * Muhammad Firly - Personal Portfolio
- * Royal Navy & Pure White Aesthetic + Fluid Navigation & Interactive Features
+ * Royal Navy & Pure White Aesthetic + Multi-Language & Interactive Terminal Playground
  */
 
 function initApp() {
   initSplashScreen();
   initScrollProgress();
+  initLanguageSwitcher();
   initMusicPlayer();
-  initCommandPalette();
+  initSecretleePlayground();
   initBackToTop();
   initTypingEffect();
   initProjectFilters();
@@ -43,7 +44,114 @@ function initScrollProgress() {
 }
 
 /* ==========================================================================
-   1. Ambient Background Music Player & Interactive Control Popover
+   1. Multi-Language (ID / EN) Dynamic Translation Switcher
+   ========================================================================== */
+const I18N = {
+  currentLang: localStorage.getItem('mf_portfolio_lang') || 'id',
+
+  dict: {
+    id: {
+      navHome: 'Home',
+      navAbout: 'About',
+      navSkills: 'Skills',
+      navProjects: 'Projects',
+      navMedia: 'Media',
+      navCerts: 'Certifications',
+      navContact: 'Contact',
+      openToWork: 'Open to Work',
+      heroSubtitle: 'Backend • IoT Engineering • Data Science',
+      heroLead: 'Menghubungkan dunia sistem hardware, embedded devices, dan backend modern berkecepatan tinggi dengan analitik data berbasis Python, SQL, dan kecerdasan buatan.',
+      btnExplore: 'Explore Projects',
+      btnDownloadCv: 'Download CV (ATS)',
+      btnCerts: 'Certifications',
+      btnContact: 'Get in Touch',
+      aboutBadge: 'About Me',
+      aboutHeading: 'Passionate In Building <span class="underline decoration-white/40">End-to-End Solutions</span>',
+      aboutDesc1: 'Halo! Saya <strong>Muhammad Firly</strong>, seorang pengembang yang memiliki ketertarikan mendalam dalam integrasi teknologi <strong>Backend Development</strong>, <strong>Internet of Things (IoT) Hardware</strong>, dan <strong>Data Science & AI</strong>.',
+      aboutDesc2: 'Saya terbiasa merancang arsitektur sistem dari dasar: mulai dari pemilihan komponen sensor dan modul mikrokontroler, perakitan sirkuit prototipe, pengiriman telemetri data real-time, hingga pengolahan basis data SQL dan visualisasi analitik untuk memecahkan masalah nyata.',
+      projectsHeading: 'Featured <span class="underline decoration-white/40">Projects & Hardware</span>',
+      projectsSubtitle: 'Dokumentasi perangkat lunak keamanan siber, prototipe perangkat keras IoT, dan dashboard telemetri monitoring.',
+      mediaHeading: 'Featured In <span class="underline decoration-white/40">Radar Bekasi</span>',
+      mediaSubtitle: 'Dokumentasi liputan media cetak dan portal berita digital resmi atas inovasi penelitian tugas akhir perangkat sistem IoT di lapangan.',
+      certsHeading: 'Official <span class="underline decoration-white/40">Certifications & Knowledge</span>',
+      contactHeading: "Let's Build Something <span class=\"underline decoration-white/40\">Extraordinary</span>",
+      contactSubtitle: 'Terbuka untuk kolaborasi proyek, diskusi teknis sistem backend & IoT, maupun peluang karir.',
+      toastLangSwitched: 'Bahasa diubah ke Bahasa Indonesia'
+    },
+    en: {
+      navHome: 'Home',
+      navAbout: 'About',
+      navSkills: 'Skills',
+      navProjects: 'Projects',
+      navMedia: 'Media',
+      navCerts: 'Certifications',
+      navContact: 'Contact',
+      openToWork: 'Available for Hire',
+      heroSubtitle: 'Backend • IoT Systems • Data Science & AI',
+      heroLead: 'Bridging high-performance backend architectures, microcontroller hardware telemetry, and intelligent data pipelines using Python, Go, SQL, and Machine Learning.',
+      btnExplore: 'Explore Works',
+      btnDownloadCv: 'Download Resume (ATS)',
+      btnCerts: 'Credentials',
+      btnContact: 'Contact Me',
+      aboutBadge: 'About Profile',
+      aboutHeading: 'Passionate In Engineering <span class="underline decoration-white/40">End-to-End Systems</span>',
+      aboutDesc1: "Hello! I'm <strong>Muhammad Firly</strong>, an engineer focused on <strong>High-Performance Backend</strong>, <strong>IoT Hardware Prototyping</strong>, and <strong>Data Science & AI Analytics</strong>.",
+      aboutDesc2: 'Experienced in end-to-end system design: from microcontroller circuit assembly and telemetry protocol design to database schema modeling and automated security tooling.',
+      projectsHeading: 'Featured <span class="underline decoration-white/40">Projects & Hardware</span>',
+      projectsSubtitle: 'Interactive security tooling, IoT microcontroller prototypes, and real-time field telemetry validation.',
+      mediaHeading: 'Press Recognition in <span class="underline decoration-white/40">Radar Bekasi</span>',
+      mediaSubtitle: 'Official press feature covering field testing of smart traffic telemetry systems for municipal road research.',
+      certsHeading: 'Verified <span class="underline decoration-white/40">Accreditations & Certificates</span>',
+      contactHeading: "Let's Build Something <span class=\"underline decoration-white/40\">Remarkable</span>",
+      contactSubtitle: 'Open for high-impact backend engineering, IoT development opportunities, and technical collaboration.',
+      toastLangSwitched: 'Language switched to English'
+    }
+  },
+
+  apply(lang) {
+    this.currentLang = lang;
+    localStorage.setItem('mf_portfolio_lang', lang);
+    const d = this.dict[lang];
+
+    // Update Language Button Text
+    const langBtns = document.querySelectorAll('.lang-btn-text');
+    langBtns.forEach(btn => {
+      btn.textContent = lang === 'id' ? 'ID' : 'EN';
+    });
+
+    // Update text elements with data-i18n attributes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (d[key]) {
+        el.innerHTML = d[key];
+      }
+    });
+
+    // Update typing effect language roles
+    initTypingEffect(lang);
+  },
+
+  toggle() {
+    const nextLang = this.currentLang === 'id' ? 'en' : 'id';
+    this.apply(nextLang);
+    showToast(this.dict[nextLang].toastLangSwitched, 'success');
+  }
+};
+
+function initLanguageSwitcher() {
+  const switchBtns = document.querySelectorAll('.btn-lang-toggle');
+  switchBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      I18N.toggle();
+    });
+  });
+
+  I18N.apply(I18N.currentLang);
+}
+
+/* ==========================================================================
+   2. Ambient Background Music Player & Interactive Control Popover
    ========================================================================== */
 const MusicPlayer = {
   playlist: [
@@ -74,7 +182,6 @@ const MusicPlayer = {
     this.audio.preload = 'auto';
     this.loadTrack(0);
 
-    // Continuous playlist loop
     this.audio.addEventListener('ended', () => {
       this.next();
     });
@@ -129,10 +236,10 @@ const MusicPlayer = {
   toggle() {
     if (this.isPlaying) {
       this.pause();
-      showToast('Musik Latar Dijeda (BGM Paused)', 'info');
+      showToast('Musik Latar Dijeda', 'info');
     } else {
       this.play();
-      showToast('Memutar Musik Latar (BGM Playing)', 'info');
+      showToast('Memutar Musik Latar', 'info');
     }
   },
 
@@ -295,109 +402,102 @@ function initMusicPlayer() {
 }
 
 /* ==========================================================================
-   2. Interactive Command Palette (Ctrl + K) & Quick Navigation
+   3. Interactive Secretlee Terminal Playground Engine
    ========================================================================== */
-function initCommandPalette() {
-  const modal = document.getElementById('cmd-palette-modal');
-  const toggleBtn = document.getElementById('cmd-palette-toggle');
-  const closeBtn = document.getElementById('cmd-palette-close');
-  const input = document.getElementById('cmd-input');
-  const items = document.querySelectorAll('.cmd-item');
+function initSecretleePlayground() {
+  const termOutput = document.getElementById('term-interactive-output');
+  const termInput = document.getElementById('term-input');
+  const chipBtns = document.querySelectorAll('.terminal-chip-btn');
 
-  if (!modal) return;
+  if (!termOutput) return;
 
-  function openPalette() {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    if (input) {
-      input.value = '';
-      filterItems('');
-      setTimeout(() => input.focus(), 50);
+  function appendLog(lineHtml) {
+    const p = document.createElement('div');
+    p.innerHTML = lineHtml;
+    termOutput.appendChild(p);
+    termOutput.scrollTop = termOutput.scrollHeight;
+  }
+
+  function handleCommand(cmd) {
+    const raw = cmd.trim();
+    if (!raw) return;
+
+    appendLog(`<span class="text-white font-bold">$ ${raw}</span>`);
+    const c = raw.toLowerCase();
+
+    if (c === 'help') {
+      appendLog(`<span class="text-slate-300">Available commands:</span>
+  <span class="text-white">scan</span>     - Run automated passive & active security audit
+  <span class="text-white">proxy</span>    - Start dynamic TLS MITM intercepting proxy on :8080
+  <span class="text-white">repeater</span> - Replay HTTP payload with modified headers
+  <span class="text-white">jwt</span>      - Decode and inspect sample JWT token structure
+  <span class="text-white">stats</span>    - View runtime metrics (Go routines, memory, throughput)
+  <span class="text-white">clear</span>    - Clear terminal buffer
+  <span class="text-white">about</span>    - View Secretlee author and license info`);
+    } else if (c === 'scan' || c.startsWith('scan')) {
+      appendLog(`<span class="text-slate-400">> Initializing Secretlee Passive Security Scanner...</span>`);
+      setTimeout(() => {
+        appendLog(`<span class="text-white">✓ [AUDIT-PASS] CORS Misconfiguration Check: SECURE</span>`);
+      }, 200);
+      setTimeout(() => {
+        appendLog(`<span class="text-white">✓ [AUDIT-PASS] Missing Security Headers (HSTS, CSP): VERIFIED</span>`);
+      }, 400);
+      setTimeout(() => {
+        appendLog(`<span class="text-white font-bold">★ Scan Finished: 0 Critical, 0 High Vulnerabilities Found.</span>`);
+      }, 600);
+    } else if (c === 'proxy' || c.startsWith('proxy') || c === 'start') {
+      appendLog(`<span class="text-white">> Secretlee Dynamic TLS Intercepting Proxy listening on 127.0.0.1:8080</span>`);
+      appendLog(`<span class="text-slate-300">> Certificate Authority (CA) generated: ~/.secretlee/ca.crt</span>`);
+      appendLog(`<span class="text-slate-400">> Reactive Bubble Tea TUI Console Ready. Intercept mode: ON</span>`);
+    } else if (c === 'repeater') {
+      appendLog(`<span class="text-slate-400">> Sending crafted request to target: GET /api/v1/telemetry/nodes</span>`);
+      setTimeout(() => {
+        appendLog(`<span class="text-white">< HTTP/2 200 OK (84ms) [Content-Type: application/json]</span>`);
+        appendLog(`<span class="text-slate-300">< {"status":"online","esp32_nodes":4,"queue":"active"}</span>`);
+      }, 300);
+    } else if (c === 'jwt') {
+      appendLog(`<span class="text-slate-400">> Header:  {"alg":"HS256","typ":"JWT"}</span>`);
+      appendLog(`<span class="text-white">> Payload: {"sub":"firly_admin","role":"engineer","iat":1787934208}</span>`);
+      appendLog(`<span class="text-slate-300">> Signature: VALID [HMAC-SHA256 verified]</span>`);
+    } else if (c === 'stats') {
+      appendLog(`<span class="text-slate-300">> Secretlee Engine Runtime: Go 1.22+ (x86_64)</span>`);
+      appendLog(`<span class="text-white">> Goroutines: 12 | Mem Alloc: 6.4 MB | SQLite: In-Memory (Zero-CGO)</span>`);
+      appendLog(`<span class="text-slate-400">> Traffic Handled: 1,420 requests (4.8 MB transmitted)</span>`);
+    } else if (c === 'clear' || c === 'cls') {
+      termOutput.innerHTML = '';
+      appendLog(`<span class="text-slate-400">Terminal buffer cleared. Type <span class="text-white font-bold">help</span> to view commands.</span>`);
+    } else if (c === 'about') {
+      appendLog(`<span class="text-white font-bold">Secretlee v1.0.0</span> - Terminal-Based HTTP(S) Intercepting Proxy`);
+      appendLog(`<span class="text-slate-300">Author: Muhammad Firly | GitHub: github.com/frlmhmmd/secretlee</span>`);
+      appendLog(`<span class="text-slate-400">Built with pure Go and Bubble Tea framework.</span>`);
+    } else {
+      appendLog(`<span class="text-slate-400">Command not found: '${raw}'. Type <span class="text-white font-bold">help</span> for a list of commands.</span>`);
     }
   }
 
-  function closePalette() {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (toggleBtn) toggleBtn.addEventListener('click', openPalette);
-  if (closeBtn) closeBtn.addEventListener('click', closePalette);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal || e.target.classList.contains('cmd-backdrop')) {
-      closePalette();
-    }
-  });
-
-  // Keyboard shortcut: Ctrl+K or Cmd+K
-  document.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
-      e.preventDefault();
-      if (modal.classList.contains('active')) {
-        closePalette();
-      } else {
-        openPalette();
-      }
-    }
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closePalette();
-    }
-  });
-
-  function filterItems(query) {
-    const q = query.toLowerCase().trim();
-    items.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      if (!q || text.includes(q)) {
-        item.style.display = 'flex';
-      } else {
-        item.style.display = 'none';
+  if (termInput) {
+    termInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const val = termInput.value;
+        termInput.value = '';
+        handleCommand(val);
       }
     });
   }
 
-  if (input) {
-    input.addEventListener('input', (e) => {
-      filterItems(e.target.value);
-    });
-  }
-
-  // Handle item actions
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const action = item.getAttribute('data-action');
-      closePalette();
-
-      if (action === 'navigate') {
-        const target = item.getAttribute('data-target');
-        const targetEl = document.querySelector(target);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else if (action === 'music-toggle') {
-        MusicPlayer.toggle();
-      } else if (action === 'music-next') {
-        MusicPlayer.next();
-      } else if (action === 'copy-email') {
-        navigator.clipboard.writeText('muhammadfirly68@gmail.com').then(() => {
-          showToast('Email (muhammadfirly68@gmail.com) disalin!', 'success');
-        });
-      } else if (action === 'download-cv') {
-        const cvLink = document.createElement('a');
-        cvLink.href = 'cv_ats/CV_Muhammad_Firly_ATS.pdf';
-        cvLink.download = 'CV_Muhammad_Firly_ATS.pdf';
-        cvLink.target = '_blank';
-        cvLink.click();
-        showToast('Mengunduh CV Muhammad Firly...', 'success');
+  chipBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cmd = btn.getAttribute('data-cmd');
+      if (cmd) {
+        handleCommand(cmd);
       }
     });
   });
 }
 
 /* ==========================================================================
-   3. Dynamic Back-to-Top Button
-   ========================================================================== */
+   4. Dynamic Back-to-Top Button
+   ========================================================================= */
 function initBackToTop() {
   const btn = document.getElementById('back-to-top-btn');
   if (!btn) return;
@@ -416,13 +516,23 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   4. Dynamic Typing Effect for Hero Title
-   ========================================================================== */
-function initTypingEffect() {
+   5. Dynamic Typing Effect for Hero Title
+   ========================================================================= */
+let typingTimer = null;
+function initTypingEffect(lang = 'id') {
   const typingEl = document.getElementById('typing-text');
   if (!typingEl) return;
 
-  const roles = [
+  if (typingTimer) clearTimeout(typingTimer);
+
+  const roles = lang === 'en' ? [
+    'Backend & API Architect',
+    'Cybersecurity & Network Tooling',
+    'IoT & Embedded Systems Engineer',
+    'Secretlee (MITM Proxy) Creator',
+    'Data Science & AI Specialist',
+    'Go & Python Specialist'
+  ] : [
     'Backend & API Developer',
     'Cybersecurity & Network Tooling',
     'IoT & Hardware Systems Engineer',
@@ -461,15 +571,15 @@ function initTypingEffect() {
       delay = pauseStart;
     }
 
-    setTimeout(type, delay);
+    typingTimer = setTimeout(type, delay);
   }
 
-  setTimeout(type, 500);
+  typingTimer = setTimeout(type, 300);
 }
 
 /* ==========================================================================
-   5. Project Category Filtering
-   ========================================================================== */
+   6. Project Category Filtering
+   ========================================================================= */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
@@ -507,8 +617,8 @@ function initProjectFilters() {
 }
 
 /* ==========================================================================
-   6. Universal Lightbox Modal for Certificates & Project Images
-   ========================================================================== */
+   7. Universal Lightbox Modal for Certificates & Project Images
+   ========================================================================= */
 let lightboxItems = [];
 let currentLightboxIndex = 0;
 
@@ -590,8 +700,8 @@ function initLightbox() {
 }
 
 /* ==========================================================================
-   7. Navbar Scroll Spy & Active State
-   ========================================================================== */
+   8. Navbar Scroll Spy & Active State
+   ========================================================================= */
 function initNavbarScrollSpy() {
   const header = document.querySelector('header');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -625,8 +735,8 @@ function initNavbarScrollSpy() {
 }
 
 /* ==========================================================================
-   8. Mobile Navigation Drawer
-   ========================================================================== */
+   9. Mobile Navigation Drawer
+   ========================================================================= */
 function initMobileMenu() {
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-drawer');
@@ -661,8 +771,8 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   9. Contact Form & Handlers
-   ========================================================================== */
+   10. Contact Form & Handlers
+   ========================================================================= */
 function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   if (!contactForm) return;
@@ -691,8 +801,8 @@ function initContactForm() {
 }
 
 /* ==========================================================================
-   10. Toast System & Copy Actions
-   ========================================================================== */
+   11. Toast System & Copy Actions
+   ========================================================================= */
 function initToast() {
   let container = document.getElementById('toast-container');
   if (!container) {
@@ -757,8 +867,8 @@ function initCvDownload() {
 }
 
 /* ==========================================================================
-   11. Elegant Splash Screen Handler
-   ========================================================================== */
+   12. Elegant Splash Screen Handler
+   ========================================================================= */
 function initSplashScreen() {
   const splash = document.getElementById('splash-screen');
   if (!splash) return;

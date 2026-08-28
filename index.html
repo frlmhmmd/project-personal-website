@@ -10,6 +10,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#080e21" />
   <link rel="canonical" href="https://frlmhmmd.github.io/project-personal-website/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
 
   <!-- OpenGraph / Facebook / LinkedIn / WhatsApp Rich Preview -->
   <meta property="og:site_name" content="Muhammad Firly Portfolio" />
@@ -209,14 +211,14 @@
       <!-- Trailing Action Buttons -->
       <div class="hidden sm:flex items-center gap-2.5 shrink-0">
         
-        <!-- Command Palette Trigger Button (Ctrl+K) -->
+        <!-- Multi-Language Switcher (ID / EN) -->
         <button 
-          id="cmd-palette-toggle"
-          class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white/5 border border-white/15 text-slate-300 hover:text-white hover:bg-white/10 text-xs font-mono transition-all cursor-pointer"
-          title="Buka Menu Perintah Cepat (Ctrl + K)"
+          class="btn-lang-toggle inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/10 border border-white/25 text-white hover:bg-white/20 text-xs font-mono font-bold transition-all duration-300 shadow-sm cursor-pointer"
+          title="Ganti Bahasa (Switch ID / EN)"
+          aria-label="Switch Language"
         >
-          <span class="material-symbols-outlined text-[16px]">terminal</span>
-          <span class="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-white/10 border border-white/10">⌘K</span>
+          <span class="material-symbols-outlined text-[16px]">language</span>
+          <span class="lang-btn-text">ID</span>
         </button>
 
         <!-- Ambient Background Music Capsule with Dropdown Popover -->
@@ -283,17 +285,23 @@
           title="Unduh CV ATS Muhammad Firly"
         >
           <span class="material-symbols-outlined text-[16px]">download</span>
-          <span>CV ATS</span>
+          <span data-i18n="navCerts">CV ATS</span>
         </a>
 
         <!-- Get in Touch CTA -->
-        <a class="inline-flex items-center justify-center px-4 py-2 bg-white text-deep-void font-semibold text-xs rounded-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
+        <a class="inline-flex items-center justify-center px-4 py-2 bg-white text-deep-void font-semibold text-xs rounded-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact" data-i18n="btnContact">
           Contact
         </a>
       </div>
 
       <!-- Mobile Hamburger & Quick BGM Toggle -->
       <div class="flex xl:hidden items-center gap-2">
+        <button 
+          class="btn-lang-toggle p-2 rounded-lg bg-white/10 border border-white/20 text-white font-mono text-xs font-bold"
+          title="Switch Language"
+        >
+          <span class="lang-btn-text">ID</span>
+        </button>
         <button 
           id="mobile-quick-music-btn" 
           class="p-2 rounded-lg bg-white/10 border border-white/20 text-white"
@@ -327,16 +335,25 @@
         </button>
       </div>
       <nav class="flex flex-col gap-3 mt-6">
-        <a class="mobile-nav-link text-white hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#home">Home</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#about">About</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#skills">Skills</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#projects">Projects & Hardware</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#media">Media & Press</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#certifications">Certifications</a>
-        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#contact">Contact</a>
+        <a class="mobile-nav-link text-white hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#home" data-i18n="navHome">Home</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#about" data-i18n="navAbout">About</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#skills" data-i18n="navSkills">Skills</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#projects" data-i18n="navProjects">Projects & Hardware</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#media" data-i18n="navMedia">Media & Press</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#certifications" data-i18n="navCerts">Certifications</a>
+        <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#contact" data-i18n="navContact">Contact</a>
       </nav>
     </div>
     <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
+      <!-- Language Switcher for Mobile Drawer -->
+      <button 
+        class="btn-lang-toggle w-full py-2.5 bg-white/10 text-white border border-white/30 text-center font-semibold text-xs rounded-lg hover:bg-white hover:text-deep-void transition-all flex items-center justify-center gap-2"
+        aria-label="Switch Language Mobile"
+      >
+        <span class="material-symbols-outlined text-[16px]">language</span>
+        <span>Bahasa: <strong class="lang-btn-text">ID</strong> (Klik untuk ganti)</span>
+      </button>
+
       <!-- Ambient Music Toggle for Mobile -->
       <button 
         id="mobile-music-toggle-btn" 
@@ -884,41 +901,58 @@
               </div>
             </div>
 
-            <!-- Right Terminal ASCII & TUI Visualizer -->
+            <!-- Right Terminal Interactive Playground Visualizer -->
             <div class="lg:col-span-5 flex flex-col">
-              <div class="rounded-xl overflow-hidden border border-white/20 bg-[#060c1c]/95 shadow-2xl font-mono text-[11px] leading-relaxed">
+              <div class="rounded-2xl overflow-hidden border border-white/25 bg-[#060c1c]/95 shadow-[0_15px_35px_rgba(0,0,0,0.6)] font-mono text-[11px] leading-relaxed">
                 <!-- Terminal Window Bar -->
                 <div class="px-4 py-2.5 bg-[#0f1d38] border-b border-white/10 flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="w-3 h-3 rounded-full bg-white/40 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-white/60 inline-block"></span>
-                    <span class="w-3 h-3 rounded-full bg-white inline-block"></span>
-                    <span class="text-slate-300 text-xs ml-2 font-mono">secretlee - TUI Console</span>
+                    <span class="w-3 h-3 rounded-full bg-red-400/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400/80 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-400/80 inline-block"></span>
+                    <span class="text-slate-300 text-xs ml-2 font-mono">secretlee - Interactive Terminal</span>
                   </div>
-                  <span class="text-[10px] text-white font-mono">MITM :8080</span>
+                  <span class="text-[10px] text-white font-mono flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live Shell
+                  </span>
                 </div>
                 
-                <!-- Terminal Content Body -->
-                <div class="p-4 text-slate-300 space-y-2 overflow-x-auto select-none">
+                <!-- Terminal Content Body (Dynamic Output) -->
+                <div id="term-interactive-output" class="p-4 text-slate-300 space-y-1.5 terminal-output-area select-none">
                   <div class="text-white font-bold">
-                    SECRETLEE <span class="text-white">1 Traffic</span> <span class="text-slate-400">2 Repeater</span> <span class="text-slate-400">3 Intruder</span> <span class="text-slate-300">4 Scanner(3)</span>
+                    SECRETLEE v1.0.0 (Go 1.22+) - Interactive Security Shell
                   </div>
-                  <div class="text-slate-400 border-b border-white/10 pb-1">
-                    #  | METHOD | STATUS | HOST           | PATH            | TIME
+                  <div class="text-slate-400 text-[10px]">
+                    Type <span class="text-white font-bold">help</span> or tap the quick commands below to test the engine:
                   </div>
-                  <div class="text-white font-semibold">
-                    ★1 | GET    | 200    | api.github.com | /user/repos     | 142ms
-                  </div>
-                  <div class="text-slate-300">
-                     2 | POST   | 401    | target.internal| /api/v1/auth    | 85ms
+                  <div class="text-slate-300 pt-1">
+                    <span class="text-white font-semibold">$ secretlee start --port 8080</span>
                   </div>
                   <div class="text-slate-400">
-                     3 | GET    | 404    | httpbin.org    | /status/404     | 310ms
+                    > MITM Proxy listening on 127.0.0.1:8080 [TLS Dynamic Engine Ready]
                   </div>
-                  <div class="mt-3 pt-2 border-t border-white/10 text-[10px] text-slate-400 flex justify-between">
-                    <span class="text-white font-semibold">[PASSIVE AUDIT: ACTIVE]</span>
-                    <span class="text-slate-400">[r] Repeat [i] Intrude [q] Quit</span>
-                  </div>
+                </div>
+
+                <!-- Live Command Input Bar -->
+                <div class="px-4 py-2.5 bg-[#0a1428] border-t border-white/10 flex items-center gap-2">
+                  <span class="text-white font-bold font-mono">$</span>
+                  <input 
+                    id="term-input" 
+                    type="text" 
+                    placeholder="Try 'scan', 'proxy', 'jwt', 'repeater'..." 
+                    class="w-full bg-transparent text-xs text-white placeholder-slate-500 focus:outline-none font-mono"
+                  />
+                  <span class="text-[10px] font-mono text-slate-500 hidden sm:inline">Enter ↵</span>
+                </div>
+
+                <!-- Quick Action Chips for Easy Tapping on Mobile/Desktop -->
+                <div class="px-3 py-2 bg-[#060c1c] border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] font-mono">
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="scan">scan</button>
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="proxy">proxy</button>
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="repeater">repeater</button>
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="jwt">jwt</button>
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="stats">stats</button>
+                  <button class="terminal-chip-btn px-2.5 py-1 rounded-md" data-cmd="clear">clear</button>
                 </div>
               </div>
             </div>
@@ -1019,9 +1053,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 IoT Sensor Interface & Microcontroller Unit
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Perakitan sirkuit sirkulasi sensor dan mikrokontroler untuk akuisisi sinyal fisik secara kontinu dengan proteksi interferensi tegangan.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Microcontroller:</span><span class="text-white font-semibold">ESP32 240MHz</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Sensor Interface:</span><span class="text-white font-semibold">ADC / Optical / Ultrasonic</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Signal Bus:</span><span class="text-white font-semibold">I2C / SPI / GPIO Interrupt</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -1062,9 +1104,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 Embedded Power & Signal Regulator Hub
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Unit pengatur distribusi tegangan dan pembagian bus sinyal sensor agar perangkat mampu bekerja stabil tanpa fluktuasi data.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Power Regulation:</span><span class="text-white font-semibold">Dual Step-Down LM2596</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Voltage In/Out:</span><span class="text-white font-semibold">12V DC &rarr; 5V / 3.3V DC</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Protection:</span><span class="text-white font-semibold">Surge & Reverse Polarity</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -1105,9 +1155,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 Integrated Hardware Assembly & Enclosure
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Desain struktur kemasan pelindung perangkat keras agar praktis saat dibawa untuk pengujian lapangan dan instalasi monitoring.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Housing Type:</span><span class="text-white font-semibold">Polycarbonate Junction Box</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Environmental:</span><span class="text-white font-semibold">IP54 Weather Resistant</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Mounting:</span><span class="text-white font-semibold">Damped Sensor Bracket</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -1148,9 +1206,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 Precision Field Sensing & Transceiver Node
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Unit penginderaan telemetri yang dioptimalkan untuk responsifitas data tingkat tinggi dengan konsumsi daya yang efisien.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Communication:</span><span class="text-white font-semibold">MQTT / HTTP REST API</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Antenna:</span><span class="text-white font-semibold">High-Gain External Omni</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Sampling Rate:</span><span class="text-white font-semibold">100Hz Continuous Stream</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -1191,9 +1257,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 Live Telemetry & Sensor Monitoring System
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Antarmuka visualisasi pemantauan data sensor secara live untuk memverifikasi akurasi bacaan perangkat terhadap parameter acuan.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Algorithm:</span><span class="text-white font-semibold">Volume & Velocity Computing</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Database Log:</span><span class="text-white font-semibold">Structured SQL Telemetry</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Field Location:</span><span class="text-white font-semibold">Bekasi Timur (Mayor Hasibuan)</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -1234,9 +1308,17 @@
               <h3 class="text-lg font-bold text-white mb-2 group-hover:underline transition-colors">
                 Field Deployment & System Validation Test
               </h3>
-              <p class="text-sm text-on-surface-variant line-clamp-3 mb-5 leading-relaxed">
+              <p class="text-sm text-on-surface-variant line-clamp-2 mb-4 leading-relaxed">
                 Pengujian langsung kestabilan transfer data, logging riwayat pembacaan, dan analisis deviasi sinyal pada kondisi operasional sebenarnya.
               </p>
+
+              <!-- Technical Specifications Breakdown -->
+              <div class="p-3 rounded-xl bg-white/5 border border-white/10 mb-4 font-mono text-[11px] space-y-1">
+                <div class="tech-spec-row"><span class="text-slate-400">Connection:</span><span class="text-white font-semibold">GSM / Wi-Fi Multi-Fallback</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Latency:</span><span class="text-white font-semibold">&lt; 120ms Round-Trip</span></div>
+                <div class="tech-spec-row"><span class="text-slate-400">Test Duration:</span><span class="text-white font-semibold">Continuous Field Operation</span></div>
+              </div>
+
               <button 
                 class="inline-flex items-center gap-1.5 text-xs font-mono text-white hover:underline font-semibold transition-colors"
                 data-lightbox="true"
@@ -2087,118 +2169,7 @@
   </div>
 
   <!-- =========================================================================
-       11. Interactive Command Palette (Ctrl + K) Modal
-       ========================================================================= -->
-  <div id="cmd-palette-modal" class="fixed inset-0 z-[9999] flex items-start justify-center pt-20 px-4 bg-deep-void/85 backdrop-blur-xl">
-    <div class="cmd-backdrop absolute inset-0 cursor-pointer"></div>
-    
-    <div class="cmd-card relative z-10 max-w-xl w-full glass-card rounded-2xl border border-white/20 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] flex flex-col">
-      <!-- Search Input Header -->
-      <div class="p-4 border-b border-white/10 flex items-center gap-3 bg-[#0d1b33]/90">
-        <span class="material-symbols-outlined text-[20px] text-white">search</span>
-        <input 
-          id="cmd-input" 
-          type="text" 
-          placeholder="Ketik perintah atau cari bagian (contoh: Project, Lagu, CV, Email)..." 
-          class="w-full bg-transparent text-sm text-white placeholder-slate-400 focus:outline-none font-mono"
-        />
-        <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-slate-300 border border-white/10">ESC</span>
-        <button id="cmd-palette-close" class="text-slate-400 hover:text-white p-1" aria-label="Tutup Command Menu">
-          <span class="material-symbols-outlined text-[20px]">close</span>
-        </button>
-      </div>
-
-      <!-- Command Items List -->
-      <div class="p-3 max-h-80 overflow-y-auto space-y-1 font-mono text-xs">
-        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold">Navigasi Cepat</div>
-        
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#home">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">home</span>
-            <span>Home (Beranda Utama)</span>
-          </div>
-          <span class="text-[10px] text-slate-400">#home</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#projects">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">rocket_launch</span>
-            <span>Projects & Secretlee MITM Proxy</span>
-          </div>
-          <span class="text-[10px] text-slate-400">#projects</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#certifications">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">verified</span>
-            <span>6x Official Certifications</span>
-          </div>
-          <span class="text-[10px] text-slate-400">#certifications</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#media">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">newspaper</span>
-            <span>Media Recognition (Radar Bekasi)</span>
-          </div>
-          <span class="text-[10px] text-slate-400">#media</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#contact">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">mail</span>
-            <span>Contact & Get in Touch</span>
-          </div>
-          <span class="text-[10px] text-slate-400">#contact</span>
-        </div>
-
-        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold mt-2">Fitur Interaktif & Musik</div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="music-toggle">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">play_pause</span>
-            <span>Putar / Jeda Musik Latar (Play/Pause BGM)</span>
-          </div>
-          <span class="text-[10px] text-slate-400">Space</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="music-next">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">skip_next</span>
-            <span>Ganti Lagu Selanjutnya (Next Soundtrack)</span>
-          </div>
-          <span class="text-[10px] text-slate-400">Next</span>
-        </div>
-
-        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold mt-2">Aksi Cepat</div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="download-cv">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">download</span>
-            <span>Unduh Resume / CV (ATS Format)</span>
-          </div>
-          <span class="text-[10px] text-slate-400">PDF</span>
-        </div>
-
-        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="copy-email">
-          <div class="flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-[16px] text-white">content_copy</span>
-            <span>Salin Alamat Email</span>
-          </div>
-          <span class="text-[10px] text-slate-400">Clipboard</span>
-        </div>
-      </div>
-
-      <!-- Footer Info -->
-      <div class="p-2.5 border-t border-white/10 bg-[#080e21]/90 flex items-center justify-between text-[10px] font-mono text-slate-400 px-4">
-        <span>Gunakan &uarr; &darr; untuk memilih, Enter untuk aksi</span>
-        <span>Muhammad Firly Portfolio</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       12. Floating Back-to-Top Button
+       11. Floating Back-to-Top Button
        ========================================================================= -->
   <button 
     id="back-to-top-btn" 

@@ -1,6 +1,6 @@
 /* ==========================================================================
    MUHAMMAD FIRLY - PERSONAL PORTFOLIO STYLESHEET
-   Crisp Royal Navy & Pure White Aesthetic + Fluid Navigation & Interactive Hub
+   Crisp Royal Navy & Pure White Aesthetic + Fluid Navigation & Interactive Features
    ========================================================================== */
 
 :root {
@@ -207,36 +207,6 @@ body {
   transform: scale(1);
 }
 
-/* Command Palette Modal */
-#cmd-palette-modal {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#cmd-palette-modal.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#cmd-palette-modal .cmd-card {
-  transform: scale(0.94) translateY(-10px);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#cmd-palette-modal.active .cmd-card {
-  transform: scale(1) translateY(0);
-}
-
-.cmd-item {
-  transition: all 0.15s ease;
-}
-
-.cmd-item:hover, .cmd-item.selected {
-  background-color: rgba(255, 255, 255, 0.12);
-  transform: translateX(4px);
-}
-
 /* Media Highlight Accent */
 .media-glow {
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
@@ -391,4 +361,49 @@ body {
 @keyframes eqBounce4 {
   0% { height: 13px; }
   100% { height: 5px; }
+}
+
+/* ==========================================================================
+   Interactive Secretlee Terminal Playground Styles
+   ========================================================================== */
+.terminal-chip-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+  font-family: 'Times New Roman', Georgia, serif;
+}
+
+.terminal-chip-btn:hover {
+  background: #ffffff;
+  color: #080e21;
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.terminal-output-area {
+  max-height: 240px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.terminal-output-area::-webkit-scrollbar {
+  width: 4px;
+}
+.terminal-output-area::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* Technical Specs Detail Pill & Box */
+.tech-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+}
+.tech-spec-row:last-child {
+  border-bottom: none;
 }
