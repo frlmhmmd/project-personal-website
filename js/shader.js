@@ -1,7 +1,7 @@
 /**
  * Interactive WebGL Ambient Shader for Hero Section
  * Muhammad Firly - Portfolio
- * Luxury Champaign & Silk Aesthetic
+ * Royal Navy & Pure White Aesthetic
  */
 
 (function initHeroShader() {
@@ -50,22 +50,22 @@
       vec2 uv = v_texCoord;
       vec2 mouseNorm = u_mouse / u_resolution;
       
-      // Base luxury dark mocha & warm espresso background
-      vec3 deepVoid = vec3(0.078, 0.055, 0.039);    // #140e0a
-      vec3 darkSurface = vec3(0.125, 0.086, 0.063); // #201610
+      // Deep Royal Navy background base
+      vec3 deepNavy = vec3(0.031, 0.055, 0.129);   // #080E21
+      vec3 navySurface = vec3(0.051, 0.106, 0.200); // #0D1B33
       
-      // Dynamic fluid silk wave
+      // Dynamic fluid wave
       float wave1 = sin(uv.x * 5.0 + u_time * 0.35) * 0.045;
       float wave2 = cos(uv.y * 5.0 - u_time * 0.28) * 0.045;
       float gridNoise = sin((uv.x + wave1) * 30.0) * cos((uv.y + wave2) * 30.0) * 0.012;
       
-      vec3 base = mix(deepVoid, darkSurface, uv.y + wave1 + gridNoise);
+      vec3 base = mix(deepNavy, navySurface, uv.y + wave1 + gridNoise);
       
-      // Mouse interactive radial warm champagne glow
+      // Mouse interactive radial pure white glow
       float distToMouse = length(uv - vec2(mouseNorm.x, 1.0 - mouseNorm.y));
-      float mouseGlow = 0.018 / (distToMouse * distToMouse + 0.07);
+      float mouseGlow = 0.016 / (distToMouse * distToMouse + 0.07);
       
-      // Constellation / glowing champagne particle nodes
+      // Constellation / glowing white particle nodes
       float particleGlow = 0.0;
       for (float i = 0.0; i < 6.0; i++) {
         vec2 p = vec2(
@@ -73,16 +73,15 @@
           cos(u_time * 0.20 + i * 1.82) * 0.42 + 0.5
         );
         float d = length(uv - p);
-        particleGlow += 0.0019 / (d * d + 0.012);
+        particleGlow += 0.0018 / (d * d + 0.012);
       }
       
-      // Champagne gold, warm silk caramel, and almond highlights
-      vec3 champagneAccent = vec3(0.847, 0.698, 0.545); // #D8B28B
-      vec3 caramelAccent = vec3(0.729, 0.580, 0.467);   // #BA9477
-      vec3 silkLight = vec3(0.953, 0.898, 0.843);       // #F3E5D8
+      // Luminous white and silver highlights
+      vec3 whiteAccent = vec3(0.95, 0.97, 1.0);
+      vec3 silverAccent = vec3(0.80, 0.86, 0.94);
       
-      vec3 glowColor = mix(champagneAccent, caramelAccent, sin(u_time * 0.4) * 0.5 + 0.5);
-      vec3 finalColor = base + (particleGlow * champagneAccent * 1.1) + (mouseGlow * 0.45 * glowColor);
+      vec3 glowColor = mix(whiteAccent, silverAccent, sin(u_time * 0.4) * 0.5 + 0.5);
+      vec3 finalColor = base + (particleGlow * whiteAccent * 0.8) + (mouseGlow * 0.4 * glowColor);
       
       gl_FragColor = vec4(finalColor, 1.0);
     }

@@ -1,12 +1,11 @@
 /**
  * Main Application Logic & Interactivity
  * Muhammad Firly - Personal Portfolio
- * Luxury Champaign Theme & Interaction Engine
+ * Royal Navy & Pure White Aesthetic
  */
 
 function initApp() {
   initSplashScreen();
-  initSoundEngine();
   initTypingEffect();
   initProjectFilters();
   initLightbox();
@@ -22,244 +21,6 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
-}
-
-/* ==========================================================================
-   0. Web Audio API - Elegant Ambient Sound Synthesizer
-   ========================================================================== */
-const SoundEngine = {
-  ctx: null,
-  enabled: false,
-  initialized: false,
-
-  init() {
-    if (this.initialized) return;
-    const savedState = localStorage.getItem('firly_portfolio_sfx');
-    this.enabled = savedState === 'enabled';
-    this.updateUI();
-    this.initialized = true;
-  },
-
-  getContext() {
-    if (!this.ctx) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (AudioCtx) {
-        this.ctx = new AudioCtx();
-      }
-    }
-    if (this.ctx && this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-    return this.ctx;
-  },
-
-  toggle() {
-    this.enabled = !this.enabled;
-    localStorage.setItem('firly_portfolio_sfx', this.enabled ? 'enabled' : 'disabled');
-    this.updateUI();
-
-    if (this.enabled) {
-      this.getContext();
-      this.playSuccess();
-      showToast('Efek Suara Interaktif Diaktifkan (SFX ON)', 'info');
-    } else {
-      showToast('Efek Suara Dimatikan (SFX OFF)', 'info');
-    }
-  },
-
-  updateUI() {
-    const btn = document.getElementById('sfx-toggle-btn');
-    const label = document.getElementById('sfx-label');
-    const icon = document.getElementById('sfx-icon');
-    if (!btn) return;
-
-    if (this.enabled) {
-      btn.classList.add('sfx-active', 'border-neon-accent/60');
-      btn.classList.remove('border-glass-border');
-      if (label) label.textContent = 'SFX: ON';
-      if (icon) {
-        icon.textContent = 'volume_up';
-        icon.classList.add('text-neon-accent');
-        icon.classList.remove('text-on-surface-variant');
-      }
-    } else {
-      btn.classList.remove('sfx-active', 'border-neon-accent/60');
-      btn.classList.add('border-glass-border');
-      if (label) label.textContent = 'SFX: OFF';
-      if (icon) {
-        icon.textContent = 'volume_off';
-        icon.classList.remove('text-neon-accent');
-        icon.classList.add('text-on-surface-variant');
-      }
-    }
-  },
-
-  // Elegant subtle warm click chirp
-  playClick() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(650, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(320, ctx.currentTime + 0.04);
-
-      gain.gain.setValueAtTime(0.06, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 0.045);
-    } catch (e) {
-      // Audio context policy fallback
-    }
-  },
-
-  // Subtle low-volume micro tick for hover
-  playHover() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(420, ctx.currentTime);
-
-      gain.gain.setValueAtTime(0.012, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.02);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 0.025);
-    } catch (e) {}
-  },
-
-  // Warm champagne harmonic chord for toast / copy / download
-  playSuccess() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-
-      const now = ctx.currentTime;
-      const notes = [523.25, 659.25, 783.99]; // C5 -> E5 -> G5 Major chord
-
-      notes.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, now + i * 0.06);
-
-        gain.gain.setValueAtTime(0.04, now + i * 0.06);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.06 + 0.18);
-
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-
-        osc.start(now + i * 0.06);
-        osc.stop(now + i * 0.06 + 0.2);
-      });
-    } catch (e) {}
-  },
-
-  // Soft resonant opening sweep for Lightbox
-  playModalOpen() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(280, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(560, ctx.currentTime + 0.12);
-
-      gain.gain.setValueAtTime(0.04, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.13);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 0.14);
-    } catch (e) {}
-  },
-
-  // Soft descending sweep for Lightbox close
-  playModalClose() {
-    if (!this.enabled) return;
-    try {
-      const ctx = this.getContext();
-      if (!ctx) return;
-
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(520, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.1);
-
-      gain.gain.setValueAtTime(0.035, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.11);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 0.12);
-    } catch (e) {}
-  }
-};
-
-function initSoundEngine() {
-  SoundEngine.init();
-
-  const toggleBtn = document.getElementById('sfx-toggle-btn');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      SoundEngine.toggle();
-    });
-  }
-
-  // Attach hover sounds with throttle
-  let lastHoverTime = 0;
-  const attachSoundListeners = () => {
-    const interactiveEls = document.querySelectorAll('button, a, .glass-card-interactive, .filter-btn, [data-lightbox]');
-    interactiveEls.forEach(el => {
-      if (el.dataset.sfxBound) return;
-      el.dataset.sfxBound = 'true';
-
-      el.addEventListener('mouseenter', () => {
-        const now = Date.now();
-        if (now - lastHoverTime > 75) {
-          SoundEngine.playHover();
-          lastHoverTime = now;
-        }
-      }, { passive: true });
-
-      el.addEventListener('click', () => {
-        if (el.id !== 'sfx-toggle-btn') {
-          SoundEngine.playClick();
-        }
-      });
-    });
-  };
-
-  attachSoundListeners();
 }
 
 /* ==========================================================================
@@ -326,10 +87,10 @@ function initProjectFilters() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       // Update active button
-      filterBtns.forEach(b => b.classList.remove('active', 'bg-neon-accent', 'text-deep-void'));
+      filterBtns.forEach(b => b.classList.remove('active', 'bg-white', 'text-[#080e21]'));
       filterBtns.forEach(b => b.classList.add('glass-card', 'text-on-surface-variant'));
       
-      btn.classList.add('active', 'bg-neon-accent', 'text-deep-void');
+      btn.classList.add('active', 'bg-white', 'text-[#080e21]');
       btn.classList.remove('glass-card', 'text-on-surface-variant');
 
       const filterValue = btn.getAttribute('data-filter');
@@ -393,13 +154,11 @@ function initLightbox() {
     updateLightboxContent();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    SoundEngine.playModalOpen();
   }
 
   function closeLightbox() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    SoundEngine.playModalClose();
   }
 
   function updateLightboxContent() {
@@ -415,13 +174,11 @@ function initLightbox() {
   function showNext() {
     currentLightboxIndex = (currentLightboxIndex + 1) % lightboxItems.length;
     updateLightboxContent();
-    SoundEngine.playClick();
   }
 
   function showPrev() {
     currentLightboxIndex = (currentLightboxIndex - 1 + lightboxItems.length) % lightboxItems.length;
     updateLightboxContent();
-    SoundEngine.playClick();
   }
 
   if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
@@ -494,12 +251,10 @@ function initMobileMenu() {
       mobileMenu.classList.remove('translate-x-0');
       mobileMenu.classList.add('translate-x-full');
       document.body.style.overflow = '';
-      SoundEngine.playModalClose();
     } else {
       mobileMenu.classList.remove('translate-x-full');
       mobileMenu.classList.add('translate-x-0');
       document.body.style.overflow = 'hidden';
-      SoundEngine.playModalOpen();
     }
   }
 
@@ -564,14 +319,14 @@ function showToast(message, type = 'info') {
   const toast = document.createElement('div');
   toast.className = `toast glass-card px-5 py-3 rounded-xl border flex items-center gap-3 text-sm font-medium shadow-2xl ${
     type === 'success'
-      ? 'border-emerald-500/40 text-emerald-200 bg-[#221812]/95'
+      ? 'border-white/40 text-white bg-[#080e21]/95'
       : type === 'error'
-      ? 'border-red-500/40 text-red-200 bg-[#221812]/95'
-      : 'border-neon-accent/40 text-[#f5e6d3] bg-[#221812]/95'
+      ? 'border-red-400/40 text-red-200 bg-[#080e21]/95'
+      : 'border-white/30 text-white bg-[#080e21]/95'
   }`;
 
   const iconName = type === 'success' ? 'check_circle' : type === 'error' ? 'error' : 'info';
-  const iconColor = type === 'success' ? 'text-emerald-400' : type === 'error' ? 'text-red-400' : 'text-neon-accent';
+  const iconColor = type === 'success' ? 'text-white' : type === 'error' ? 'text-red-300' : 'text-white';
 
   toast.innerHTML = `
     <span class="material-symbols-outlined text-[20px] ${iconColor}">${iconName}</span>
@@ -580,10 +335,6 @@ function showToast(message, type = 'info') {
 
   container.appendChild(toast);
   setTimeout(() => toast.classList.add('show'), 10);
-
-  if (type === 'success' || type === 'info') {
-    SoundEngine.playSuccess();
-  }
 
   setTimeout(() => {
     toast.classList.remove('show');
@@ -614,7 +365,6 @@ function initCvDownload() {
   cvButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       showToast('Mengunduh CV Muhammad Firly (Format ATS)...', 'success');
-      SoundEngine.playSuccess();
     });
   });
 }
