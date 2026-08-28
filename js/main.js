@@ -1,11 +1,12 @@
 /**
  * Main Application Logic & Interactivity
  * Muhammad Firly - Personal Portfolio
- * Royal Navy & Pure White Aesthetic
+ * Royal Navy & Pure White Aesthetic + Ambient Music Player Engine
  */
 
 function initApp() {
   initSplashScreen();
+  initMusicPlayer();
   initTypingEffect();
   initProjectFilters();
   initLightbox();
@@ -21,6 +22,186 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
   initApp();
+}
+
+/* ==========================================================================
+   0. Ambient Background Music Player & Auto-Loop Playlist Engine
+   ========================================================================== */
+const MusicPlayer = {
+  playlist: [
+    {
+      title: 'Egosentris',
+      artist: 'alkateri',
+      src: 'audio/alkateri - Egosentris.mp3'
+    },
+    {
+      title: 'For All the Dreams That Wings Could Fly',
+      artist: 'the milo',
+      src: 'audio/the milo - For All the Dreams That Wings Could Fly.mp3'
+    },
+    {
+      title: 'Esok',
+      artist: 'alkateri',
+      src: 'audio/alkateri - Esok.mp3'
+    }
+  ],
+  currentIndex: 0,
+  audio: null,
+  isPlaying: false,
+  targetVolume: 0.40, // Comfortable, crystal-clear background volume
+  fadeInterval: null,
+  hasInteracted: false,
+
+  init() {
+    this.audio = new Audio();
+    this.audio.preload = 'auto';
+    this.loadTrack(0);
+
+    // Continuous loop: when track ends, automatically advance to next and loop forever
+    this.audio.addEventListener('ended', () => {
+      this.next();
+    });
+
+    this.bindControls();
+    this.setupAutoplayTriggers();
+  },
+
+  loadTrack(index) {
+    this.currentIndex = (index + this.playlist.length) % this.playlist.length;
+    const track = this.playlist[this.currentIndex];
+    this.audio.src = encodeURI(track.src);
+    this.audio.volume = 0;
+  },
+
+  play() {
+    if (!this.audio) return;
+    const playPromise = this.audio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        this.isPlaying = true;
+        this.fadeIn();
+        this.updateUI(true);
+      }).catch(() => {
+        // Autoplay policy prevented immediate playback; waiting for first interaction
+        this.isPlaying = false;
+        this.updateUI(false);
+      });
+    }
+  },
+
+  pause() {
+    if (!this.audio) return;
+    this.fadeOut(() => {
+      this.audio.pause();
+      this.isPlaying = false;
+      this.updateUI(false);
+    });
+  },
+
+  toggle() {
+    if (this.isPlaying) {
+      this.pause();
+      showToast('Musik Latar Dijeda', 'info');
+    } else {
+      this.play();
+      showToast('Memutar Musik Latar', 'info');
+    }
+  },
+
+  next() {
+    this.fadeOut(() => {
+      this.loadTrack(this.currentIndex + 1);
+      this.play();
+    }, 600);
+  },
+
+  fadeIn(duration = 1600) {
+    if (this.fadeInterval) clearInterval(this.fadeInterval);
+    this.audio.volume = 0;
+    const step = 0.02;
+    const intervalTime = Math.max(20, duration / (this.targetVolume / step));
+
+    this.fadeInterval = setInterval(() => {
+      if (this.audio.volume + step < this.targetVolume) {
+        this.audio.volume += step;
+      } else {
+        this.audio.volume = this.targetVolume;
+        clearInterval(this.fadeInterval);
+      }
+    }, intervalTime);
+  },
+
+  fadeOut(callback, duration = 600) {
+    if (this.fadeInterval) clearInterval(this.fadeInterval);
+    const step = 0.04;
+    const intervalTime = Math.max(20, duration / (this.audio.volume / step || 10));
+
+    this.fadeInterval = setInterval(() => {
+      if (this.audio.volume - step > 0) {
+        this.audio.volume -= step;
+      } else {
+        this.audio.volume = 0;
+        clearInterval(this.fadeInterval);
+        if (callback) callback();
+      }
+    }, intervalTime);
+  },
+
+  updateUI(playing) {
+    const eqEls = document.querySelectorAll('.music-equalizer');
+    const statusTexts = document.querySelectorAll('#music-status-text, #mobile-music-text');
+
+    eqEls.forEach(eq => {
+      if (playing) {
+        eq.classList.add('playing');
+      } else {
+        eq.classList.remove('playing');
+      }
+    });
+
+    statusTexts.forEach(txt => {
+      if (txt.id === 'music-status-text') {
+        txt.textContent = playing ? 'BGM: ON' : 'BGM: OFF';
+      } else {
+        txt.textContent = playing ? 'Musik Latar: ON' : 'Musik Latar: OFF';
+      }
+    });
+  },
+
+  setupAutoplayTriggers() {
+    // Try immediate autoplay
+    this.play();
+
+    // Browser interaction triggers to unblock audio seamlessly
+    const handleFirstInteraction = () => {
+      if (!this.isPlaying) {
+        this.play();
+      }
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('touchstart', handleFirstInteraction);
+      document.removeEventListener('scroll', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction, { once: true });
+    document.addEventListener('touchstart', handleFirstInteraction, { once: true, passive: true });
+    document.addEventListener('scroll', handleFirstInteraction, { once: true, passive: true });
+    document.addEventListener('keydown', handleFirstInteraction, { once: true });
+  },
+
+  bindControls() {
+    const toggleBtns = document.querySelectorAll('#music-toggle-btn, #mobile-music-toggle-btn');
+    toggleBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.toggle();
+      });
+    });
+  }
+};
+
+function initMusicPlayer() {
+  MusicPlayer.init();
 }
 
 /* ==========================================================================

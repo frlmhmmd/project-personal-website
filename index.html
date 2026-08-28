@@ -205,6 +205,22 @@
 
       <!-- Trailing Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
+        <!-- Ambient Background Music Toggle Button -->
+        <button 
+          id="music-toggle-btn" 
+          class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/30 text-white hover:bg-white/20 text-xs font-mono font-medium transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] cursor-pointer group" 
+          title="Putar / Jeda Musik Latar"
+          aria-label="Toggle Background Music"
+        >
+          <div class="music-equalizer">
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+          </div>
+          <span id="music-status-text" class="text-[11px] tracking-wide text-slate-200 group-hover:text-white">BGM</span>
+        </button>
+
         <!-- Direct ATS CV Download Button -->
         <a 
           href="cv_ats/CV_Muhammad_Firly_ATS.pdf" 
@@ -260,6 +276,21 @@
       </nav>
     </div>
     <div class="pt-6 border-t border-glass-border flex flex-col gap-3">
+      <!-- Ambient Music Toggle for Mobile -->
+      <button 
+        id="mobile-music-toggle-btn" 
+        class="w-full py-2.5 bg-white/10 text-white border border-white/30 text-center font-semibold text-xs rounded-lg hover:bg-white hover:text-deep-void transition-all flex items-center justify-center gap-2"
+        aria-label="Toggle Background Music Mobile"
+      >
+        <div class="music-equalizer">
+          <span class="music-bar"></span>
+          <span class="music-bar"></span>
+          <span class="music-bar"></span>
+          <span class="music-bar"></span>
+        </div>
+        <span id="mobile-music-text">Musik Latar: ON</span>
+      </button>
+
       <!-- Direct ATS CV Download Button for Mobile -->
       <a class="w-full py-2.5 bg-white/10 text-white border border-white/30 text-center font-semibold text-xs rounded-lg hover:bg-white hover:text-deep-void transition-all flex items-center justify-center gap-2" href="cv_ats/CV_Muhammad_Firly_ATS.pdf" download="CV_Muhammad_Firly_ATS.pdf" target="_blank" rel="noopener noreferrer">
         <span class="material-symbols-outlined text-[16px]">download</span>
