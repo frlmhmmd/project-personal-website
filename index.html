@@ -170,56 +170,108 @@
     </script>
   </div>
 
+  <!-- Top Scroll Reading Progress Bar -->
+  <div id="scroll-progress"></div>
+
   <!-- =========================================================================
-       1. Top Navigation Bar
+       1. Top Navigation Bar (Fluid Glass Capsule Design)
        ========================================================================= -->
-  <header class="fixed top-0 w-full z-50 bg-deep-void/85 backdrop-blur-lg border-b border-glass-border shadow-[0_4px_25px_rgba(0,0,0,0.6)] transition-all duration-300">
+  <header class="fixed top-0 w-full z-50 bg-deep-void/80 backdrop-blur-xl border-b border-glass-border shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-all duration-300">
     <div class="max-w-container-max mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
       
       <!-- Brand Logo -->
-      <a class="flex items-center gap-3 group" href="#home">
-        <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/30 flex items-center justify-center text-white font-mono font-bold text-xl group-hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] group-hover:scale-105 transition-all duration-300">
+      <a class="flex items-center gap-3 group shrink-0" href="#home">
+        <div class="w-10 h-10 rounded-xl bg-white/10 border border-white/25 flex items-center justify-center text-white font-mono font-bold text-lg group-hover:bg-white group-hover:text-deep-void transition-all duration-300 shadow-sm">
           F
         </div>
         <div class="flex flex-col">
-          <span class="font-bold text-lg text-white tracking-wide group-hover:text-white transition-colors duration-300">
-            Muhammad <span class="text-white underline decoration-white/40">Firly</span>
+          <span class="font-bold text-base sm:text-lg text-white tracking-wide leading-tight">
+            Muhammad <span class="text-white/80">Firly</span>
           </span>
-          <span class="text-[11px] font-mono text-slate-300 flex items-center gap-1.5 -mt-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+          <span class="text-[11px] font-mono text-slate-300 flex items-center gap-1.5 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
             Open to Work
           </span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-6 xl:gap-7">
-        <a class="nav-link text-white font-medium text-sm hover:text-white py-1 active" href="#home">Home</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#about">About</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#skills">Skills</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#projects">Projects & Hardware</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#media">Media & Press</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#certifications">Certifications</a>
-        <a class="nav-link text-on-surface-variant font-medium text-sm hover:text-white py-1" href="#contact">Contact</a>
+      <!-- Desktop Navigation Links (Clean Center Capsule) -->
+      <nav class="hidden xl:flex items-center gap-1 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
+        <a class="nav-link text-white font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full transition-all active" href="#home">Home</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#about">About</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#skills">Skills</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#projects">Projects</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#media">Media</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#certifications">Certifications</a>
+        <a class="nav-link text-on-surface-variant font-medium text-xs sm:text-sm px-3.5 py-1 rounded-full hover:text-white transition-all" href="#contact">Contact</a>
       </nav>
 
       <!-- Trailing Action Buttons -->
-      <div class="hidden sm:flex items-center gap-3">
-        <!-- Ambient Background Music Toggle Button -->
+      <div class="hidden sm:flex items-center gap-2.5 shrink-0">
+        
+        <!-- Command Palette Trigger Button (Ctrl+K) -->
         <button 
-          id="music-toggle-btn" 
-          class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/30 text-white hover:bg-white/20 text-xs font-mono font-medium transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.1)] cursor-pointer group" 
-          title="Putar / Jeda Musik Latar"
-          aria-label="Toggle Background Music"
+          id="cmd-palette-toggle"
+          class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-white/5 border border-white/15 text-slate-300 hover:text-white hover:bg-white/10 text-xs font-mono transition-all cursor-pointer"
+          title="Buka Menu Perintah Cepat (Ctrl + K)"
         >
-          <div class="music-equalizer">
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
-            <span class="music-bar"></span>
-          </div>
-          <span id="music-status-text" class="text-[11px] tracking-wide text-slate-200 group-hover:text-white">BGM</span>
+          <span class="material-symbols-outlined text-[16px]">terminal</span>
+          <span class="hidden md:inline text-[10px] px-1.5 py-0.5 rounded bg-white/10 border border-white/10">⌘K</span>
         </button>
+
+        <!-- Ambient Background Music Capsule with Dropdown Popover -->
+        <div class="relative">
+          <button 
+            id="music-toggle-btn" 
+            class="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 border border-white/25 text-white hover:bg-white/20 text-xs font-mono font-medium transition-all duration-300 shadow-sm cursor-pointer" 
+            title="Klik untuk membuka Kontrol Musik Latar"
+            aria-label="Toggle Background Music Menu"
+          >
+            <div class="music-equalizer">
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+              <span class="music-bar"></span>
+            </div>
+            <span id="music-status-text" class="text-[11px] font-semibold tracking-wider">BGM</span>
+            <span class="material-symbols-outlined text-[14px] opacity-70">expand_more</span>
+          </button>
+
+          <!-- Interactive Music Player Dropdown Popover -->
+          <div id="music-popover" class="hidden absolute right-0 mt-2 w-72 glass-card p-4 rounded-2xl border border-white/20 shadow-2xl z-50 flex flex-col gap-3">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[18px] text-white">graphic_eq</span>
+                <span class="text-xs font-mono font-bold text-white uppercase tracking-wider">Soundtrack</span>
+              </div>
+              <span id="music-track-counter" class="text-[10px] font-mono text-slate-400">1 of 3</span>
+            </div>
+
+            <!-- Current Track Info -->
+            <div class="flex items-center gap-3 py-1">
+              <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-[20px] text-white">music_note</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span id="player-track-title" class="text-xs font-bold text-white truncate">Egosentris</span>
+                <span id="player-track-artist" class="text-[11px] font-mono text-slate-400 truncate">alkateri</span>
+              </div>
+            </div>
+
+            <!-- Player Controls (Prev, Play/Pause, Next) -->
+            <div class="flex items-center justify-center gap-4 pt-1">
+              <button id="player-btn-prev" class="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors" title="Lagu Sebelumnya">
+                <span class="material-symbols-outlined text-[20px]">skip_previous</span>
+              </button>
+              <button id="player-btn-play" class="w-9 h-9 rounded-full bg-white text-deep-void flex items-center justify-center hover:scale-105 active:scale-95 transition-transform" title="Play / Pause">
+                <span id="player-play-icon" class="material-symbols-outlined text-[22px]">play_arrow</span>
+              </button>
+              <button id="player-btn-next" class="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors" title="Lagu Selanjutnya">
+                <span class="material-symbols-outlined text-[20px]">skip_next</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- Direct ATS CV Download Button -->
         <a 
@@ -227,29 +279,38 @@
           download="CV_Muhammad_Firly_ATS.pdf" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/10 border border-white/30 text-white hover:bg-white hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300 shadow-[0_0_12px_rgba(255,255,255,0.1)]" 
+          class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-white/10 border border-white/25 text-white hover:bg-white hover:text-deep-void text-xs font-mono font-semibold transition-all duration-300" 
           title="Unduh CV ATS Muhammad Firly"
         >
           <span class="material-symbols-outlined text-[16px]">download</span>
           <span>CV ATS</span>
         </a>
 
-        <!-- Copy Email Button -->
-        <button class="btn-copy-email inline-flex items-center gap-2 px-3.5 py-2 rounded-lg glass-card text-xs font-mono text-white hover:border-white hover:bg-white/10 transition-all duration-300" data-email="muhammadfirly68@gmail.com" title="Salin Email">
-          <span class="material-symbols-outlined text-[16px]">content_copy</span>
-          <span>Copy Email</span>
-        </button>
-
         <!-- Get in Touch CTA -->
-        <a class="inline-flex items-center justify-center px-4 py-2 bg-white text-deep-void font-semibold text-sm rounded-lg hover:shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
-          Get in Touch
+        <a class="inline-flex items-center justify-center px-4 py-2 bg-white text-deep-void font-semibold text-xs rounded-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-[1.02] active:scale-95 transition-all duration-300" href="#contact">
+          Contact
         </a>
       </div>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button id="mobile-menu-toggle" class="lg:hidden p-2 text-on-surface-variant hover:text-white focus:outline-none transition-colors" aria-label="Toggle Mobile Menu">
-        <span class="material-symbols-outlined text-[30px]">menu</span>
-      </button>
+      <!-- Mobile Hamburger & Quick BGM Toggle -->
+      <div class="flex xl:hidden items-center gap-2">
+        <button 
+          id="mobile-quick-music-btn" 
+          class="p-2 rounded-lg bg-white/10 border border-white/20 text-white"
+          title="Toggle Musik Latar"
+        >
+          <div class="music-equalizer">
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+            <span class="music-bar"></span>
+          </div>
+        </button>
+        <button id="mobile-menu-toggle" class="p-2 text-slate-300 hover:text-white focus:outline-none transition-colors" aria-label="Toggle Mobile Menu">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+
     </div>
   </header>
 
@@ -265,7 +326,7 @@
           <span class="material-symbols-outlined text-[24px]">close</span>
         </button>
       </div>
-      <nav class="flex flex-col gap-4 mt-8">
+      <nav class="flex flex-col gap-3 mt-6">
         <a class="mobile-nav-link text-white hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#home">Home</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#about">About</a>
         <a class="mobile-nav-link text-on-surface-variant hover:text-white font-medium py-2 px-3 rounded hover:bg-white/5 transition-colors" href="#skills">Skills</a>
@@ -2024,6 +2085,129 @@
 
     </div>
   </div>
+
+  <!-- =========================================================================
+       11. Interactive Command Palette (Ctrl + K) Modal
+       ========================================================================= -->
+  <div id="cmd-palette-modal" class="fixed inset-0 z-[9999] flex items-start justify-center pt-20 px-4 bg-deep-void/85 backdrop-blur-xl">
+    <div class="cmd-backdrop absolute inset-0 cursor-pointer"></div>
+    
+    <div class="cmd-card relative z-10 max-w-xl w-full glass-card rounded-2xl border border-white/20 overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.8)] flex flex-col">
+      <!-- Search Input Header -->
+      <div class="p-4 border-b border-white/10 flex items-center gap-3 bg-[#0d1b33]/90">
+        <span class="material-symbols-outlined text-[20px] text-white">search</span>
+        <input 
+          id="cmd-input" 
+          type="text" 
+          placeholder="Ketik perintah atau cari bagian (contoh: Project, Lagu, CV, Email)..." 
+          class="w-full bg-transparent text-sm text-white placeholder-slate-400 focus:outline-none font-mono"
+        />
+        <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-slate-300 border border-white/10">ESC</span>
+        <button id="cmd-palette-close" class="text-slate-400 hover:text-white p-1" aria-label="Tutup Command Menu">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Command Items List -->
+      <div class="p-3 max-h-80 overflow-y-auto space-y-1 font-mono text-xs">
+        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold">Navigasi Cepat</div>
+        
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#home">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">home</span>
+            <span>Home (Beranda Utama)</span>
+          </div>
+          <span class="text-[10px] text-slate-400">#home</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#projects">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">rocket_launch</span>
+            <span>Projects & Secretlee MITM Proxy</span>
+          </div>
+          <span class="text-[10px] text-slate-400">#projects</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#certifications">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">verified</span>
+            <span>6x Official Certifications</span>
+          </div>
+          <span class="text-[10px] text-slate-400">#certifications</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#media">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">newspaper</span>
+            <span>Media Recognition (Radar Bekasi)</span>
+          </div>
+          <span class="text-[10px] text-slate-400">#media</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="navigate" data-target="#contact">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">mail</span>
+            <span>Contact & Get in Touch</span>
+          </div>
+          <span class="text-[10px] text-slate-400">#contact</span>
+        </div>
+
+        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold mt-2">Fitur Interaktif & Musik</div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="music-toggle">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">play_pause</span>
+            <span>Putar / Jeda Musik Latar (Play/Pause BGM)</span>
+          </div>
+          <span class="text-[10px] text-slate-400">Space</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="music-next">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">skip_next</span>
+            <span>Ganti Lagu Selanjutnya (Next Soundtrack)</span>
+          </div>
+          <span class="text-[10px] text-slate-400">Next</span>
+        </div>
+
+        <div class="text-[10px] text-slate-400 uppercase tracking-widest px-3 py-1 font-semibold mt-2">Aksi Cepat</div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="download-cv">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">download</span>
+            <span>Unduh Resume / CV (ATS Format)</span>
+          </div>
+          <span class="text-[10px] text-slate-400">PDF</span>
+        </div>
+
+        <div class="cmd-item p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-slate-200" data-action="copy-email">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[16px] text-white">content_copy</span>
+            <span>Salin Alamat Email</span>
+          </div>
+          <span class="text-[10px] text-slate-400">Clipboard</span>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="p-2.5 border-t border-white/10 bg-[#080e21]/90 flex items-center justify-between text-[10px] font-mono text-slate-400 px-4">
+        <span>Gunakan &uarr; &darr; untuk memilih, Enter untuk aksi</span>
+        <span>Muhammad Firly Portfolio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       12. Floating Back-to-Top Button
+       ========================================================================= -->
+  <button 
+    id="back-to-top-btn" 
+    class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-white text-deep-void shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center cursor-pointer border border-white/40"
+    title="Kembali ke Atas"
+    aria-label="Back to Top"
+  >
+    <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+  </button>
 
   <!-- Toast Notification Container -->
   <div id="toast-container"></div>

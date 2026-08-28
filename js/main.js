@@ -1,12 +1,15 @@
 /**
- * Main Application Logic & Interactivity
+ * Main Application Logic & Interactivity Hub
  * Muhammad Firly - Personal Portfolio
- * Royal Navy & Pure White Aesthetic + Ambient Music Player Engine
+ * Royal Navy & Pure White Aesthetic + Fluid Navigation & Interactive Features
  */
 
 function initApp() {
   initSplashScreen();
+  initScrollProgress();
   initMusicPlayer();
+  initCommandPalette();
+  initBackToTop();
   initTypingEffect();
   initProjectFilters();
   initLightbox();
@@ -25,7 +28,22 @@ if (document.readyState === 'loading') {
 }
 
 /* ==========================================================================
-   0. Ambient Background Music Player & Auto-Loop Playlist Engine
+   0. Scroll Progress Bar at the Top Edge
+   ========================================================================== */
+function initScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = `${progress}%`;
+  }, { passive: true });
+}
+
+/* ==========================================================================
+   1. Ambient Background Music Player & Interactive Control Popover
    ========================================================================== */
 const MusicPlayer = {
   playlist: [
@@ -48,16 +66,15 @@ const MusicPlayer = {
   currentIndex: 0,
   audio: null,
   isPlaying: false,
-  targetVolume: 0.40, // Comfortable, crystal-clear background volume
+  targetVolume: 0.40,
   fadeInterval: null,
-  hasInteracted: false,
 
   init() {
     this.audio = new Audio();
     this.audio.preload = 'auto';
     this.loadTrack(0);
 
-    // Continuous loop: when track ends, automatically advance to next and loop forever
+    // Continuous playlist loop
     this.audio.addEventListener('ended', () => {
       this.next();
     });
@@ -71,6 +88,18 @@ const MusicPlayer = {
     const track = this.playlist[this.currentIndex];
     this.audio.src = encodeURI(track.src);
     this.audio.volume = 0;
+    this.updateTrackInfo();
+  },
+
+  updateTrackInfo() {
+    const track = this.playlist[this.currentIndex];
+    const titleEl = document.getElementById('player-track-title');
+    const artistEl = document.getElementById('player-track-artist');
+    const counterEl = document.getElementById('music-track-counter');
+
+    if (titleEl) titleEl.textContent = track.title;
+    if (artistEl) artistEl.textContent = track.artist;
+    if (counterEl) counterEl.textContent = `${this.currentIndex + 1} of ${this.playlist.length}`;
   },
 
   play() {
@@ -82,7 +111,6 @@ const MusicPlayer = {
         this.fadeIn();
         this.updateUI(true);
       }).catch(() => {
-        // Autoplay policy prevented immediate playback; waiting for first interaction
         this.isPlaying = false;
         this.updateUI(false);
       });
@@ -101,10 +129,10 @@ const MusicPlayer = {
   toggle() {
     if (this.isPlaying) {
       this.pause();
-      showToast('Musik Latar Dijeda', 'info');
+      showToast('Musik Latar Dijeda (BGM Paused)', 'info');
     } else {
       this.play();
-      showToast('Memutar Musik Latar', 'info');
+      showToast('Memutar Musik Latar (BGM Playing)', 'info');
     }
   },
 
@@ -112,10 +140,21 @@ const MusicPlayer = {
     this.fadeOut(() => {
       this.loadTrack(this.currentIndex + 1);
       this.play();
-    }, 600);
+      const track = this.playlist[this.currentIndex];
+      showToast(`Memutar: ${track.artist} - ${track.title}`, 'info');
+    }, 400);
   },
 
-  fadeIn(duration = 1600) {
+  prev() {
+    this.fadeOut(() => {
+      this.loadTrack(this.currentIndex - 1);
+      this.play();
+      const track = this.playlist[this.currentIndex];
+      showToast(`Memutar: ${track.artist} - ${track.title}`, 'info');
+    }, 400);
+  },
+
+  fadeIn(duration = 1400) {
     if (this.fadeInterval) clearInterval(this.fadeInterval);
     this.audio.volume = 0;
     const step = 0.02;
@@ -131,7 +170,7 @@ const MusicPlayer = {
     }, intervalTime);
   },
 
-  fadeOut(callback, duration = 600) {
+  fadeOut(callback, duration = 500) {
     if (this.fadeInterval) clearInterval(this.fadeInterval);
     const step = 0.04;
     const intervalTime = Math.max(20, duration / (this.audio.volume / step || 10));
@@ -150,6 +189,7 @@ const MusicPlayer = {
   updateUI(playing) {
     const eqEls = document.querySelectorAll('.music-equalizer');
     const statusTexts = document.querySelectorAll('#music-status-text, #mobile-music-text');
+    const playIcon = document.getElementById('player-play-icon');
 
     eqEls.forEach(eq => {
       if (playing) {
@@ -166,13 +206,15 @@ const MusicPlayer = {
         txt.textContent = playing ? 'Musik Latar: ON' : 'Musik Latar: OFF';
       }
     });
+
+    if (playIcon) {
+      playIcon.textContent = playing ? 'pause' : 'play_arrow';
+    }
   },
 
   setupAutoplayTriggers() {
-    // Try immediate autoplay
     this.play();
 
-    // Browser interaction triggers to unblock audio seamlessly
     const handleFirstInteraction = () => {
       if (!this.isPlaying) {
         this.play();
@@ -190,13 +232,61 @@ const MusicPlayer = {
   },
 
   bindControls() {
-    const toggleBtns = document.querySelectorAll('#music-toggle-btn, #mobile-music-toggle-btn');
-    toggleBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
+    const musicBtn = document.getElementById('music-toggle-btn');
+    const musicPopover = document.getElementById('music-popover');
+    const playBtn = document.getElementById('player-btn-play');
+    const nextBtn = document.getElementById('player-btn-next');
+    const prevBtn = document.getElementById('player-btn-prev');
+    const mobileQuickBtn = document.getElementById('mobile-quick-music-btn');
+    const mobileDrawerBtn = document.getElementById('mobile-music-toggle-btn');
+
+    if (musicBtn && musicPopover) {
+      musicBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        musicPopover.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!musicPopover.contains(e.target) && !musicBtn.contains(e.target)) {
+          musicPopover.classList.add('hidden');
+        }
+      });
+    }
+
+    if (playBtn) {
+      playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         this.toggle();
       });
-    });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.next();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.prev();
+      });
+    }
+
+    if (mobileQuickBtn) {
+      mobileQuickBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggle();
+      });
+    }
+
+    if (mobileDrawerBtn) {
+      mobileDrawerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggle();
+      });
+    }
   }
 };
 
@@ -205,7 +295,128 @@ function initMusicPlayer() {
 }
 
 /* ==========================================================================
-   1. Dynamic Typing Effect for Hero Title
+   2. Interactive Command Palette (Ctrl + K) & Quick Navigation
+   ========================================================================== */
+function initCommandPalette() {
+  const modal = document.getElementById('cmd-palette-modal');
+  const toggleBtn = document.getElementById('cmd-palette-toggle');
+  const closeBtn = document.getElementById('cmd-palette-close');
+  const input = document.getElementById('cmd-input');
+  const items = document.querySelectorAll('.cmd-item');
+
+  if (!modal) return;
+
+  function openPalette() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (input) {
+      input.value = '';
+      filterItems('');
+      setTimeout(() => input.focus(), 50);
+    }
+  }
+
+  function closePalette() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (toggleBtn) toggleBtn.addEventListener('click', openPalette);
+  if (closeBtn) closeBtn.addEventListener('click', closePalette);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('cmd-backdrop')) {
+      closePalette();
+    }
+  });
+
+  // Keyboard shortcut: Ctrl+K or Cmd+K
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      e.preventDefault();
+      if (modal.classList.contains('active')) {
+        closePalette();
+      } else {
+        openPalette();
+      }
+    }
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closePalette();
+    }
+  });
+
+  function filterItems(query) {
+    const q = query.toLowerCase().trim();
+    items.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      if (!q || text.includes(q)) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  if (input) {
+    input.addEventListener('input', (e) => {
+      filterItems(e.target.value);
+    });
+  }
+
+  // Handle item actions
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const action = item.getAttribute('data-action');
+      closePalette();
+
+      if (action === 'navigate') {
+        const target = item.getAttribute('data-target');
+        const targetEl = document.querySelector(target);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (action === 'music-toggle') {
+        MusicPlayer.toggle();
+      } else if (action === 'music-next') {
+        MusicPlayer.next();
+      } else if (action === 'copy-email') {
+        navigator.clipboard.writeText('muhammadfirly68@gmail.com').then(() => {
+          showToast('Email (muhammadfirly68@gmail.com) disalin!', 'success');
+        });
+      } else if (action === 'download-cv') {
+        const cvLink = document.createElement('a');
+        cvLink.href = 'cv_ats/CV_Muhammad_Firly_ATS.pdf';
+        cvLink.download = 'CV_Muhammad_Firly_ATS.pdf';
+        cvLink.target = '_blank';
+        cvLink.click();
+        showToast('Mengunduh CV Muhammad Firly...', 'success');
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   3. Dynamic Back-to-Top Button
+   ========================================================================== */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top-btn');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ==========================================================================
+   4. Dynamic Typing Effect for Hero Title
    ========================================================================== */
 function initTypingEffect() {
   const typingEl = document.getElementById('typing-text');
@@ -257,7 +468,7 @@ function initTypingEffect() {
 }
 
 /* ==========================================================================
-   2. Project Category Filtering
+   5. Project Category Filtering
    ========================================================================== */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -267,7 +478,6 @@ function initProjectFilters() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Update active button
       filterBtns.forEach(b => b.classList.remove('active', 'bg-white', 'text-[#080e21]'));
       filterBtns.forEach(b => b.classList.add('glass-card', 'text-on-surface-variant'));
       
@@ -297,7 +507,7 @@ function initProjectFilters() {
 }
 
 /* ==========================================================================
-   3. Universal Lightbox Modal for Certificates & Project Images
+   6. Universal Lightbox Modal for Certificates & Project Images
    ========================================================================== */
 let lightboxItems = [];
 let currentLightboxIndex = 0;
@@ -314,7 +524,6 @@ function initLightbox() {
 
   if (!modal) return;
 
-  // Gather all clickable preview elements
   const triggers = document.querySelectorAll('[data-lightbox]');
   lightboxItems = Array.from(triggers).map(el => ({
     src: el.getAttribute('data-img-src') || el.querySelector('img')?.src || el.src,
@@ -381,7 +590,7 @@ function initLightbox() {
 }
 
 /* ==========================================================================
-   4. Navbar Scroll Spy & Header Blur Effect
+   7. Navbar Scroll Spy & Active State
    ========================================================================== */
 function initNavbarScrollSpy() {
   const header = document.querySelector('header');
@@ -389,14 +598,14 @@ function initNavbarScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      header?.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.6)]', 'bg-opacity-95');
+    if (window.scrollY > 30) {
+      header?.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.7)]', 'bg-deep-void/95');
     } else {
-      header?.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.6)]', 'bg-opacity-95');
+      header?.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.7)]', 'bg-deep-void/95');
     }
 
     let currentId = '';
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -416,7 +625,7 @@ function initNavbarScrollSpy() {
 }
 
 /* ==========================================================================
-   5. Mobile Navigation Drawer
+   8. Mobile Navigation Drawer
    ========================================================================== */
 function initMobileMenu() {
   const mobileToggle = document.getElementById('mobile-menu-toggle');
@@ -452,7 +661,7 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   6. Contact Form & WhatsApp / Mailto Handlers
+   9. Contact Form & Handlers
    ========================================================================== */
 function initContactForm() {
   const contactForm = document.getElementById('contact-form');
@@ -482,7 +691,7 @@ function initContactForm() {
 }
 
 /* ==========================================================================
-   7. Copy-to-Clipboard Actions & Toast System
+   10. Toast System & Copy Actions
    ========================================================================== */
 function initToast() {
   let container = document.getElementById('toast-container');
@@ -538,9 +747,6 @@ function initCopyActions() {
   });
 }
 
-/* ==========================================================================
-   8. Direct ATS CV Download Handler
-   ========================================================================== */
 function initCvDownload() {
   const cvButtons = document.querySelectorAll('.btn-cv-download');
   cvButtons.forEach(btn => {
@@ -551,7 +757,7 @@ function initCvDownload() {
 }
 
 /* ==========================================================================
-   9. Elegant Splash Screen Handler
+   11. Elegant Splash Screen Handler
    ========================================================================== */
 function initSplashScreen() {
   const splash = document.getElementById('splash-screen');
@@ -580,5 +786,4 @@ function initSplashScreen() {
   }
 }
 
-// Immediate execution so splash starts dismissing right away
 initSplashScreen();
