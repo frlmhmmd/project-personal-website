@@ -22,6 +22,7 @@ A lightweight, zero-dependency security testing and traffic inspection toolkit i
 - **Media Recognition (Radar Bekasi)**: Official press coverage on *04 August 2026* for the field trial testing of the IoT Vehicle Volume & Speed Monitoring System at Jl. Mayor Madmuin Hasibuan, Bekasi Timur.
 
 ### 3. 📜 Official Certifications & Credentials
+- **Monitoring Lalu Lintas Jaringan Cerdas Dengan Zabbix** — *Universitas Bani Saleh & HIMATEKOM*
 - **Belajar Dasar AI (Artificial Intelligence)** — *Dicoding Indonesia*
 - **Belajar Dasar Data Science** — *Dicoding Indonesia*
 - **Belajar Dasar Pemrograman Python** — *Dicoding Indonesia*
